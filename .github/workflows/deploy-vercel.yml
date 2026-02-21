@@ -1,0 +1,31 @@
+name: Deploy → Vercel
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Trigger Vercel Production Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Vercel
+        run: |
+          RESPONSE=$(curl -sf -X POST \
+            "https://api.vercel.com/v13/deployments?teamId=${{ secrets.VERCEL_TEAM_ID }}" \
+            -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "name": "corex-landing",
+              "project": "${{ secrets.VERCEL_PROJECT_ID }}",
+              "target": "production",
+              "gitSource": {
+                "type": "github",
+                "repoId": 1162731851,
+                "ref": "master",
+                "sha": "${{ github.sha }}"
+              }
+            }')
+          URL=$(echo "$RESPONSE" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('url','?'))")
+          echo "✅ Deployed: https://$URL"
