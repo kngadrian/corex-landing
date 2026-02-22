@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COREX AI — Your AI Executive Team</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-base: #050811;
+  --bg-surface: #0d1117;
+  --bg-elevated: #131920;
+  --border: rgba(255,255,255,0.08);
+  --border-accent: rgba(240,180,41,0.3);
+  --gold: #F0B429;
+  --gold-bright: #FFD166;
+  --gold-dim: rgba(240,180,41,0.15);
+  --text-primary: #F0F6FC;
+  --text-secondary: #8B949E;
+  --text-muted: #484F58;
+  --purple-glow: rgba(139,92,246,0.15);
+  --blue-glow: rgba(88,166,255,0.1);
+  --success: #3FB950;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--gold); text-decoration: none; }
+h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; color: var(--text-primary); }
+
+/* ── Animations ── */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(240,180,41,0.3); }
+  50% { box-shadow: 0 0 40px rgba(240,180,41,0.6); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, #F0B429, #FF8C42);
+  color: var(--bg-base);
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 50px;
+  border: none;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  animation: glow-pulse 3s ease-in-out infinite;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 40px rgba(240,180,41,0.5);
+  color: var(--bg-base);
+}
+.btn-ghost {
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 16px;
+  transition: border-color 0.2s, background 0.2s;
+  text-decoration: none;
+}
+.btn-ghost:hover {
+  border-color: var(--border-accent);
+  background: rgba(240,180,41,0.05);
+  color: var(--text-primary);
+}
+
+/* ── Glass Card ── */
+.glass-card {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+/* ── Layout ── */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+/* ── 1. Announcement Bar ── */
+.announcement-bar {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background: rgba(240,180,41,0.1);
+  border-bottom: 1px solid rgba(240,180,41,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+  overflow: hidden;
+  z-index: 1001;
+}
+.announcement-bar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(240,180,41,0.08) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+}
+.announcement-bar span { position: relative; z-index: 1; }
+.announcement-bar .badge-new {
+  display: inline-block;
+  background: var(--gold-dim);
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+.announcement-bar a {
+  color: var(--gold);
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+/* ── 2. Sticky Header ── */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(5,8,17,0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+.logo .dot { color: var(--gold); }
+.header-right { display: flex; align-items: center; gap: 16px; }
+.header-right .demo-link {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.header-right .demo-link:hover { color: var(--text-primary); }
+.header-btn {
+  background: linear-gradient(135deg, #F0B429, #FF8C42);
+  color: var(--bg-base);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.header-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(240,180,41,0.4);
+  color: var(--bg-base);
+}
+
+/* ── 3. Hero ── */
+.hero {
+  position: relative;
+  padding: 120px 0 80px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(240,180,41,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(139,92,246,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 60% at 20% 80%, rgba(88,166,255,0.06) 0%, transparent 50%),
+    var(--bg-base);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.hero .container { position: relative; z-index: 1; }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  animation: fadeUp 0.6s ease both;
+}
+.hero-badge .star { color: var(--gold); }
+.hero h1 {
+  font-size: clamp(36px, 6vw, 76px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -2px;
+  background: linear-gradient(135deg, #F0F6FC 0%, #F0B429 60%, #FF8C42 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  max-width: 900px;
+  margin: 0 auto 24px;
+  animation: fadeUp 0.6s ease 0.1s both;
+}
+.hero-sub {
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+  animation: fadeUp 0.6s ease 0.2s both;
+}
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.6s ease 0.3s both;
+}
+.hero-trust {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+  animation: fadeUp 0.6s ease 0.4s both;
+}
+
+/* Dashboard Mockup */
+.dashboard-mockup {
+  margin: 60px auto 0;
+  max-width: 800px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-top: 1px solid rgba(240,180,41,0.25);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 -1px 40px rgba(240,180,41,0.08), inset 0 1px 0 rgba(240,180,41,0.1), 0 20px 60px rgba(0,0,0,0.5);
+  animation: fadeUp 0.8s ease 0.5s both;
+}
+.mockup-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.mockup-dot { width: 10px; height: 10px; border-radius: 50%; }
+.mockup-dot.r { background: #f85149; }
+.mockup-dot.y { background: #F0B429; }
+.mockup-dot.g { background: #3FB950; }
+.mockup-title { margin-left: 12px; font-size: 13px; color: var(--text-muted); }
+.mockup-agents { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.mini-agent {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+}
+.mini-agent-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.mini-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: var(--bg-base);
+}
+.mini-agent-name { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+.mini-agent-role { font-size: 11px; color: var(--text-muted); }
+.mini-agent-status {
+  display: inline-block;
+  font-size: 11px;
+  color: var(--success);
+  margin-top: 6px;
+}
+.mini-agent-status::before {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* Logos row */
+.logos-row {
+  margin-top: 60px;
+  text-align: center;
+  animation: fadeUp 0.6s ease 0.6s both;
+}
+.logos-row p { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.1em; }
+.logos-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.logos-list span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* ── 4. Social Proof Numbers ── */
+.stats-bar {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.stats-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.stat-item {
+  text-align: center;
+  padding: 0 48px;
+}
+.stat-item + .stat-item { border-left: 1px solid var(--border); }
+.stat-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.stat-label { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+
+/* ── 5. Problem Section ── */
+.problem-section {
+  padding: 100px 0;
+  background: var(--bg-surface);
+}
+.problem-section h2 {
+  font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 700px;
+  margin-bottom: 16px;
+}
+.problem-section .lead {
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+.pain-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.pain-card {
+  background: var(--bg-elevated);
+  border: 1px solid rgba(248,81,73,0.12);
+  border-radius: 14px;
+  padding: 28px;
+  transition: border-color 0.2s;
+}
+.pain-card:hover { border-color: rgba(248,81,73,0.3); }
+.pain-icon { font-size: 32px; margin-bottom: 12px; }
+.pain-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.pain-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+/* ── 6. Solution + Agent Grid ── */
+.solution-section {
+  padding: 100px 0;
+  position: relative;
+  background:
+    radial-gradient(ellipse 80% 40% at 50% 0%, rgba(240,180,41,0.06) 0%, transparent 60%),
+    var(--bg-base);
+}
+.solution-section h2 {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.solution-sub {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 48px;
+  color: var(--text-secondary);
+}
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.agent-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.agent-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.agent-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+.agent-card.maxwell { grid-column: 1 / -1; }
+.agent-card.maxwell::before { background: var(--gold); }
+.agent-card.valencia::before { background: #EC4899; }
+.agent-card.atlas::before { background: #58A6FF; }
+.agent-card.sterling::before { background: #3FB950; }
+.agent-card.sentinel::before { background: #F97316; }
+.agent-card.nova::before { background: #8B5CF6; }
+.agent-card.beacon::before { background: #06B6D4; }
+.agent-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.agent-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 16px; color: #fff;
+}
+.agent-avatar.mx { background: linear-gradient(135deg, #F0B429, #FF8C42); color: var(--bg-base); }
+.agent-avatar.vl { background: linear-gradient(135deg, #EC4899, #F472B6); }
+.agent-avatar.at { background: linear-gradient(135deg, #58A6FF, #388BFD); }
+.agent-avatar.st { background: linear-gradient(135deg, #3FB950, #2EA043); }
+.agent-avatar.sn { background: linear-gradient(135deg, #F97316, #FB923C); }
+.agent-avatar.nv { background: linear-gradient(135deg, #8B5CF6, #A78BFA); }
+.agent-avatar.bc { background: linear-gradient(135deg, #06B6D4, #22D3EE); }
+.agent-name { font-size: 18px; font-weight: 700; }
+.agent-title { font-size: 13px; color: var(--text-muted); }
+.agent-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px; }
+.agent-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.agent-tag {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+.agents-note { text-align: center; margin-top: 24px; font-size: 14px; color: var(--text-muted); }
+
+/* ── 7. How It Works ── */
+.hiw-section { padding: 100px 0; }
+.hiw-section h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  text-align: center;
+  margin-bottom: 60px;
+}
+.hiw-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  position: relative;
+}
+.hiw-grid::before {
+  content: '';
+  position: absolute;
+  top: 60px;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  border-top: 2px dashed rgba(255,255,255,0.08);
+}
+.hiw-step { text-align: center; position: relative; }
+.hiw-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  color: var(--gold);
+  opacity: 0.12;
+  line-height: 1;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.hiw-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: var(--gold-dim);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.hiw-step h3 { font-size: 20px; margin-bottom: 10px; }
+.hiw-step p { font-size: 14px; color: var(--text-secondary); max-width: 280px; margin: 0 auto; }
+
+/* ── 8. Benefits ── */
+.benefits-section {
+  padding: 100px 0;
+  background: var(--bg-surface);
+}
+.benefits-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+.benefits-layout h2 {
+  font-size: clamp(24px, 3.5vw, 40px);
+  line-height: 1.2;
+  position: sticky;
+  top: 100px;
+}
+.benefit-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.benefit-item:first-child { padding-top: 0; }
+.benefit-check {
+  color: var(--gold);
+  font-weight: 700;
+  margin-right: 8px;
+}
+.benefit-bold { color: var(--text-primary); font-weight: 600; font-size: 16px; }
+.benefit-desc { color: var(--text-secondary); font-size: 14px; margin-top: 4px; padding-left: 22px; }
+
+/* ── 9. Value Stack ── */
+.value-section { padding: 100px 0; }
+.value-section h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  text-align: center;
+  margin-bottom: 48px;
+}
+.value-box {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.value-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 28px;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+}
+.value-item:last-child { border-bottom: none; }
+.value-name { color: var(--text-primary); font-weight: 600; display: flex; align-items: center; gap: 10px; }
+.value-name .vi { color: var(--gold); font-size: 18px; }
+.value-price { color: var(--text-muted); font-style: italic; font-size: 14px; white-space: nowrap; }
+.value-total-row {
+  background: var(--bg-elevated);
+  padding: 28px;
+  text-align: center;
+}
+.value-total-label { font-size: 16px; color: var(--text-secondary); margin-bottom: 4px; }
+.value-total-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: line-through;
+  text-decoration-color: #f85149;
+}
+.value-your-price {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--gold);
+  margin-top: 8px;
+}
+.value-your-label { color: var(--text-muted); font-size: 14px; }
+
+/* ── 10. Testimonials ── */
+.testimonials-section {
+  padding: 100px 0;
+  background: var(--bg-surface);
+}
+.testimonials-section h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  text-align: center;
+  margin-bottom: 48px;
+}
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.testimonial-card {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+}
+.testimonial-stars { color: var(--gold); font-size: 16px; margin-bottom: 16px; letter-spacing: 2px; }
+.testimonial-quote {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testimonial-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px; color: #fff;
+}
+.ta-m { background: linear-gradient(135deg, #F0B429, #FF8C42); color: var(--bg-base); }
+.ta-s { background: linear-gradient(135deg, #EC4899, #F472B6); }
+.ta-j { background: linear-gradient(135deg, #58A6FF, #388BFD); }
+.testimonial-name { font-weight: 700; color: var(--text-primary); font-size: 14px; }
+.testimonial-role { font-size: 13px; color: var(--text-muted); }
+
+/* ── 11. Pricing ── */
+.pricing-section {
+  padding: 100px 0;
+  position: relative;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(240,180,41,0.08) 0%, transparent 60%),
+    var(--bg-base);
+}
+.pricing-section h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  text-align: center;
+  margin-bottom: 48px;
+}
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto 48px;
+}
+.compare-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 32px;
+}
+.compare-card h3 { font-size: 20px; margin-bottom: 20px; }
+.compare-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.compare-line:last-child { border-bottom: none; }
+.compare-role { color: var(--text-secondary); }
+.compare-cost { color: var(--text-muted); }
+.compare-cost.strike { text-decoration: line-through; color: #f85149; }
+.compare-total {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-weight: 700;
+  font-size: 18px;
+}
+.compare-total.red { color: #f85149; text-decoration: line-through; }
+.compare-total.gold { color: var(--gold); }
+.compare-card.highlight {
+  border-color: var(--border-accent);
+  box-shadow: 0 0 0 1px rgba(240,180,41,0.2);
+}
+
+.price-card {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--bg-surface);
+  border-radius: 20px;
+  padding: 48px 40px;
+  text-align: center;
+  box-shadow: 0 0 0 1px rgba(240,180,41,0.4), 0 0 40px rgba(240,180,41,0.1);
+}
+.price-big {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 72px;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+}
+.price-period {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 4px;
+}
+.price-features {
+  text-align: left;
+  margin: 28px 0;
+  list-style: none;
+  padding: 0;
+}
+.price-features li {
+  padding: 8px 0;
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+.price-features li::before {
+  content: '✓';
+  color: var(--gold);
+  font-weight: 700;
+  margin-right: 10px;
+}
+.price-cta { margin-top: 8px; }
+.price-urgency {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.price-oto {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* ── 12. Guarantee ── */
+.guarantee-section {
+  padding: 80px 0;
+}
+.guarantee-box {
+  max-width: 640px;
+  margin: 0 auto;
+  background: rgba(63,185,80,0.05);
+  border: 1px solid rgba(63,185,80,0.2);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+}
+.guarantee-shield { font-size: 48px; margin-bottom: 16px; }
+.guarantee-box h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.guarantee-box p { color: var(--text-secondary); max-width: 480px; margin: 0 auto; font-size: 15px; }
+
+/* ── 13. FAQ ── */
+.faq-section {
+  padding: 100px 0;
+  background: var(--bg-surface);
+}
+.faq-section h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  text-align: center;
+  margin-bottom: 48px;
+}
+.faq-list { max-width: 720px; margin: 0 auto; }
+.faq-item-wrap { border-bottom: 1px solid var(--border); }
+.faq-item-wrap:first-child { border-top: 1px solid var(--border); }
+.faq-toggle { display: none; }
+.faq-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 0;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color 0.2s;
+}
+.faq-label:hover { color: var(--gold); }
+.faq-chevron {
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+.faq-toggle:checked + .faq-label .faq-chevron { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.faq-toggle:checked ~ .faq-answer {
+  max-height: 400px;
+  padding-bottom: 22px;
+}
+.faq-answer p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+
+/* ── 14. Final CTA ── */
+.final-cta-section {
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(240,180,41,0.12) 0%, transparent 50%),
+    var(--bg-base);
+}
+.final-cta-section h2 {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  margin-bottom: 32px;
+}
+.final-urgency { font-size: 15px; color: var(--text-secondary); margin-top: 24px; }
+.final-note { font-size: 13px; color: var(--text-muted); margin-top: 16px; }
+
+/* ── 15. Footer ── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 24px;
+  text-align: center;
+}
+.footer-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.footer-logo .dot { color: var(--gold); }
+.footer-links { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+.footer-links a { color: var(--text-muted); margin: 0 12px; }
+.footer-links a:hover { color: var(--text-secondary); }
+.footer-copy { font-size: 12px; color: var(--text-muted); opacity: 0.6; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .agent-grid { grid-template-columns: 1fr; }
+  .agent-card.maxwell { grid-column: 1; }
+  .hiw-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hiw-grid::before { display: none; }
+  .benefits-layout { grid-template-columns: 1fr; gap: 32px; }
+  .benefits-layout h2 { position: static; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .stat-item { padding: 0 24px; }
+  .stat-num { font-size: 32px; }
+  .stats-grid { flex-wrap: wrap; gap: 20px; }
+  .stat-item + .stat-item { border-left: none; }
+  .mockup-agents { grid-template-columns: 1fr; }
+  .hero { padding: 80px 0 60px; }
+  .header-right .demo-link { display: none; }
+  .price-card { padding: 36px 24px; }
+  .price-big { font-size: 56px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ 1. ANNOUNCEMENT BAR ═══ -->
+<div class="announcement-bar">
+  <span><span class="badge-new">💡 New</span> COREX AI is now live — 7 AI agents, one dashboard →<a href="#buy"> Try it free</a></span>
+</div>
+
+<!-- ═══ 2. STICKY HEADER ═══ -->
+<header class="sticky-header">
+  <div class="logo">COREX<span class="dot">.</span>AI</div>
+  <div class="header-right">
+    <a href="#agents" class="demo-link">See Demo</a>
+    <a href="#buy" class="header-btn">Get Access — $27</a>
+  </div>
+</header>
+
+<!-- ═══ 3. HERO ═══ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge"><span class="star">✦</span> Trusted by 500+ founders &amp; agency owners</div>
+    <h1>Fire Your Entire To-Do List.<br>7 AI Executives Now Run<br>Your Business.</h1>
+    <p class="hero-sub">Marketing, operations, finance, product, tech — handled by AI agents with C-suite-level intelligence. All from one dashboard.</p>
+    <div class="hero-ctas">
+      <a href="#buy" class="btn-primary">Get COREX AI — $27 One-Time</a>
+      <a href="#agents" class="btn-ghost">Meet the Team →</a>
+    </div>
+    <p class="hero-trust">🔒 No credit card required · 30-day guarantee · Cancel anytime</p>
+
+    <div class="dashboard-mockup">
+      <div class="mockup-bar">
+        <div class="mockup-dot r"></div>
+        <div class="mockup-dot y"></div>
+        <div class="mockup-dot g"></div>
+        <span class="mockup-title">app.usecorex.com — Dashboard</span>
+      </div>
+      <div class="mockup-agents">
+        <div class="mini-agent">
+          <div class="mini-agent-header">
+            <div class="mini-avatar" style="background:linear-gradient(135deg,#F0B429,#FF8C42);color:#050811">M</div>
+            <div>
+              <div class="mini-agent-name">Maxwell</div>
+              <div class="mini-agent-role">Chief of Staff</div>
+            </div>
+          </div>
+          <div class="mini-agent-status">Active — Morning brief sent</div>
+        </div>
+        <div class="mini-agent">
+          <div class="mini-agent-header">
+            <div class="mini-avatar" style="background:linear-gradient(135deg,#EC4899,#F472B6)">V</div>
+            <div>
+              <div class="mini-agent-name">Valencia</div>
+              <div class="mini-agent-role">CMO</div>
+            </div>
+          </div>
+          <div class="mini-agent-status">Active — Writing campaign</div>
+        </div>
+        <div class="mini-agent">
+          <div class="mini-agent-header">
+            <div class="mini-avatar" style="background:linear-gradient(135deg,#58A6FF,#388BFD)">A</div>
+            <div>
+              <div class="mini-agent-name">Atlas</div>
+              <div class="mini-agent-role">CTO</div>
+            </div>
+          </div>
+          <div class="mini-agent-status">Active — Reviewing code</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="logos-row">
+      <p>As seen by teams at</p>
+      <div class="logos-list">
+        <span>Acme Corp</span>
+        <span>Nebula</span>
+        <span>Vertex</span>
+        <span>Solaris</span>
+        <span>Quantum</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4. SOCIAL PROOF NUMBERS ═══ -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">7</div>
+        <div class="stat-label">AI Agents</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10,000+</div>
+        <div class="stat-label">Tasks Handled</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Businesses Running on COREX</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5. PROBLEM ═══ -->
+<section class="problem-section">
+  <div class="container">
+    <div class="section-label">Problem</div>
+    <h2>You Didn't Start a Business to Become a Full-Time Task Manager</h2>
+    <p class="lead">But here you are. Wearing every hat. Drowning in the exact work you thought "being your own boss" would eliminate.</p>
+    <div class="pain-cards">
+      <div class="pain-card">
+        <div class="pain-icon">😤</div>
+        <h4>Drowning in Busywork</h4>
+        <p>You wake up to 47 Slack messages, 12 emails, and a client who's "just checking in" for the third time. Your to-do list from yesterday? Still there.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🤹</div>
+        <h4>Wearing Every Hat</h4>
+        <p>You're the CEO, CMO, CTO, CFO, and customer support. You write marketing emails, fix the website, check revenue — all before lunch. Strategy? Maybe "this weekend."</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🔌</div>
+        <h4>AI Tools That Don't Connect</h4>
+        <p>ChatGPT for writing. Another tool for images. Another for code. None know your business. None remember yesterday. You spend more time managing AI tools than they save you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6. SOLUTION + AGENT GRID ═══ -->
+<section class="solution-section" id="agents">
+  <div class="container">
+    <div class="section-label">Solution</div>
+    <h2>Meet Your New Executive Team</h2>
+    <p class="solution-sub">Seven specialized AI agents — each an expert in their domain, working together inside one dashboard.</p>
+    <div class="agent-grid">
+      <div class="agent-card maxwell">
+        <div class="agent-header">
+          <div class="agent-avatar mx">M</div>
+          <div>
+            <div class="agent-name">Maxwell</div>
+            <div class="agent-title">Chief of Staff</div>
+          </div>
+        </div>
+        <p class="agent-desc">Your right hand. Maxwell sends your daily morning brief, routes tasks to the right department, coordinates across all agents, and makes sure nothing falls through the cracks. The brain of your operation.</p>
+        <div class="agent-tags">
+          <span class="agent-tag">Coordination</span>
+          <span class="agent-tag">Daily Briefs</span>
+          <span class="agent-tag">Task Routing</span>
+          <span class="agent-tag">Strategy</span>
+        </div>
+      </div>
+      <div class="agent-card valencia">
+        <div class="agent-header">
+          <div class="agent-avatar vl">V</div>
+          <div>
+            <div class="agent-name">Valencia</div>
+            <div class="agent-title">CMO</div>
+          </div>
+        </div>
+        <p class="agent-desc">Marketing strategy, campaigns, and copywriting that actually sounds like your brand. Valencia analyzes your audience and drafts what a $8K/mo hire would.</p>
+        <div class="agent-tags">
+          <span class="agent-tag">Marketing</span>
+          <span class="agent-tag">Copy</span>
+          <span class="agent-tag">Campaigns</span>
+        </div>
+      </div>
+      <div class="agent-card atlas">
+        <div class="agent-header">
+          <div class="agent-avatar at">A</div>
+          <div>
+            <div class="agent-name">Atlas</div>
+            <div class="agent-title">CTO</div>
+          </div>
+        </div>
+        <p class="agent-desc">Technical architecture, code review, and tech decisions explained in plain English. No Googling "is this the right database" ever again.</p>
+        <div class="agent-tags">
+          <span class="agent-tag">Tech</span>
+          <span class="agent-tag">Code Review</span>
+          <span class="agent-tag">Architecture</span>
+        </div>
+      </div>
+      <div class="agent-card sterling">
+        <div class="agent-header">
+          <div class="agent-avatar st">S</div>
+          <div>
+            <div class="agent-name">Sterling</div>
+            <div class="agent-title">CFO</div>
+          </div>
+        </div>
+        <p class="agent-desc">Budget tracking, revenue analysis, and cash flow forecasting. Know if you can afford that new tool before you buy it.</p>
+        <div class="agent-tags">
+          <span class="agent-tag">Finance</span>
+          <span class="agent-tag">Budget</span>
+          <span class="agent-tag">Forecasting</span>
+        </div>
+      </div>
+      <div class="agent-card sentinel">
+        <div class="agent-header">
+          <div class="agent-avatar sn">S</div>
+          <div>
+            <div class="agent-name">Sentinel</div>
+            <div class="agent-title">COO</div>
+          </div>
+        </div>
+        <p class="agent-desc">Operations, SLAs, and vendor management. Catches problems before they become emergencies so you never firefight again.</p>
+        <div class="agent-tags">
+          <span class="agent-tag">Operations</span>
+          <span class="agent-tag">SLAs</span>
+          <span class="agent-tag">Vendors</span>
+        </div>
+      </div>
+      <div class="agent-card nova">
+        <div class="agent-header">
+          <div class="agent-avatar nv">N</div>
+          <div>
+            <div class="agent-name">Nova</div>
+            <div class="agent-title">CPO</div>
+          </div>
+        </div>
+        <p class="agent-desc">Product strategy, feature prioritization, and UX decisions backed by data — not gut feeling.</p>
+        <div class="agent-tags">
+          <span class="agent-tag">Product</span>
+          <span class="agent-tag">Features</span>
+          <span class="agent-tag">UX</span>
+        </div>
+      </div>
+      <div class="agent-card beacon">
+        <div class="agent-header">
+          <div class="agent-avatar bc">B</div>
+          <div>
+            <div class="agent-name">Beacon</div>
+            <div class="agent-title">Analytics Lead</div>
+          </div>
+        </div>
+        <p class="agent-desc">KPIs, data insights, and performance tracking. Proves what's working so every decision is informed.</p>
+        <div class="agent-tags">
+          <span class="agent-tag">Analytics</span>
+          <span class="agent-tag">KPIs</span>
+          <span class="agent-tag">Data</span>
+        </div>
+      </div>
+    </div>
+    <p class="agents-note">...plus 4 Specialist Agents on the Unlimited tier</p>
+  </div>
+</section>
+
+<!-- ═══ 7. HOW IT WORKS ═══ -->
+<section class="hiw-section">
+  <div class="container">
+    <div class="section-label" style="text-align:center">How It Works</div>
+    <h2>Three Steps to Your AI Team</h2>
+    <div class="hiw-grid">
+      <div class="hiw-step">
+        <div class="hiw-num">1</div>
+        <div class="hiw-icon">🔗</div>
+        <h3>Connect</h3>
+        <p>Log into your COREX dashboard at app.usecorex.com. Connect Telegram for daily morning briefs. Takes 2 minutes.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">2</div>
+        <div class="hiw-icon">📋</div>
+        <h3>Assign</h3>
+        <p>Give tasks to any agent — or just describe what you need and Maxwell routes it to the right department automatically.</p>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">3</div>
+        <div class="hiw-icon">🚀</div>
+        <h3>Watch It Run</h3>
+        <p>Your agents execute, coordinate, and report back. Maxwell briefs you every morning. You focus on growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 8. BENEFITS ═══ -->
+<section class="benefits-section">
+  <div class="container">
+    <div class="benefits-layout">
+      <div>
+        <div class="section-label">Benefits</div>
+        <h2>What This Actually Means for Your Business</h2>
+        <p style="color:var(--text-secondary);margin-top:16px">Every feature exists to save you time, money, or sanity. Here's what changes on Day 1.</p>
+      </div>
+      <div>
+        <div class="benefit-item">
+          <div><span class="benefit-check">✓</span><span class="benefit-bold">Wake up to a 90-second brief instead of inbox chaos</span></div>
+          <p class="benefit-desc">Maxwell sends your Telegram daily brief every morning: what's done, what needs you, what's coming.</p>
+        </div>
+        <div class="benefit-item">
+          <div><span class="benefit-check">✓</span><span class="benefit-bold">Get marketing strategy without a $8K/mo CMO</span></div>
+          <p class="benefit-desc">Valencia analyzes your audience, drafts campaigns, and writes copy that sounds like your brand.</p>
+        </div>
+        <div class="benefit-item">
+          <div><span class="benefit-check">✓</span><span class="benefit-bold">Make technical decisions without being technical</span></div>
+          <p class="benefit-desc">Atlas reviews code, evaluates architecture, and explains trade-offs in plain English.</p>
+        </div>
+        <div class="benefit-item">
+          <div><span class="benefit-check">✓</span><span class="benefit-bold">Know your numbers without building spreadsheets</span></div>
+          <p class="benefit-desc">Sterling tracks revenue, flags budget risks, and forecasts cash flow automatically.</p>
+        </div>
+        <div class="benefit-item">
+          <div><span class="benefit-check">✓</span><span class="benefit-bold">Stop context-switching between 6 different AI tools</span></div>
+          <p class="benefit-desc">One dashboard. One team. Every agent knows your business and talks to each other.</p>
+        </div>
+        <div class="benefit-item">
+          <div><span class="benefit-check">✓</span><span class="benefit-bold">Agents get smarter the longer you use them</span></div>
+          <p class="benefit-desc">Persistent memory means COREX learns your preferences and context over time.</p>
+        </div>
+        <div class="benefit-item">
+          <div><span class="benefit-check">✓</span><span class="benefit-bold">Delegate operations without hiring an ops manager</span></div>
+          <p class="benefit-desc">Sentinel monitors SLAs, manages vendors, and catches problems before they escalate.</p>
+        </div>
+        <div class="benefit-item">
+          <div><span class="benefit-check">✓</span><span class="benefit-bold">Product decisions backed by data, not gut</span></div>
+          <p class="benefit-desc">Nova handles feature prioritization. Beacon tracks what's actually working.</p>
+        </div>
+        <div class="benefit-item">
+          <div><span class="benefit-check">✓</span><span class="benefit-bold">500 tasks/month means real work gets done</span></div>
+          <p class="benefit-desc">Not a "try it 3 times" free tier. 500 tasks covers a full month of active use.</p>
+        </div>
+        <div class="benefit-item">
+          <div><span class="benefit-check">✓</span><span class="benefit-bold">Works from your phone via Telegram</span></div>
+          <p class="benefit-desc">Assign tasks, get updates, review outputs from anywhere. No laptop required.</p>
+        </div>
+        <div class="benefit-item">
+          <div><span class="benefit-check">✓</span><span class="benefit-bold">Never repeat yourself to an AI again</span></div>
+          <p class="benefit-desc">Tell COREX your business model once. It remembers. Every agent carries that context forever.</p>
+        </div>
+        <div class="benefit-item">
+          <div><span class="benefit-check">✓</span><span class="benefit-bold">Your executive layer — running 24/7</span></div>
+          <p class="benefit-desc">They don't sleep, don't take PTO, don't need health insurance. Working at 3 AM on a Sunday.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 9. VALUE STACK ═══ -->
+<section class="value-section">
+  <div class="container">
+    <div class="section-label" style="text-align:center">What You Get</div>
+    <h2>Everything Included Today</h2>
+    <div class="value-box">
+      <div class="value-item">
+        <span class="value-name"><span class="vi">⚡</span> Maxwell — AI Chief of Staff</span>
+        <span class="value-price">$2,000/mo value</span>
+      </div>
+      <div class="value-item">
+        <span class="value-name"><span class="vi">📣</span> Valencia — AI CMO</span>
+        <span class="value-price">$3,000/mo value</span>
+      </div>
+      <div class="value-item">
+        <span class="value-name"><span class="vi">🔧</span> Atlas — AI CTO</span>
+        <span class="value-price">$4,000/mo value</span>
+      </div>
+      <div class="value-item">
+        <span class="value-name"><span class="vi">💰</span> Sterling — AI CFO</span>
+        <span class="value-price">$2,500/mo value</span>
+      </div>
+      <div class="value-item">
+        <span class="value-name"><span class="vi">⚙️</span> Sentinel — AI COO</span>
+        <span class="value-price">$2,000/mo value</span>
+      </div>
+      <div class="value-item">
+        <span class="value-name"><span class="vi">🎯</span> Nova — AI CPO</span>
+        <span class="value-price">$2,500/mo value</span>
+      </div>
+      <div class="value-item">
+        <span class="value-name"><span class="vi">📊</span> Beacon — AI Analytics</span>
+        <span class="value-price">$1,500/mo value</span>
+      </div>
+      <div class="value-item">
+        <span class="value-name"><span class="vi">🧠</span> Persistent Memory System</span>
+        <span class="value-price">$500/mo value</span>
+      </div>
+      <div class="value-item">
+        <span class="value-name"><span class="vi">📱</span> Telegram Daily Briefs</span>
+        <span class="value-price">$300/mo value</span>
+      </div>
+      <div class="value-item">
+        <span class="value-name"><span class="vi">🖥️</span> Unified Dashboard</span>
+        <span class="value-price">$200/mo value</span>
+      </div>
+      <div class="value-item">
+        <span class="value-name"><span class="vi">📋</span> 500 Tasks/Month</span>
+        <span class="value-price">$1,000/mo value</span>
+      </div>
+      <div class="value-total-row">
+        <div class="value-total-label">Total Value</div>
+        <div class="value-total-num">$19,500/month</div>
+        <div class="value-your-price">$27</div>
+        <div class="value-your-label">ONE-TIME PAYMENT</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 10. TESTIMONIALS ═══ -->
+<!-- [REAL TESTIMONIAL — PLACEHOLDER] -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Testimonials</div>
+    <h2>What Early Users Are Saying</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"I was managing 3 Notion boards, 2 project management tools, and a spreadsheet to keep my agency running. After one week with COREX, Maxwell consolidated everything into a single morning brief. I've saved at least 2 hours every day."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar ta-m">M</div>
+          <div>
+            <div class="testimonial-name">Marcus T.</div>
+            <div class="testimonial-role">Agency Owner, 4-person team</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"I gave Valencia a rough description of my target audience and asked for a launch email sequence. What came back was better than what my last freelance copywriter charged $1,200 for — and Valencia already knew my brand voice."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar ta-s">S</div>
+          <div>
+            <div class="testimonial-name">Sarah K.</div>
+            <div class="testimonial-role">SaaS Founder, Solopreneur</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"I've bought every AI tool on JVZoo in the last year. Most collect dust after 48 hours. COREX is the first one I open every single morning — because Maxwell is already waiting with a brief before I finish my coffee."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar ta-j">J</div>
+          <div>
+            <div class="testimonial-name">James R.</div>
+            <div class="testimonial-role">Online Marketer, 1-person operation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 11. PRICING ═══ -->
+<section class="pricing-section" id="buy">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Pricing</div>
+    <h2>The Real Cost</h2>
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h3>Traditional Hire</h3>
+        <div class="compare-line"><span class="compare-role">Chief of Staff</span><span class="compare-cost strike">$5,000/mo</span></div>
+        <div class="compare-line"><span class="compare-role">CMO</span><span class="compare-cost strike">$8,500/mo</span></div>
+        <div class="compare-line"><span class="compare-role">CTO</span><span class="compare-cost strike">$12,000/mo</span></div>
+        <div class="compare-line"><span class="compare-role">CFO</span><span class="compare-cost strike">$7,000/mo</span></div>
+        <div class="compare-line"><span class="compare-role">COO</span><span class="compare-cost strike">$6,000/mo</span></div>
+        <div class="compare-line"><span class="compare-role">CPO</span><span class="compare-cost strike">$7,500/mo</span></div>
+        <div class="compare-line"><span class="compare-role">Analytics Lead</span><span class="compare-cost strike">$4,000/mo</span></div>
+        <div class="compare-total red">$50,000+/mo</div>
+      </div>
+      <div class="compare-card highlight">
+        <h3>COREX AI</h3>
+        <div class="compare-line"><span class="compare-role">All 7 AI Executives</span><span class="compare-cost" style="color:var(--gold)">✓</span></div>
+        <div class="compare-line"><span class="compare-role">Persistent Memory</span><span class="compare-cost" style="color:var(--gold)">✓</span></div>
+        <div class="compare-line"><span class="compare-role">Telegram Briefs</span><span class="compare-cost" style="color:var(--gold)">✓</span></div>
+        <div class="compare-line"><span class="compare-role">Unified Dashboard</span><span class="compare-cost" style="color:var(--gold)">✓</span></div>
+        <div class="compare-line"><span class="compare-role">500 Tasks/Month</span><span class="compare-cost" style="color:var(--gold)">✓</span></div>
+        <div class="compare-line"><span class="compare-role">24/7 Availability</span><span class="compare-cost" style="color:var(--gold)">✓</span></div>
+        <div class="compare-line"><span class="compare-role">No Onboarding</span><span class="compare-cost" style="color:var(--gold)">✓</span></div>
+        <div class="compare-total gold">$27 once</div>
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="price-big">$27</div>
+      <div class="price-period">One Time</div>
+      <ul class="price-features">
+        <li>7 AI Executives (Maxwell, Valencia, Atlas, Sterling, Sentinel, Nova, Beacon)</li>
+        <li>500 Tasks/Month</li>
+        <li>Persistent Memory — agents learn your business</li>
+        <li>Daily Telegram Morning Briefs</li>
+        <li>Unified Dashboard at app.usecorex.com</li>
+        <li>Cross-agent coordination</li>
+        <li>30-Day Money Back Guarantee</li>
+      </ul>
+      <div class="price-cta">
+        <a href="#buy" class="btn-primary" style="width:100%;text-align:center;display:block">Get COREX AI Now — $27 →</a>
+      </div>
+      <p class="price-urgency">⏰ Launch pricing ends when this campaign closes</p>
+    </div>
+    <p class="price-oto">Want to go further? Upgrade to <strong style="color:var(--text-primary)">Unlimited ($67)</strong> after purchase — uncapped tasks, extra specialist agents, and agency features.</p>
+  </div>
+</section>
+
+<!-- ═══ 12. GUARANTEE ═══ -->
+<section class="guarantee-section">
+  <div class="container">
+    <div class="guarantee-box">
+      <div class="guarantee-shield">🛡️</div>
+      <h3>30-Day Money Back Guarantee</h3>
+      <p>Use it for 30 days. If COREX AI doesn't deliver value, email us once. Full refund, no questions, no hoops.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 13. FAQ ═══ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-label" style="text-align:center">FAQ</div>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+
+      <div class="faq-item-wrap">
+        <input type="checkbox" id="faq1" class="faq-toggle">
+        <label for="faq1" class="faq-label">How is this different from just using ChatGPT? <span class="faq-chevron">▼</span></label>
+        <div class="faq-answer"><p>ChatGPT is one brain doing everything. COREX is 7 specialized agents that coordinate with each other, remember your business context across sessions, and proactively brief you. ChatGPT doesn't send you a Telegram brief at 8 AM or route your marketing question to a marketing specialist automatically.</p></div>
+      </div>
+
+      <div class="faq-item-wrap">
+        <input type="checkbox" id="faq2" class="faq-toggle">
+        <label for="faq2" class="faq-label">Is 500 tasks/month actually enough? <span class="faq-chevron">▼</span></label>
+        <div class="faq-answer"><p>For most solopreneurs and small teams, yes. That's roughly 16-17 tasks per day. Each "task" is a complete interaction — asking Valencia to draft a campaign, having Sterling analyze your revenue. If you need more, the Unlimited tier removes the cap entirely.</p></div>
+      </div>
+
+      <div class="faq-item-wrap">
+        <input type="checkbox" id="faq3" class="faq-toggle">
+        <label for="faq3" class="faq-label">What happens when I hit the 500 task limit? <span class="faq-chevron">▼</span></label>
+        <div class="faq-answer"><p>Your access continues — you just can't assign new tasks until the next billing cycle or until you upgrade to Unlimited. Nothing breaks. Nothing gets deleted. Your agents and their memory stay intact.</p></div>
+      </div>
+
+      <div class="faq-item-wrap">
+        <input type="checkbox" id="faq4" class="faq-toggle">
+        <label for="faq4" class="faq-label">I've bought AI tools before and stopped using them. Why is this different? <span class="faq-chevron">▼</span></label>
+        <div class="faq-answer"><p>COREX gets better the more you use it. Most AI tools are stateless — every session starts from zero. COREX remembers your business, your preferences, and your history. Day 30 is dramatically more useful than Day 1. The morning Telegram brief alone creates a habit loop that keeps you engaged daily.</p></div>
+      </div>
+
+      <div class="faq-item-wrap">
+        <input type="checkbox" id="faq5" class="faq-toggle">
+        <label for="faq5" class="faq-label">Do I need to be technical to use this? <span class="faq-chevron">▼</span></label>
+        <div class="faq-answer"><p>No. Atlas (CTO) handles technical decisions for you. You describe what you need in plain English, and the right agent handles it. If you can write a text message, you can use COREX.</p></div>
+      </div>
+
+      <div class="faq-item-wrap">
+        <input type="checkbox" id="faq6" class="faq-toggle">
+        <label for="faq6" class="faq-label">Is my business data safe? <span class="faq-chevron">▼</span></label>
+        <div class="faq-answer"><p>Your data stays in your workspace. Agents only access your business context — they don't share it with other users. We don't sell data or use it to train models. Standard enterprise-grade security practices.</p></div>
+      </div>
+
+      <div class="faq-item-wrap">
+        <input type="checkbox" id="faq7" class="faq-toggle">
+        <label for="faq7" class="faq-label">$27 one-time seems too cheap. What's the catch? <span class="faq-chevron">▼</span></label>
+        <div class="faq-answer"><p>The front-end gets you in with core functionality. If you love it, there are optional upgrades for more tasks, more agents, and agency features. But the $27 tier is a complete, usable product — not a demo with a paywall three clicks in. We price it low because we want you inside the ecosystem.</p></div>
+      </div>
+
+      <div class="faq-item-wrap">
+        <input type="checkbox" id="faq8" class="faq-toggle">
+        <label for="faq8" class="faq-label">What if I run multiple businesses? <span class="faq-chevron">▼</span></label>
+        <div class="faq-answer"><p>The Starter tier is built for one business context. If you're running multiple businesses, the Agency tier (available as an upgrade) gives you separate workspaces per client or business with isolated memory and context.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 14. FINAL CTA ═══ -->
+<section class="final-cta-section">
+  <div class="container">
+    <h2>Your Team Is Ready.</h2>
+    <a href="#buy" class="btn-primary" style="font-size:20px;padding:20px 48px">Get COREX AI Now — $27 →</a>
+    <p class="final-urgency">🔥 347 founders started their AI executive team this week</p>
+    <p class="final-note">30-day money back guarantee · One-time payment · Instant access</p>
+  </div>
+</section>
+
+<!-- ═══ 15. FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="footer-logo">COREX<span class="dot">.</span>AI</div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#">Support</a>
+  </div>
+  <div class="footer-copy">© 2026 COREX AI. All rights reserved.</div>
+  <!-- [PLACEHOLDER: JVZoo badge] -->
+</footer>
+
+</body>
+</html>

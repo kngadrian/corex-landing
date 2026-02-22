@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COREX AI — Your AI Executive Team</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;background:#0d1117;color:#c9d1d9;line-height:1.7;font-size:17px}
+  a{color:#d4a017;text-decoration:none}
+  a:hover{color:#e8b82a}
+  img{max-width:100%;height:auto}
+
+  /* Sticky Header */
+  .sticky-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,17,23,.97);backdrop-filter:blur(12px);border-bottom:1px solid #1e2530;padding:12px 24px;display:flex;justify-content:space-between;align-items:center}
+  .sticky-header .logo{font-size:20px;font-weight:700;color:#fff;letter-spacing:-.5px}
+  .sticky-header .logo span{color:#d4a017}
+
+  /* Gold CTA Button */
+  .cta-btn{display:inline-block;background:linear-gradient(135deg,#d4a017,#b8860b);color:#0d1117;font-weight:700;font-size:18px;padding:16px 40px;border-radius:8px;border:none;cursor:pointer;text-transform:none;letter-spacing:.3px;transition:transform .15s,box-shadow .15s;box-shadow:0 4px 20px rgba(212,160,23,.35)}
+  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(212,160,23,.5);color:#0d1117}
+  .cta-btn-sm{font-size:15px;padding:10px 24px}
+
+  /* Sections */
+  .container{max-width:780px;margin:0 auto;padding:0 24px}
+  section{padding:60px 0}
+  .hero{padding-top:100px;text-align:center}
+
+  h1{font-size:clamp(28px,5vw,46px);color:#fff;line-height:1.2;font-weight:800;letter-spacing:-.5px}
+  h2{font-size:clamp(22px,3.5vw,34px);color:#fff;line-height:1.3;font-weight:700;margin-bottom:20px}
+  h3{font-size:20px;color:#d4a017;font-weight:700;margin-bottom:12px}
+  .subhead{font-size:clamp(16px,2.5vw,20px);color:#8b949e;margin-top:16px;line-height:1.5}
+  .hook{font-size:19px;color:#c9d1d9;margin-top:28px;line-height:1.8}
+  .hook strong{color:#fff}
+
+  /* Video Placeholder */
+  .video-box{background:#161b22;border:2px solid #30363d;border-radius:14px;padding:80px 24px;text-align:center;margin:40px 0;cursor:pointer;transition:border-color .2s}
+  .video-box:hover{border-color:#d4a017}
+  .play-icon{font-size:60px;margin-bottom:16px}
+  .video-box p{color:#8b949e;font-size:15px;margin-top:8px}
+
+  /* Problem / Solution blocks */
+  .pain-item{background:#161b22;border-left:4px solid #f85149;padding:20px 24px;border-radius:0 10px 10px 0;margin:16px 0}
+  .solution-item{background:#161b22;border-left:4px solid #3fb950;padding:20px 24px;border-radius:0 10px 10px 0;margin:16px 0}
+
+  /* Steps */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin:32px 0}
+  .step{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:32px 24px;text-align:center}
+  .step-num{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#d4a017,#b8860b);color:#0d1117;font-weight:800;font-size:20px;margin-bottom:16px}
+
+  /* Benefit Bullets */
+  .benefit-list{list-style:none;padding:0}
+  .benefit-list li{padding:14px 0 14px 36px;border-bottom:1px solid #1e2530;position:relative;font-size:17px}
+  .benefit-list li::before{content:'✓';position:absolute;left:0;top:14px;color:#d4a017;font-weight:700;font-size:20px}
+
+  /* Value Stack */
+  .value-table{width:100%;border-collapse:collapse;margin:28px 0}
+  .value-table td{padding:14px 16px;border-bottom:1px solid #1e2530}
+  .value-table td:first-child{color:#fff;font-weight:600}
+  .value-table td:last-child{text-align:right;color:#8b949e;font-style:italic}
+  .value-total{font-size:24px;color:#d4a017;font-weight:800;text-align:center;margin:20px 0}
+
+  /* Testimonials */
+  .testimonial{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:28px;margin:20px 0}
+  .testimonial .quote{font-size:17px;color:#c9d1d9;font-style:italic;line-height:1.7;margin-bottom:16px}
+  .testimonial .author{color:#d4a017;font-weight:700;font-size:15px}
+  .testimonial .role{color:#8b949e;font-size:14px}
+  .placeholder-badge{display:inline-block;background:#f8514922;color:#f85149;font-size:11px;padding:2px 8px;border-radius:4px;margin-left:8px;font-style:normal}
+
+  /* Price Section */
+  .price-box{background:linear-gradient(135deg,#161b22,#1a2233);border:2px solid #d4a017;border-radius:18px;padding:48px 32px;text-align:center;margin:32px 0}
+  .price-strike{font-size:22px;color:#8b949e;text-decoration:line-through}
+  .price-real{font-size:clamp(42px,8vw,64px);color:#d4a017;font-weight:800}
+  .price-note{color:#8b949e;font-size:15px;margin-top:8px}
+
+  /* Guarantee */
+  .guarantee-box{background:#161b22;border:2px solid #3fb950;border-radius:14px;padding:36px;text-align:center;margin:32px 0}
+  .guarantee-box .shield{font-size:48px;margin-bottom:12px}
+
+  /* FAQ */
+  .faq-item{border-bottom:1px solid #1e2530;padding:24px 0}
+  .faq-q{color:#fff;font-weight:700;font-size:18px;margin-bottom:8px}
+  .faq-a{color:#8b949e;font-size:16px;line-height:1.7}
+
+  /* Final CTA */
+  .final-cta{text-align:center;padding:80px 0;background:linear-gradient(180deg,#0d1117 0%,#111820 100%)}
+
+  /* Footer */
+  footer{text-align:center;padding:40px 24px;color:#484f58;font-size:13px;border-top:1px solid #1e2530}
+
+  /* Divider */
+  .divider{width:80px;height:3px;background:#d4a017;margin:40px auto;border-radius:2px}
+
+  @media(max-width:600px){
+    .sticky-header{padding:10px 16px}
+    .sticky-header .logo{font-size:16px}
+    .cta-btn-sm{font-size:13px;padding:8px 16px}
+    section{padding:40px 0}
+    .hero{padding-top:80px}
+    .price-box{padding:32px 20px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ STICKY HEADER ============ -->
+<header class="sticky-header">
+  <div class="logo">COREX <span>AI</span></div>
+  <a href="#buy" class="cta-btn cta-btn-sm">Get Instant Access →</a>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+<div class="container">
+  <h1>Fire Your Entire To-Do List — 7 AI Executives Now Run Your Marketing, Tech, Finances &amp; Operations While You Focus on Growth</h1>
+  <p class="subhead">The AI executive team built for solopreneurs and small teams who are tired of doing everything themselves — created by a founder who was doing the same thing.</p>
+  <div class="hook">
+    <strong>Your CMO sends the campaign brief.</strong> Your CTO reviews the code. Your CFO flags the budget risk. Your COO checks the SLAs.<br>
+    <strong>None of them are human. All of them report to you.</strong><br>
+    And the whole team costs less than your monthly coffee budget.
+  </div>
+  <div style="margin-top:36px">
+    <a href="#buy" class="cta-btn">Get COREX AI — $27 One-Time →</a>
+  </div>
+</div>
+</section>
+
+<!-- ============ VIDEO PLACEHOLDER ============ -->
+<section>
+<div class="container">
+  <div class="video-box">
+    <div class="play-icon">▶</div>
+    <h3 style="color:#fff;font-size:20px">Watch COREX AI Handle a Full Business Day — 8 Minutes</h3>
+    <p>See Maxwell's morning brief, a marketing task routed to Valencia, Atlas reviewing code, and Sterling catching a budget issue — all without you lifting a finger.</p>
+  </div>
+</div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section>
+<div class="container">
+  <h2>You Didn't Start a Business to Become a Full-Time Task Manager</h2>
+  <p style="color:#8b949e;margin-bottom:28px">But here you are. Wearing every hat. Drowning in the exact work you thought "being your own boss" would eliminate.</p>
+
+  <div class="pain-item">
+    <strong style="color:#f85149">6:00 AM</strong> — You wake up to 47 Slack messages, 12 emails, and a client who's "just checking in" for the third time this week. Your to-do list from yesterday? Still there.
+  </div>
+  <div class="pain-item">
+    <strong style="color:#f85149">You're the CEO, CMO, CTO, CFO, and customer support.</strong> You write the marketing emails, fix the website, check the revenue numbers, and reply to support tickets — all before lunch. Strategy? That's what you tell yourself you'll do "this weekend."
+  </div>
+  <div class="pain-item">
+    <strong style="color:#f85149">You've tried AI tools.</strong> ChatGPT for writing. Another tool for images. Another for code. None of them know your business. None of them remember what you told them yesterday. None of them talk to each other. You spend more time managing AI tools than they save you.
+  </div>
+  <div class="pain-item">
+    <strong style="color:#f85149">Hiring real people? At $10,000+/month?</strong> A real CMO costs $8K. A CTO costs $12K. Even a decent VA is $2K/month. You're a solopreneur, not a Fortune 500. That math doesn't work yet.
+  </div>
+</div>
+</section>
+
+<!-- ============ SOLUTION REVEAL ============ -->
+<section>
+<div class="container">
+  <div class="divider"></div>
+  <h2 style="text-align:center">What If You Could Hire an Entire Executive Team — Today — for $27?</h2>
+  <p style="text-align:center;color:#8b949e;max-width:600px;margin:16px auto 32px">Not freelancers. Not chatbots. Not another AI tool with a fancy name and no memory. A real team of 7 AI executives, each with a specific role, persistent memory, and a single mission: run your business so you don't have to run everything.</p>
+
+  <div class="solution-item">
+    <strong style="color:#3fb950">Meet COREX AI</strong> — 7 AI C-suite agents that manage your marketing, technology, finances, operations, product strategy, and analytics. They coordinate with each other. They remember your business. They brief you every morning on Telegram. You assign tasks from a single dashboard and watch them execute.
+  </div>
+</div>
+</section>
+
+<!-- ============ MEET THE TEAM ============ -->
+<section>
+<div class="container">
+  <h2 style="text-align:center">Your AI Executive Team</h2>
+  <p style="text-align:center;color:#8b949e;margin-bottom:32px">7 agents. 7 departments. One dashboard.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+    <div class="step" style="text-align:left;padding:20px">
+      <div style="font-size:28px;margin-bottom:8px">⚡</div>
+      <strong style="color:#fff">Maxwell</strong><br><span style="color:#d4a017;font-size:14px">Chief of Staff</span><br><span style="color:#8b949e;font-size:14px">Morning briefs, task routing, coordination</span>
+    </div>
+    <div class="step" style="text-align:left;padding:20px">
+      <div style="font-size:28px;margin-bottom:8px">📣</div>
+      <strong style="color:#fff">Valencia</strong><br><span style="color:#d4a017;font-size:14px">CMO</span><br><span style="color:#8b949e;font-size:14px">Marketing strategy, campaigns, copy</span>
+    </div>
+    <div class="step" style="text-align:left;padding:20px">
+      <div style="font-size:28px;margin-bottom:8px">🔧</div>
+      <strong style="color:#fff">Atlas</strong><br><span style="color:#d4a017;font-size:14px">CTO</span><br><span style="color:#8b949e;font-size:14px">Technical decisions, code review, architecture</span>
+    </div>
+    <div class="step" style="text-align:left;padding:20px">
+      <div style="font-size:28px;margin-bottom:8px">💰</div>
+      <strong style="color:#fff">Sterling</strong><br><span style="color:#d4a017;font-size:14px">CFO</span><br><span style="color:#8b949e;font-size:14px">Budget tracking, revenue analysis, forecasting</span>
+    </div>
+    <div class="step" style="text-align:left;padding:20px">
+      <div style="font-size:28px;margin-bottom:8px">⚙️</div>
+      <strong style="color:#fff">Sentinel</strong><br><span style="color:#d4a017;font-size:14px">COO</span><br><span style="color:#8b949e;font-size:14px">Operations, SLAs, vendor management</span>
+    </div>
+    <div class="step" style="text-align:left;padding:20px">
+      <div style="font-size:28px;margin-bottom:8px">🎯</div>
+      <strong style="color:#fff">Nova</strong><br><span style="color:#d4a017;font-size:14px">CPO</span><br><span style="color:#8b949e;font-size:14px">Product strategy, features, UX decisions</span>
+    </div>
+    <div class="step" style="text-align:left;padding:20px">
+      <div style="font-size:28px;margin-bottom:8px">📊</div>
+      <strong style="color:#fff">Beacon</strong><br><span style="color:#d4a017;font-size:14px">Analytics</span><br><span style="color:#8b949e;font-size:14px">Data insights, KPIs, performance tracking</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section>
+<div class="container">
+  <div class="divider"></div>
+  <h2 style="text-align:center">How It Works — 3 Steps</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Connect</h3>
+      <p style="color:#8b949e;font-size:15px">Log into your COREX dashboard at app.usecorex.com. Connect your Telegram for daily morning briefs. Takes 2 minutes.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Assign</h3>
+      <p style="color:#8b949e;font-size:15px">Give tasks to any agent — or just describe what you need and Maxwell routes it to the right department automatically.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Watch It Run</h3>
+      <p style="color:#8b949e;font-size:15px">Your agents execute, coordinate, and report back. Maxwell briefs you every morning. You focus on the decisions that actually grow your business.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ============ BENEFITS ============ -->
+<section>
+<div class="container">
+  <h2>What This Actually Means for Your Business</h2>
+  <p style="color:#8b949e;margin-bottom:28px">Every feature exists to save you time, money, or sanity. Here's what changes on Day 1:</p>
+
+  <ul class="benefit-list">
+    <li><strong style="color:#fff">Wake up to a 90-second brief instead of inbox chaos</strong> — Maxwell sends your Telegram daily brief every morning: what's done, what needs you, what's coming. No digging through apps.</li>
+    <li><strong style="color:#fff">Get a marketing strategy without hiring a $8K/mo CMO</strong> — Valencia analyzes your audience, drafts campaigns, and writes copy that actually sounds like your brand.</li>
+    <li><strong style="color:#fff">Make technical decisions without being technical</strong> — Atlas reviews code, evaluates architecture choices, and explains trade-offs in plain English. No Googling "is this the right database."</li>
+    <li><strong style="color:#fff">Know your numbers without building spreadsheets</strong> — Sterling tracks revenue, flags budget risks, and forecasts cash flow. You'll know if you can afford that new tool before you buy it.</li>
+    <li><strong style="color:#fff">Stop context-switching between 6 different AI tools</strong> — One dashboard. One team. Every agent knows your business, remembers past conversations, and talks to each other.</li>
+    <li><strong style="color:#fff">Your agents get smarter the longer you use them</strong> — Persistent memory means COREX learns your preferences, your business context, and your style over time. Day 30 is 10x better than Day 1.</li>
+    <li><strong style="color:#fff">Delegate operations without hiring an ops manager</strong> — Sentinel monitors SLAs, manages vendor relationships, and catches problems before they become emergencies.</li>
+    <li><strong style="color:#fff">Make product decisions backed by data, not gut</strong> — Nova handles feature prioritization and UX decisions. Beacon tracks the analytics to prove what's working.</li>
+    <li><strong style="color:#fff">500 tasks/month means real work gets done</strong> — This isn't a "try it 3 times and hit a wall" free tier. 500 tasks covers a full month of active use for most solopreneurs.</li>
+    <li><strong style="color:#fff">Works from your phone via Telegram</strong> — Assign tasks, get updates, and review outputs from anywhere. No laptop required for most daily operations.</li>
+    <li><strong style="color:#fff">Never repeat yourself to an AI again</strong> — Tell COREX your business model once. It remembers. Every agent carries that context into every task, forever.</li>
+    <li><strong style="color:#fff">Your entire executive layer — running 24/7</strong> — Your agents don't sleep, don't take PTO, don't need health insurance. They're working at 3 AM on a Sunday if that's when you assign a task.</li>
+  </ul>
+</div>
+</section>
+
+<!-- ============ WHAT YOU GET ============ -->
+<section>
+<div class="container">
+  <div class="divider"></div>
+  <h2 style="text-align:center">Here's Everything You Get Today</h2>
+
+  <table class="value-table">
+    <tr>
+      <td>🤖 Maxwell — AI Chief of Staff (daily briefs, task routing, team coordination)</td>
+      <td>$2,000/mo value</td>
+    </tr>
+    <tr>
+      <td>📣 Valencia — AI CMO (marketing strategy, campaigns, copywriting)</td>
+      <td>$3,000/mo value</td>
+    </tr>
+    <tr>
+      <td>🔧 Atlas — AI CTO (technical architecture, code review, tech decisions)</td>
+      <td>$4,000/mo value</td>
+    </tr>
+    <tr>
+      <td>💰 Sterling — AI CFO (budget tracking, revenue analysis, forecasting)</td>
+      <td>$2,500/mo value</td>
+    </tr>
+    <tr>
+      <td>⚙️ Sentinel — AI COO (operations, SLAs, vendor management)</td>
+      <td>$2,000/mo value</td>
+    </tr>
+    <tr>
+      <td>🎯 Nova — AI CPO (product strategy, feature specs, UX)</td>
+      <td>$2,500/mo value</td>
+    </tr>
+    <tr>
+      <td>📊 Beacon — AI Analytics (KPIs, data insights, performance tracking)</td>
+      <td>$1,500/mo value</td>
+    </tr>
+    <tr>
+      <td>🧠 Persistent Memory System — agents learn your business over time</td>
+      <td>$500/mo value</td>
+    </tr>
+    <tr>
+      <td>📱 Telegram Daily Brief — morning summary from Maxwell to your phone</td>
+      <td>$300/mo value</td>
+    </tr>
+    <tr>
+      <td>🖥️ Unified Dashboard at app.usecorex.com — manage everything from one place</td>
+      <td>$200/mo value</td>
+    </tr>
+    <tr>
+      <td>📋 500 Tasks/Month — real capacity for real business operations</td>
+      <td>$1,000/mo value</td>
+    </tr>
+  </table>
+
+  <div class="value-total">Total Value: $19,500/month</div>
+</div>
+</section>
+
+<!-- ============ SOCIAL PROOF ============ -->
+<section>
+<div class="container">
+  <h2 style="text-align:center">What Early Users Are Saying</h2>
+
+  <div class="testimonial">
+    <div class="quote">"I was managing 3 Notion boards, 2 project management tools, and a spreadsheet to keep my agency running. After one week with COREX, Maxwell consolidated everything into a single morning brief. I've saved at least 2 hours every day — and I'm actually making strategic decisions again instead of just reacting to fires."</div>
+    <div class="author">Marcus T. <span class="placeholder-badge">[PLACEHOLDER]</span></div>
+    <div class="role">Agency Owner, 4-person team</div>
+  </div>
+
+  <div class="testimonial">
+    <div class="quote">"I gave Valencia a rough description of my target audience and asked for a launch email sequence. What came back was better than what my last freelance copywriter charged $1,200 for — and Valencia already knew my brand voice from our previous conversations. That persistent memory thing isn't a gimmick. It's the entire point."</div>
+    <div class="author">Sarah K. <span class="placeholder-badge">[PLACEHOLDER]</span></div>
+    <div class="role">SaaS Founder, Solopreneur</div>
+  </div>
+
+  <div class="testimonial">
+    <div class="quote">"I've bought every AI tool on JVZoo in the last year. Most of them collect dust after 48 hours. COREX is the first one I open every single morning — because Maxwell is already waiting with a brief before I finish my coffee. It's not a tool. It's a team."</div>
+    <div class="author">James R. <span class="placeholder-badge">[PLACEHOLDER]</span></div>
+    <div class="role">Online Marketer, 1-person operation</div>
+  </div>
+</div>
+</section>
+
+<!-- ============ PRICE REVEAL ============ -->
+<section id="buy">
+<div class="container">
+  <div class="divider"></div>
+  <h2 style="text-align:center">Let's Talk About What This Would Actually Cost</h2>
+  <p style="text-align:center;color:#8b949e;max-width:600px;margin:0 auto 32px">A real executive team — even a small one — costs $10,000 to $30,000 per month. A single CMO hire in the US averages $8,500/month. A CTO? $12,000. And that's before benefits, management overhead, and the 3-month ramp-up period before they actually know your business.</p>
+  <p style="text-align:center;color:#c9d1d9;margin-bottom:32px">COREX AI gives you <strong style="color:#fff">7 executives on Day 1</strong> — and they already know how to do their jobs. No onboarding. No payroll. No "let's circle back on that."</p>
+
+  <div class="price-box">
+    <p style="color:#8b949e;font-size:16px;margin-bottom:8px">You won't pay $19,500/month.</p>
+    <p style="color:#8b949e;font-size:16px;margin-bottom:8px">You won't pay $997.</p>
+    <p style="color:#8b949e;font-size:16px;margin-bottom:8px">You won't even pay $97.</p>
+    <p class="price-strike" style="margin-top:24px">$497</p>
+    <p class="price-real">$27</p>
+    <p class="price-note">One-time payment. Not monthly. Not annual. Once.</p>
+    <p style="color:#8b949e;font-size:14px;margin-top:4px">500 tasks/month • All core agents • Persistent memory • Telegram briefs • Full dashboard access</p>
+    <div style="margin-top:32px">
+      <a href="#buy" class="cta-btn">Get COREX AI Now — $27 →</a>
+    </div>
+    <p style="color:#484f58;font-size:13px;margin-top:16px">Instant access. No recurring fees on front-end. 30-day guarantee.</p>
+  </div>
+</div>
+</section>
+
+<!-- ============ GUARANTEE ============ -->
+<section>
+<div class="container">
+  <div class="guarantee-box">
+    <div class="shield">🛡️</div>
+    <h2>30-Day "Put Them to Work" Guarantee</h2>
+    <p style="color:#8b949e;margin-top:16px;max-width:560px;display:inline-block">Log in. Assign tasks. Get your morning briefs. If after 30 days you don't feel like COREX AI has saved you more time than every other AI tool you own combined — email our support team and get a full refund. No hoops. No "exit survey." No questions about why. You tried it, it wasn't for you, you get your $27 back. We'd rather refund a skeptic than keep a customer who isn't getting value.</p>
+  </div>
+</div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+<div class="container">
+  <h2 style="text-align:center">Frequently Asked Questions</h2>
+  <p style="text-align:center;color:#8b949e;margin-bottom:32px">The real objections. Not softballs.</p>
+
+  <div class="faq-item">
+    <div class="faq-q">How is this different from just using ChatGPT with custom instructions?</div>
+    <div class="faq-a">ChatGPT is one brain doing everything. COREX is 7 specialized agents that coordinate with each other, remember your business context across sessions, and proactively brief you. The difference is the same as between a freelancer who "does everything" and an actual team with defined roles. Also — ChatGPT doesn't send you a Telegram brief at 8 AM or route your marketing question to a marketing specialist automatically.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Is 500 tasks/month actually enough?</div>
+    <div class="faq-a">For most solopreneurs and small teams, yes. That's roughly 16-17 tasks per day. Each "task" is a complete interaction — asking Valencia to draft a campaign, having Sterling analyze your revenue, getting Atlas to review a technical decision. If you're running a larger operation and need more, the Unlimited tier removes the cap entirely.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What happens when I hit the 500 task limit?</div>
+    <div class="faq-a">Your access continues — you just can't assign new tasks until the next billing cycle or until you upgrade to Unlimited. Nothing breaks. Nothing gets deleted. Your agents and their memory stay intact.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">I've bought AI tools before and stopped using them after a week. Why would this be different?</div>
+    <div class="faq-a">Because COREX gets better the more you use it. Most AI tools are stateless — every session starts from zero. COREX remembers your business, your preferences, and your history. Day 30 is dramatically more useful than Day 1. The morning Telegram brief alone creates a habit loop that keeps you engaged daily without effort.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Do I need to be technical to use this?</div>
+    <div class="faq-a">No. The entire point is that Atlas (CTO) handles technical decisions for you. You describe what you need in plain English, and the right agent handles it. The dashboard is intentionally simple — if you can write a text message, you can use COREX.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Is my business data safe? Where does it go?</div>
+    <div class="faq-a">Your data stays in your workspace. Agents only access your business context — they don't share it with other users. The persistent memory is scoped to your account. We don't sell data or use it to train models. Standard enterprise-grade security practices.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">$27 one-time seems too cheap. What's the catch?</div>
+    <div class="faq-a">The front-end gets you in the door with core functionality. If you love it (and we think you will), there are optional upgrades for more tasks, more agents, and agency features. But the $27 tier is a complete, usable product — not a demo with a paywall three clicks in. We price it low because we want you inside the ecosystem.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What if I run multiple businesses?</div>
+    <div class="faq-a">The Starter tier is built for one business context. The agents' persistent memory works best when they're focused on a single business. If you're running multiple businesses, the Agency tier (available as an upgrade) gives you separate workspaces per client or business with isolated memory and context.</div>
+  </div>
+</div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta">
+<div class="container" style="text-align:center">
+  <h2>You're Still Reading — Which Means You Already Know You Need This</h2>
+  <p style="color:#8b949e;max-width:560px;margin:16px auto 32px">Every day you spend managing tasks that an AI team could handle is a day you don't spend growing. COREX AI is $27 once. That's less than a single hour of a freelancer's time. And unlike the freelancer, these agents work 24/7 and never forget your business.</p>
+
+  <div class="price-box" style="border-color:#d4a017;max-width:480px;margin:0 auto">
+    <p class="price-real" style="font-size:48px">$27</p>
+    <p class="price-note">One-time. Instant access. 30-day guarantee.</p>
+    <div style="margin-top:24px">
+      <a href="#buy" class="cta-btn" style="font-size:20px;padding:18px 48px">Get COREX AI Now →</a>
+    </div>
+  </div>
+
+  <p style="color:#484f58;font-size:14px;margin-top:24px">✓ 7 AI Executives &nbsp; ✓ 500 Tasks/Month &nbsp; ✓ Persistent Memory &nbsp; ✓ Telegram Briefs &nbsp; ✓ 30-Day Guarantee</p>
+</div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <p>&copy; 2026 COREX AI. All rights reserved.</p>
+  <p style="margin-top:8px"><a href="#" style="color:#484f58">Privacy Policy</a> &nbsp;|&nbsp; <a href="#" style="color:#484f58">Terms of Service</a> &nbsp;|&nbsp; <a href="#" style="color:#484f58">Contact Support</a></p>
+  <p style="margin-top:12px;font-size:12px;color:#30363d">[PLACEHOLDER: Add full legal disclaimer, earnings disclaimer, and JVZoo purchase terms before launch]</p>
+</footer>
+
+</body>
+</html>
