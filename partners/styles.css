@@ -218,7 +218,7 @@
         }
 
         .inner_stats .content p {
-            font-size: 20px;
+            font-size: 18px;
               font-weight: 300;
               line-height: 1;
               opacity: .7;
@@ -226,4 +226,5 @@
 
         .inner_stats img {
             width:80px;
+            margin-top:auto;
         }
