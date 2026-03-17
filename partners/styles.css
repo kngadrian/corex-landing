@@ -101,9 +101,11 @@
             margin:20px auto;
         }
 
-        .stats h1 {
+        .stats h1, .what_is h1 {
             font-size:60px;
-            padding-left: 10px;
+            
+            line-height:1;
+            letter-spacing: -3%;
            
         }
         .hero h1 {
@@ -111,7 +113,7 @@
             font-weight:500;
         }
 
-        .hero h3 {
+        .hero h3, .what_is h3 {
             font-size:16px;
             font-weight:300;
            text-transform: uppercase;
@@ -227,6 +229,8 @@
 
         .inner_stats:nth-last-child(1) {
             border:none;
+            border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
         }
 
         .inner_stats:nth-child(2) {
@@ -262,3 +266,85 @@
             width:80px;
             margin-top:auto;
         }
+
+        .what_is.container {
+            display:flex;
+            flex-direction: row;
+            gap:50px;
+        }
+
+        .left_box {
+           
+        justify-content: center;
+          flex-basis: 55%;
+          display: flex;
+          flex-direction: column;
+          gap:10px;
+        }
+
+                .what_is.container .featured_image {
+                    display:flex;
+                    flex: 1;
+                    padding:0 ;
+                    position:relative;
+                }
+
+                .what_is.container .featured_image:after {
+                    content:'';
+                  display:block;
+                    box-shadow: 0 0 155px 355px rgba(0, 0, 0, 0.64);
+                  background: transparent;
+                  border-radius: 50%;
+                  position:absolute;
+                  left:50%;
+                  bottom:50%;
+                  width:1px;
+                  height:1px;
+                  z-index: -1;
+
+                }
+
+                .what_is.container img {
+                    width:100%;
+                    height:auto;
+                }
+
+                .what_is.container p {
+                    font-size: 20px;
+                  font-weight: 200;
+                  line-height: 1;
+                  opacity: .7;
+                  line-height:110%;
+                 
+                }
+
+                .what_is .left_box ul {
+                    list-style-type:   none;
+                    display:flex;
+                    flex-direction:row;
+                    margin-top:30px;
+                    gap:25px;
+                    padding:0;
+                    font-size: 20px;
+                  color: #979797;
+                  font-weight: 200;
+                }
+
+                .what_is .left_box ul li i {
+                    background: #2a2c2f;
+                  border: none;
+                  font-size: 25px;
+                  border-radius: 20px;
+                  padding: 15px;
+                  color: #fff;
+                  display: flex;
+                  border: 1px solid #ffffff1a;
+                  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.26);
+                }
+
+                .what_is .left_box ul li {
+                    display: flex;
+                      flex-direction: row;
+                      gap: 10px;
+                      align-items: center;
+                }
