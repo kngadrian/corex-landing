@@ -103,7 +103,7 @@
 
         .stats h1 {
             font-size:60px;
-            margin-bottom: 50px;
+           
         }
         .hero h1 {
             font-size:80px;
@@ -198,6 +198,31 @@
           box-shadow:inset -2px 0 2px 0px rgba(0, 0, 0, 0.26);
          
         }
+        .inner_head {
+            display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+        align-items:    center;
+         margin-bottom: 50px;
+        }
+
+
+        .inner_head .buttons {
+            display:flex;
+            flex-direction:     row;
+            gap:10px;
+        }
+        .inner_head button {
+            background: #2a2c2f;
+          border: none;
+          font-size: 25px;
+          border-radius: 20px;
+          padding: 15px;
+          color: #fff;
+          display: flex;
+          border: 1px solid #ffffff1a;
+          box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.26)
+        }
 
         .inner_stats:nth-last-child(1) {
             border:none;
@@ -207,7 +232,12 @@
             background:linear-gradient(to left bottom, #181a1e 50% , #85b21e2b);
         }
 
-        .inner_stats i {
+         .inner_stats i {
+            font-size: 25px;
+            margin-top: 25px;
+        }
+
+        .inner_stats i.circle {
            padding: 25px;
               background: #cccccc1a;
               border-radius: 50%;
@@ -215,7 +245,10 @@
               font-size: 35px;
               font-weight: 300;
               box-shadow:0 0 5px 1px rgba(0, 0, 0, 0.26);
+              margin:0;
         }
+
+       
 
         .inner_stats .content p {
             font-size: 18px;
