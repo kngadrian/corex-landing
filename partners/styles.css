@@ -48,8 +48,12 @@ body {
   width: 60px;
   height: 60px;
   display: flex;
-  background: #ffffff17;
+  background: transparent;
   border-radius: 25px;
+  background-image:url('images/logo.png');
+  background-repeat:no-repeat;
+  background-size:100%;
+
 }
 
 .navigation {
