@@ -520,6 +520,20 @@ a.white-bg {
 
 .agents_grid .agent_card:first-child {
   grid-column: span 2;
+  position:relative;
+}
+
+.agents_grid .agent_card:first-child:after {
+       content: '';
+      background-image: url('images/agent1.png');
+      background-repeat: no-repeat;
+      height: 100%;
+      width: 100%;
+      background-size: 100%;
+      opacity: .1;
+      bottom: 0;
+      right: 0;
+      border-radius: 0;
 }
 
 .agent_card {
