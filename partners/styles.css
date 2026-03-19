@@ -1905,6 +1905,9 @@ a.white-bg {
     padding: 70px 20px;
     max-width: 100%;
   }
+
+    .hero img {     width: 150%;   max-width: 1000px;   margin: 0 calc(50% - 240px);   display: block;   } 
+   .header.container {     overflow:hidden;   }   
 }
 
 /* ---- Navigation ---- */
@@ -2229,18 +2232,6 @@ a.white-bg {
     font-size: 46px;
     letter-spacing: -1.5px;
   }
-
-  .hero img {
-    width: 150%;
-  max-width: 1000px;
-  margin: 0 calc(50% - 240px);
-  display: block;
-  }
-
-  .container, .header.container {
-    overflow:hidden;
-  }
-  
   .final_cta_inner > p { font-size: 17px; }
 }
 
@@ -2270,4 +2261,51 @@ a.white-bg {
 @media (max-width: 540px) {
   .footer_links { gap: 15px; }
   .footer_links a { font-size: 15px; }
+}
+
+/* ========================= */
+/* STATS CAROUSEL            */
+/* ========================= */
+
+.stats_carousel_wrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+.stats_carousel_wrap .stats_list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 15px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  align-items: stretch;
+}
+
+.stats_carousel_wrap .inner_stats {
+  flex: 0 0 calc((100% - 45px) / 4); /* 4 visible, 3 gaps of 15px */
+  min-width: 0;
+}
+
+/* Restore last-child / nth-child overrides inside carousel */
+.stats_carousel_wrap .inner_stats:nth-last-child(1) {
+  border: 1px solid #cccccc14;
+  border-radius: 20px;
+}
+
+/* Arrow dim state */
+#statsprev, #statsnext,
+#swipesprev, #swipesnext {
+  transition: opacity 0.2s, background 0.2s;
+}
+
+@media (max-width: 992px) {
+  .stats_carousel_wrap .inner_stats {
+    flex: 0 0 calc((100% - 15px) / 2);
+  }
+}
+
+@media (max-width: 540px) {
+  .stats_carousel_wrap .inner_stats {
+    flex: 0 0 100%;
+  }
 }

@@ -49,42 +49,60 @@
   <div class="inner_head">
     <h1 class="text-white">Why Partner</h1>
     <div class="buttons">
-      <button><i class="ti ti-arrow-left"></i></button>
-      <button><i class="ti ti-arrow-right"></i></button>
+      <button id="statsprev" onclick="slideStats(-1)"><i class="ti ti-arrow-left"></i></button>
+      <button id="statsnext" onclick="slideStats(1)"><i class="ti ti-arrow-right"></i></button>
     </div>
   </div>
-  <div class="stats_list">
-    <div class="inner_stats">
-      <i class="ti ti-medal circle"></i>
-      <div class="content">
-        <h2>Prizes</h2>
-        <p>$10,000 cash JV prize pool — distributed across top 10 affiliates during launch week.</p>
+  <div class="stats_carousel_wrap">
+    <div class="stats_list" id="statsTrack">
+      <div class="inner_stats">
+        <i class="ti ti-medal circle"></i>
+        <div class="content">
+          <h2>Prizes</h2>
+          <p>$10,000 cash JV prize pool — distributed across top 10 affiliates during launch week.</p>
+        </div>
+        <i class="ti ti-arrow-up-right"></i>
       </div>
-      <i class="ti ti-arrow-up-right"></i>
-    </div>
-    <div class="inner_stats">
-      <i class="ti ti-timeline circle"></i>
-      <div class="content">
-        <h2>Conversions</h2>
-        <p>Up to 29% front-end conversions across our proven, fully-optimized launch funnel.</p>
+      <div class="inner_stats">
+        <i class="ti ti-timeline circle"></i>
+        <div class="content">
+          <h2>Conversions</h2>
+          <p>Up to 29% front-end conversions across our proven, fully-optimized launch funnel.</p>
+        </div>
+        <i class="ti ti-arrow-up-right"></i>
       </div>
-      <i class="ti ti-arrow-up-right"></i>
-    </div>
-    <div class="inner_stats">
-      <i class="ti ti-pig-money circle"></i>
-      <div class="content">
-        <h2>Reciprocation</h2>
-        <p>We've paid out over $1M+ in affiliate commissions and mailed our list hard for partners.</p>
+      <div class="inner_stats">
+        <i class="ti ti-pig-money circle"></i>
+        <div class="content">
+          <h2>Reciprocation</h2>
+          <p>We've paid out over $1M+ in affiliate commissions and mailed our list hard for partners.</p>
+        </div>
+        <i class="ti ti-arrow-up-right"></i>
       </div>
-      <i class="ti ti-arrow-up-right"></i>
-    </div>
-    <div class="inner_stats">
-      <i class="ti ti-credit-card-pay circle"></i>
-      <div class="content">
-        <h2>Commissions</h2>
-        <p>Our affiliates have collectively earned $2.5M+ across 18+ successful product launches.</p>
+      <div class="inner_stats">
+        <i class="ti ti-credit-card-pay circle"></i>
+        <div class="content">
+          <h2>Commissions</h2>
+          <p>Our affiliates have collectively earned $2.5M+ across 18+ successful product launches.</p>
+        </div>
+        <i class="ti ti-arrow-up-right"></i>
       </div>
-      <i class="ti ti-arrow-up-right"></i>
+      <div class="inner_stats">
+        <i class="ti ti-shield-check circle"></i>
+        <div class="content">
+          <h2>Low Refunds</h2>
+          <p>Consistently under 5% refund rate — fast onboarding keeps buyers happy and your commissions intact.</p>
+        </div>
+        <i class="ti ti-arrow-up-right"></i>
+      </div>
+      <div class="inner_stats">
+        <i class="ti ti-rocket circle"></i>
+        <div class="content">
+          <h2>Proven Vendor</h2>
+          <p>18+ launches and $2.6M+ in sales. Adrian Isfan is a verified 7-figure JVZoo vendor you can trust.</p>
+        </div>
+        <i class="ti ti-arrow-up-right"></i>
+      </div>
     </div>
   </div>
 </div>
@@ -564,8 +582,8 @@
   <div class="inner_head">
     <h1 class="text-white">Email Swipes</h1>
     <div class="buttons">
-      <button><i class="ti ti-arrow-left"></i></button>
-      <button><i class="ti ti-arrow-right"></i></button>
+      <button id="swipesprev" onclick="stepSwipe(-1)"><i class="ti ti-arrow-left"></i></button>
+      <button id="swipesnext" onclick="stepSwipe(1)"><i class="ti ti-arrow-right"></i></button>
     </div>
   </div>
 
@@ -993,15 +1011,66 @@
 </div>
 
 <script>
-  // Swipe tabs
+  // ── Swipe tabs (click) ──────────────────────────────────────────
+  let currentSwipe = 0;
+  const totalSwipes = document.querySelectorAll('.swipe_card').length;
+
   function showSwipe(index, btn) {
+    currentSwipe = index;
     document.querySelectorAll('.swipe_card').forEach(c => c.classList.remove('active'));
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     document.getElementById('swipe-' + index).classList.add('active');
-    btn.classList.add('active');
+    if (btn) btn.classList.add('active');
+    else document.querySelectorAll('.tab')[index].classList.add('active');
+    updateSwipeArrows();
   }
 
-  // Copy text
+  // ── Swipe arrows ────────────────────────────────────────────────
+  function stepSwipe(dir) {
+    const next = currentSwipe + dir;
+    if (next < 0 || next >= totalSwipes) return;
+    showSwipe(next, null);
+  }
+
+  function updateSwipeArrows() {
+    document.getElementById('swipesprev').style.opacity = currentSwipe === 0 ? '0.3' : '1';
+    document.getElementById('swipesnext').style.opacity = currentSwipe === totalSwipes - 1 ? '0.3' : '1';
+  }
+
+  // ── Why Partner carousel ─────────────────────────────────────────
+  const VISIBLE = 4;         // cards visible at once
+  let statsIndex = 0;
+  const statsTrack = document.getElementById('statsTrack');
+  const statCards = statsTrack.querySelectorAll('.inner_stats');
+  const totalStats = statCards.length;               // 6
+
+  function slideStats(dir) {
+    const maxIndex = totalStats - VISIBLE;
+    statsIndex = Math.min(Math.max(statsIndex + dir, 0), maxIndex);
+    applyStatsSlide();
+  }
+
+  function applyStatsSlide() {
+    // Each card takes (100% / VISIBLE) width; gap is 15px shared
+    const cardW = statsTrack.parentElement.offsetWidth;
+    const gap = 15;
+    const oneCard = (cardW - gap * (VISIBLE - 1)) / VISIBLE;
+    const offset = statsIndex * (oneCard + gap);
+    statsTrack.style.transform = `translateX(-${offset}px)`;
+
+    const maxIndex = totalStats - VISIBLE;
+    document.getElementById('statsprev').style.opacity = statsIndex === 0 ? '0.3' : '1';
+    document.getElementById('statsnext').style.opacity = statsIndex >= maxIndex ? '0.3' : '1';
+  }
+
+  // Recalculate on resize
+  window.addEventListener('resize', () => applyStatsSlide());
+
+  // Init both
+  updateSwipeArrows();
+  applyStatsSlide();
+
+  // ── Copy text ───────────────────────────────────────────────────
   function copyText(id) {
     const el = document.getElementById(id);
     const text = el.innerText;
@@ -1013,7 +1082,7 @@
     });
   }
 
-  // FAQ accordion
+  // ── FAQ accordion ───────────────────────────────────────────────
   function toggleFaq(el) {
     const item = el.parentElement;
     const isActive = item.classList.contains('active');
