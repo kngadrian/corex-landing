@@ -117,7 +117,8 @@ a.white-bg {
 
 .hero h1 {
   font-size: 80px;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: -5%;
 }
 
 .hero h3, .what_is h3, .why_diff_left h3 {
@@ -140,6 +141,7 @@ a.white-bg {
 .hero h2 {
   font-size: 28px;
   font-weight: 200;
+  max-width:1000px;
 }
 
 .hero img {
