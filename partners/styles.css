@@ -1894,6 +1894,14 @@ a.white-bg {
     padding-left: 20px;
     padding-right: 20px;
   }
+
+.hero img {     width: 900px;
+    max-width: 1000px;
+    margin: 0 calc(50% - 450px);
+    display: block;
+     }     
+.header.container {     overflow:hidden;   }   
+
   .container {
     padding-top: 70px;
     padding-bottom: 70px;
@@ -1905,9 +1913,6 @@ a.white-bg {
     padding: 70px 20px;
     max-width: 100%;
   }
-
-    .hero img {     width: 150%;   max-width: 1000px;   margin: 0 calc(50% - 240px);   display: block;   } 
-   .header.container {     overflow:hidden;   }   
 }
 
 /* ---- Navigation ---- */
@@ -2281,12 +2286,14 @@ a.white-bg {
   align-items: stretch;
 }
 
+/* Card widths are set in px by JS — these are just fallback resets */
 .stats_carousel_wrap .inner_stats {
-  flex: 0 0 calc((100% - 45px) / 4); /* 4 visible, 3 gaps of 15px */
+  flex-shrink: 0;
+  flex-grow: 0;
   min-width: 0;
 }
 
-/* Restore last-child / nth-child overrides inside carousel */
+/* Restore border overrides inside carousel */
 .stats_carousel_wrap .inner_stats:nth-last-child(1) {
   border: 1px solid #cccccc14;
   border-radius: 20px;
@@ -2296,16 +2303,4 @@ a.white-bg {
 #statsprev, #statsnext,
 #swipesprev, #swipesnext {
   transition: opacity 0.2s, background 0.2s;
-}
-
-@media (max-width: 992px) {
-  .stats_carousel_wrap .inner_stats {
-    flex: 0 0 calc((100% - 15px) / 2);
-  }
-}
-
-@media (max-width: 540px) {
-  .stats_carousel_wrap .inner_stats {
-    flex: 0 0 100%;
-  }
 }

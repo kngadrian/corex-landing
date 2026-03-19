@@ -882,7 +882,7 @@
           <div>
             <h4>Adrian Isfan</h4>
             <p>Lead JV Manager</p>
-            <a href="mailto:jv@usecorex.com">jv@usecorex.com</a>
+            <a href="/cdn-cgi/l/email-protection#97fde1d7e2e4f2f4f8e5f2efb9f4f8fa"><span class="__cf_email__" data-cfemail="c7adb187b2b4a2a4a8b5a2bfe9a4a8aa">[email&#160;protected]</span></a>
           </div>
         </div>
         <div class="contact_person">
@@ -890,7 +890,7 @@
           <div>
             <h4>Alex Costan</h4>
             <p>Affiliate Support</p>
-            <a href="mailto:affiliates@usecorex.com">affiliates@usecorex.com</a>
+            <a href="/cdn-cgi/l/email-protection#056463636c696c6471607645707660666a77607d2b666a68"><span class="__cf_email__" data-cfemail="6a0b0c0c0306030b1e0f192a1f190f0905180f1244090507">[email&#160;protected]</span></a>
           </div>
         </div>
         <div class="contact_divider"></div>
@@ -980,7 +980,7 @@
     <p class="text-white">The "AI crew" angle is fresh. The OpenClaw connection is timely. The funnel converts. 5 products. $10K prize pool. Join the affiliates already getting approved and request your links today.</p>
     <div class="call_to_action">
       <a href="#jvdoc" class="green-bg"><i class="ti ti-plus"></i> Request Affiliate Links</a>
-      <a href="mailto:jv@usecorex.com" class="white-bg">Email JV Manager</a>
+      <a href="/cdn-cgi/l/email-protection#6e04182e1b1d0b0d011c0b16400d0103" class="white-bg">Email JV Manager</a>
     </div>
     <div class="final_badges">
       <span><i class="ti ti-shield-check"></i> JVZoo Verified</span>
@@ -1004,13 +1004,13 @@
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Service</a>
       <a href="#">Affiliate Program</a>
-      <a href="mailto:jv@usecorex.com">Contact</a>
+      <a href="/cdn-cgi/l/email-protection#c6acb086b3b5a3a5a9b4a3bee8a5a9ab">Contact</a>
     </div>
     <p class="footer_copy">© 2026 Claw Crew AI. All rights reserved. Powered by Claude Sonnet · Telegram</p>
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── Swipe tabs (click) ──────────────────────────────────────────
   let currentSwipe = 0;
   const totalSwipes = document.querySelectorAll('.swipe_card').length;
@@ -1038,33 +1038,45 @@
   }
 
   // ── Why Partner carousel ─────────────────────────────────────────
-  const VISIBLE = 4;         // cards visible at once
   let statsIndex = 0;
   const statsTrack = document.getElementById('statsTrack');
-  const statCards = statsTrack.querySelectorAll('.inner_stats');
-  const totalStats = statCards.length;               // 6
+  const statCards = Array.from(statsTrack.querySelectorAll('.inner_stats'));
+  const totalStats = statCards.length; // 6
 
-  function slideStats(dir) {
-    const maxIndex = totalStats - VISIBLE;
-    statsIndex = Math.min(Math.max(statsIndex + dir, 0), maxIndex);
-    applyStatsSlide();
+  function getVisible() {
+    const w = window.innerWidth;
+    if (w <= 540)  return 1;
+    if (w <= 992)  return 2;
+    return 4;
   }
 
   function applyStatsSlide() {
-    // Each card takes (100% / VISIBLE) width; gap is 15px shared
-    const cardW = statsTrack.parentElement.offsetWidth;
     const gap = 15;
-    const oneCard = (cardW - gap * (VISIBLE - 1)) / VISIBLE;
-    const offset = statsIndex * (oneCard + gap);
+    const wrapW = statsTrack.parentElement.offsetWidth;
+    const visible = getVisible();
+    const maxIndex = Math.max(totalStats - visible, 0);
+    statsIndex = Math.min(statsIndex, maxIndex);
+
+    const oneCard = (wrapW - gap * (visible - 1)) / visible;
+
+    // Set every card to the exact pixel width
+    statCards.forEach(c => { c.style.width = oneCard + 'px'; });
+
+    const offset = (visible === 1 ? 175 : 0) + statsIndex * (oneCard + gap);
     statsTrack.style.transform = `translateX(-${offset}px)`;
 
-    const maxIndex = totalStats - VISIBLE;
     document.getElementById('statsprev').style.opacity = statsIndex === 0 ? '0.3' : '1';
     document.getElementById('statsnext').style.opacity = statsIndex >= maxIndex ? '0.3' : '1';
   }
 
-  // Recalculate on resize
-  window.addEventListener('resize', () => applyStatsSlide());
+  function slideStats(dir) {
+    const visible = getVisible();
+    const maxIndex = Math.max(totalStats - visible, 0);
+    statsIndex = Math.min(Math.max(statsIndex + dir, 0), maxIndex);
+    applyStatsSlide();
+  }
+
+  window.addEventListener('resize', () => { statsIndex = 0; applyStatsSlide(); });
 
   // Init both
   updateSwipeArrows();
