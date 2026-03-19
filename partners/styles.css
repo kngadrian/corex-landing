@@ -1331,6 +1331,10 @@ a.white-bg {
   flex-shrink: 0;
 }
 
+.contact_avatar img {
+    width:100%;
+}
+
 .contact_person h4 {
   font-size: 17px;
   font-weight: 600;
@@ -2247,7 +2251,7 @@ a.white-bg {
 
 /* ---- Inner head (stats/swipes section titles) ---- */
 @media (max-width: 600px) {
-  .inner_head { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .inner_head { flex-direction: row; align-items: flex-start; gap: 20px; }
   .inner_head h1 { font-size: 36px; }
 }
 
