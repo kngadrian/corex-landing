@@ -495,7 +495,7 @@ a.white-bg {
   color: #181a1e;
 }
 
-.section_head h1, .left_box h1 , .inner_head h1 { font-size: 60px; font-weight: 500; line-height: 1; letter-spacing: -1px; }
+.section_head h1, .left_box h1 , .inner_head h1 { font-size: 60px; font-weight: 600;  letter-spacing: -1px; }
 
 .section_head p {
   font-size: 20px;
@@ -1011,6 +1011,9 @@ a.white-bg {
   opacity: .6;
   cursor: pointer;
   transition: all .25s;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-wrap: nowrap;
 }
 
 .tab.active,
@@ -1119,12 +1122,12 @@ a.white-bg {
 }
 
 .tool_card i {
-  font-size: 35px;
+  font-size: 25px;
   color: #a4df12;
-  border: 1px solid #a4df12;
   border-radius: 50%;
-  padding: 10px;
   width: fit-content;
+  padding:25px;
+  border:1px solid #a4df12;
 }
 
 .tool_card h3 {
@@ -1141,16 +1144,29 @@ a.white-bg {
   line-height: 1.5;
 }
 
+.tool_link i {
+  font-size: 25px;
+  color: #fff;
+  border-radius: 50%;
+  width: fit-content;
+  padding:0;
+  border:none;
+}
+
 .tool_link {
   font-size: 18px;
   font-weight: 500;
-  color: #a4df12;
+  color: #fff;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 6px;
   margin-top: auto;
   transition: gap .2s;
+  border: 1px solid #fff;
+  width: fit-content;
+  padding: 10px 15px 10px 20px;
+  border-radius: 20px;
 }
 
 .tool_link:hover { gap: 10px; }
@@ -1589,8 +1605,8 @@ a.white-bg {
 
 .why_diff_left h1 {
   font-size: 60px;
-  font-weight: 500;
-  line-height: 1.1;
+  font-weight: 600;
+  
   letter-spacing: -1.5px;
   margin-bottom: 30px;
 }
@@ -1681,7 +1697,7 @@ a.white-bg {
 }
 
 .quote_item p {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
   color: #fff;
   opacity: .75;
