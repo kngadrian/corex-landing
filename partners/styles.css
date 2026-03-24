@@ -498,7 +498,7 @@ a.white-bg {
   font-size: 14px; font-weight: 500; background: transparent; width: fit-content;
   border-radius: 20px; padding: 10px 15px; border: 1px solid rgba(255,255,255,0.4); color: #fff; margin: 0;
 }
-.blue_cta_inner h1 { font-size: 72px; font-weight: 600; color: #fff; line-height: 1.05; letter-spacing: -3px; max-width: 900px; }
+.blue_cta_inner h1 { font-size: 72px; font-weight: 600; color: #fff; line-height: 1.05; letter-spacing: -3px; max-width: 700px; }
 .blue_cta_inner p { font-size: 22px; font-weight: 200; color: rgba(255,255,255,0.8); max-width: 650px; line-height: 1.6; }
 .blue_cta_inner .call_to_action a.green-bg { border-color: rgba(255,255,255,0.6); }
 .blue_badges { display: flex; flex-direction: row; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
