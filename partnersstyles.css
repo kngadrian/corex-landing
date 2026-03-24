@@ -21,7 +21,14 @@ body {
   padding: 100px 0;
 }
 
-.header.container {
+.header {
+  background-image : url('images/headerbg.png'), linear-gradient(135deg,#4f46e5,#2563eb);
+  box-sizing: border-box;
+  display: flex;
+  background-size: 100%;
+  background-position: top center;
+}
+.header > .container {
   overflow-y: clip;
   padding: 0;
 }
@@ -50,7 +57,7 @@ body {
   display: flex;
   background: transparent;
   border-radius: 25px;
-  background-image:url('images/logo.png');
+  background-image:url('images/logo2.png');
   background-repeat:no-repeat;
   background-size:100%;
 
@@ -60,10 +67,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #ffffff1a;
-  border-radius: 25px;
+  
   padding: 15px;
-  margin: 35px auto;
+  margin: 0 auto;
 
 }
 
@@ -125,7 +131,7 @@ a.white-bg {
   font-size: 16px;
   font-weight: 500;
   text-transform: uppercase;
-  background: #a4df12;
+  background:#232323;
   width: fit-content;
   border-radius: 20px;
   padding: 10px 15px;
@@ -135,7 +141,7 @@ a.white-bg {
   justify-content: center;
   gap: 10px;
   margin-bottom: 30px;
-  color: #181a1e;
+  color: #fff;
 }
 
 .hero h2 {
@@ -146,7 +152,7 @@ a.white-bg {
 
 .hero img {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   display: block;
 }
