@@ -81,6 +81,13 @@ body {
 
 }
 
+.footer_inner .logo .image {
+ 
+  background-image:url('images/logoicon.png');
+  
+
+}
+
 .navigation {
   display: flex;
   justify-content: space-between;
