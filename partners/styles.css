@@ -265,13 +265,23 @@ a.white-bg {
 /* ========================= */
 .stats_list { display: flex; flex-direction: row; align-items: stretch; justify-content: center; gap: 15px; flex-wrap: wrap; }
 .inner_stats {
-  color: #181a1e; padding: 50px; display: flex; flex-direction: column; align-items: center; gap: 25px;
-  width: calc(33% - 10px); background: #f6f7f9; border-radius: 50px; border: 1px solid #3333331c; text-align: center;
+  color: #181a1e;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: calc(33% - 10px);
+  background: #c7cad23b;
+  border-radius: 50px;
+  border: 1px solid #3333332b;
+  text-align: center;
+ 
 }
 .inner_stats i { font-size: 25px; margin-top: 25px; }
 .inner_stats i.circle {
   padding: 15px; border-radius: 50%; font-size: 35px; font-weight: 300;
-  margin: 0; color: #fff; background: #2563eb;
+  margin: 0; color: #fff; background: linear-gradient(#2f5ce8, #434ce5);
 }
 .inner_stats h2 { font-size: 24px; font-weight: 600; color: #181a1e; text-align: center; }
 .inner_stats .content { display: flex; flex-direction: column; align-items: center; gap: 12px; }
