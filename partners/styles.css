@@ -147,7 +147,7 @@ a.white-bg {
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 80px;
   font-weight: 600;
   letter-spacing: -2px;
   line-height: 1.15;
@@ -182,9 +182,9 @@ a.white-bg {
 }
 
 .hero h2 {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 300;
-  max-width:900px;
+  
   margin-bottom: 5px;
 }
 
@@ -193,20 +193,35 @@ a.white-bg {
   position: relative;
   width: 100%;
   max-width: 1100px;
-  margin: 20px auto 60px;
-  padding: 3px;
-  border-radius: 16px;
-  background: linear-gradient(145deg, #a4df12, #2563eb, #a4df1280);
-  box-shadow: 0 8px 40px rgba(0,0,0,0.35), 0 0 50px rgba(37, 99, 235, 0.1);
+  margin: 0 auto ;
+  
+  padding: 15px;
+  margin-bottom: -50px;
+  border-radius: 40px;
+  background: #ffffff1f;
+  
+  
+}
+
+.hero_video_inner:after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 0;
+  box-shadow: 0 0 15px 15px #0000008f;
+  bottom: 35px;
+  left: 0;
+  z-index: 9999;
+  position: absolute;
 }
 
 .hero_video_inner {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;
-  border-radius: 13px;
+  padding-top: 52.7%;
+  border-radius: 30px;
   overflow: hidden;
-  background: #000;
+  
 }
 
 .hero_video_inner iframe {
