@@ -35,13 +35,21 @@
   <div class="hero">
     <div class="hero_preheadline" style="display:none">From the creators of LeadsGorilla ($1.9M exit), CallFluent AI, and 18+ AI products generating $2.6M+ in sales...</div>
     <h3><i class="ti ti-circle-arrow-right" style="color:#fff; font-size: 25px;"></i> LIVE • April 14th, 2026 Launch</h3>
-    <h1 class="text-white">The AI Brand Team Offer Built For Massive JVZoo Conversions</h1>
+    <h1 class="text-white">The #1 AI Brand Design Platform Built On Nvidia OpenClaw Architecture Where Agentic AI Agents Replace Your Entire Design Team</h1>
     <h2 class="text-white">Earn up to 50% commissions, compete for $10,000 in JV prizes, and promote a visual offer that solves a massive pain point: fast, on-brand mockup creation.</h2>
     <div class="call_to_action">
       <a href="https://docs.google.com/document/d/18d-Bxd0xHCJq8Afb6pM3baCbKZ-2Xych/edit?usp=sharing&ouid=105785727185701433941&rtpof=true&sd=true" class="green-bg" target="_blank" rel="noopener noreferrer"><i class="ti ti-plus"></i> JV Doc</a>
       <a href="https://www.jvzoo.com/affiliate/affiliateinfonew/index/436449" class="white-bg" target="_blank" rel="noopener noreferrer">Request Links</a>
     </div>
-    <img src="images/heroimage.png" alt="Claw Brand AI Dashboard"/>
+    <div class="hero_video_wrapper">
+      <div class="hero_video_inner">
+        <iframe id="heroVimeo" src="https://player.vimeo.com/video/1177111988?autoplay=1&muted=1&loop=1&background=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <button class="video_sound_btn" id="soundToggle" onclick="toggleSound()">
+          <i class="ti ti-volume-off" id="soundIcon"></i>
+          <span id="soundLabel">Click for Sound</span>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 </div>
@@ -551,6 +559,34 @@ function copySwipe(id) {
     btn.innerHTML = '<i class="ti ti-check"></i> Copied!';
     setTimeout(() => btn.innerHTML = orig, 2000);
   });
+}
+</script>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+let heroPlayer;
+let isMuted = true;
+
+document.addEventListener('DOMContentLoaded', function() {
+  const iframe = document.getElementById('heroVimeo');
+  if (iframe) {
+    heroPlayer = new Vimeo.Player(iframe);
+  }
+});
+
+function toggleSound() {
+  if (!heroPlayer) return;
+  isMuted = !isMuted;
+  heroPlayer.setMuted(isMuted);
+  const icon = document.getElementById('soundIcon');
+  const label = document.getElementById('soundLabel');
+  if (isMuted) {
+    icon.className = 'ti ti-volume-off';
+    label.textContent = 'Click for Sound';
+  } else {
+    icon.className = 'ti ti-volume';
+    label.textContent = 'Sound On';
+  }
 }
 </script>
 
