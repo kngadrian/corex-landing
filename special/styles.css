@@ -8,7 +8,7 @@ a { text-decoration: none; }
 
 /* ========================= HEADER / NAV ========================= */
 .header {
-  background-image: url('images/headerbg.png'), radial-gradient(#4666e5, #4f46e5, #1a2c54);
+  background-image: url('../images/headerbg.png'), radial-gradient(#4666e5, #4f46e5, #1a2c54);
   background-size: 100%;
   background-position: top center;
   margin-bottom: 0;
@@ -29,7 +29,7 @@ a { text-decoration: none; }
   width: 50px;
   height: 50px;
   border-radius: 25px;
-  background-image: url('images/logo2.png');
+  background-image: url('../../images/logo2.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
@@ -446,7 +446,7 @@ a { text-decoration: none; }
   padding: 100px 40px;
   border-top: 1px solid #ebebf5;
   border-bottom: 1px solid #ebebf5;
-  background-image: url('images/cornerpattern.png');
+  background-image: url('../images/cornerpattern.png');
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 3490px;
@@ -1542,7 +1542,7 @@ a { text-decoration: none; }
 }
 
 .footer_inner .logo { color: #fff; }
-.footer_inner .logo .image { background-image: url('images/logo2.png'); }
+.footer_inner .logo .image { background-image: url('../../images/logo2.png'); }
 
 .footer_inner > p {
   font-size: 15px;
