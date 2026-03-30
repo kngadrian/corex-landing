@@ -86,7 +86,7 @@ body {
   display: flex;
   background: transparent;
   border-radius: 25px;
-  background-image: url('images/logo2.png');
+  background-image: url('../partners/images/logo2.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
