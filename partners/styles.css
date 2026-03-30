@@ -35,7 +35,7 @@ body {
 }
 
 .container {
-  padding: 70px 0 !important;
+  padding: 70px 0 ;
 }
 
 .header {
@@ -45,6 +45,7 @@ body {
   background-size: 100%;
   background-position: top center;
   margin-bottom:80px;
+  overflow:hidden;
 }
 .header > .container {
   overflow-y: clip;
@@ -675,7 +676,7 @@ a.white-bg {
 @media (max-width: 992px) {
   .navigation .menu a:not(.border-white):not(.white-bg) { display: none; }
   .stats_list { display: grid; grid-template-columns: 1fr 1fr; }
-  .inner_stats { width: 100%; }
+  .inner_stats { width: 100% !important; }
   .what_is.container { flex-direction: column; gap: 30px; }
   .funnel_summary { grid-template-columns: repeat(2,1fr); }
   .rules_grid { grid-template-columns: repeat(2,1fr); }
@@ -713,7 +714,7 @@ a.white-bg {
   .navigation .menu a { font-size: 14px; padding: 8px 14px; }
 }
 @media (max-width: 540px) {
-  .stats.small .stats_list { grid-template-columns: repeat(2,1fr); }
+  .stats.small .stats_list { grid-template-columns: repeat(1,1fr); }
   .rules_grid { grid-template-columns: 1fr; }
   .prize_tiers { grid-template-columns: 1fr; }
   .contact_socials { flex-direction: column; }
