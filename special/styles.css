@@ -1371,7 +1371,7 @@ a.white-bg {
   background-image: url('images/cornerpattern.png');
   background-position: top center; background-repeat: no-repeat; background-size: 3490px;
 }
-.pricing_inner { max-width: 780px; margin: 0 auto; text-align: center; }
+.pricing_inner { max-width: 980px; margin: 0 auto; text-align: center; }
 .pricing_card {
   background: #fff;
   border: 1px solid #3333332b;
@@ -1783,8 +1783,15 @@ a.white-bg {
 }
 .pcd_includes_list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }
 .pcd_inc_item {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 15px; font-weight: 400; color: rgba(255,255,255,0.85);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  justify-content: flex-start;
+  text-align: left;
+
 }
 .pcd_inc_item i { font-size: 18px; color: #deff68; flex-shrink: 0; }
 .pcd_inc_item.fire { color: #fbbf24; }
