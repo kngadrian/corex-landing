@@ -427,7 +427,7 @@ a.white-bg {
   flex-direction: row;
   align-items: center;
   border:none;
-  width: calc(25% - 15px);
+  width: calc(26% - 15px);
   background: transparent;
   text-align:left;
 }
