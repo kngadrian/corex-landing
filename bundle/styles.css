@@ -67,10 +67,11 @@ a { text-decoration: none; }
 /*  HERO HEADER                                      */
 /* ──────────────────────────────────────────────── */
 .bnd_hero {
-  background-image: url('../partners/images/headerbg.png'),
-    radial-gradient(ellipse at 50% 0%, #3a3a3a 0%, #1e1e1e 50%, #0d0d0d 100%);
-  background-size: 100%; background-position: top center;
+  background-image: url('../images/mockupsbg.png'), radial-gradient(ellipse at 50% 0%, #173ed8 0%, #361abc 50%, #274fee 100%);
+  background-size: cover;
+  background-position: bottom center;
   padding-bottom: 0;
+  background-repeat: no-repeat;
 }
 .bnd_hero_nav {
   display: flex; justify-content: space-between; align-items: center;
