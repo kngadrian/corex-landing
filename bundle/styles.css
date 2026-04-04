@@ -68,7 +68,7 @@ a { text-decoration: none; }
 /* ──────────────────────────────────────────────── */
 .bnd_hero {
   background-image: url('../images/mockupsbg.png'), radial-gradient(ellipse at 50% 0%, #173ed8 0%, #361abc 50%, #274fee 100%);
-  background-size: cover;
+  
   background-position: top center;
   padding-bottom: 0;
   background-repeat: no-repeat;
@@ -130,6 +130,84 @@ a { text-decoration: none; }
 }
 .bnd_discount_ribbon strong { color: var(--yellow-hl); font-size: 18px; }
 .bnd_discount_ribbon i { font-size: 20px; color: var(--yellow-hl); }
+
+
+.hero_video_wrapper {
+  position: relative;
+  width: 100%;
+  max-width:950px;
+  margin: ;
+  padding: 15px;
+  border-radius: 40px;
+  background: #ffffff1f;
+  border: 1px solid #ffffff40;
+  margin: 50px auto;
+  
+  
+}
+
+.hero_video_inner:after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 0;
+  box-shadow: 0 0 15px 15px #0000008f;
+  bottom: 35px;
+  left: 0;
+  z-index: 9999;
+  position: absolute;
+}
+
+.hero_video_inner {
+  position: relative;
+  width: 100%;
+  padding-top: 56.7%;
+  border-radius: 30px;
+  overflow: hidden;
+  
+}
+
+.hero_video_inner iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video_sound_btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 30px;
+  padding: 8px 16px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, transform .15s;
+  z-index: 10;
+}
+
+.video_sound_btn:hover {
+  background: rgba(0,0,0,0.85);
+  border-color: rgba(164, 223, 18, 0.5);
+  transform: scale(1.03);
+}
+
+.video_sound_btn i {
+  font-size: 16px;
+  color: #a4df12;
+}
+
 
 /* ── Coupon box ── */
 .bnd_coupon_row {
