@@ -104,7 +104,7 @@ body {
 }
 
 /* ================================================================ */
-/*  CTA BUTTONS — simplified, high-contrast, no glow/shadows      */
+/*  CTA BUTTONS — dark grey, simple, high contrast                */
 /* ================================================================ */
 .tc_nav_cta,
 .tc_cta_main,
@@ -113,9 +113,8 @@ body {
 .tc_ds_cta,
 .tc_close_cta{
   background-image: none !important;
-  background: linear-gradient( to right, #191127 60%, #000) !important;
+  background: linear-gradient(to right, #191127 60%, #000000) !important;
   color: #ffffff !important;
-  
   box-shadow: none !important;
   outline: none !important;
   text-shadow: none !important;
