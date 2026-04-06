@@ -77,7 +77,7 @@ img { max-width: 100%; }
 }
 .pl_hero_inner {
   max-width: 1400px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: start;
+  display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: start; padding-bottom: 90px;
 }
 
 /* Left: headline + video */
@@ -140,13 +140,32 @@ img { max-width: 100%; }
 .pl_play_btn i { font-size: 34px; color: #18161a; margin-left: 4px; }
 .pl_video_caption { font-size: 15px; color: rgba(255,255,255,0.5); margin-top: 10px; text-align: center; font-style: italic; }
 
+
+.under_video {
+  display:flex;
+  flex-direction:column;
+  max-width:1400px;
+  margin:0 auto;
+}
 /* What you'll see bullets */
 .pl_preview_list {
-  display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 40px 0;
+  
 }
 .pl_preview_item {
-  display: flex; align-items: center; gap: 12px;
-  font-size: 16px; color: rgba(255,255,255,0.8); font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 400;
+  padding: 15px;
+  background: #ffffff17;
+  border-radius: 25px;
+  border: 1px solid #ffffff30;
 }
 .pl_preview_item i { font-size: 18px; color: #deff68; flex-shrink: 0; }
 
@@ -269,7 +288,7 @@ img { max-width: 100%; }
 .pl_section.bg_white { background: #fff; }
 .pl_section.bg_dark {
   background-image: url('images/headerbg.png'), radial-gradient(#4666e5, #4f46e5, #1a2c54);
-  background-size: 100%; background-position: top center;
+  background-size: 100%; background-position: top center; padding: 70px 0 !important
 }
 .pl_inner { max-width: 1400px; margin: 0 auto; }
 
