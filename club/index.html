@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <script src="../js/clawbrand-tracking.js"></script>  <!-- GTM snippet goes here, AFTER the tracking script -->
+<script>
+var p = CB_PRODUCTS.OTO2; cbTrackPurchase({ transactionId: 'ORDER_FROM_JVZOO', value: p.price, itemId: p.itemId, itemName: p.itemName });
+</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
