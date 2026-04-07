@@ -287,7 +287,7 @@ img { max-width: 100%; }
 .pl_section.bg_light { background: #f9f9fb; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; }
 .pl_section.bg_white { background: #fff; }
 .pl_section.bg_dark {
-  background-image: url('images/headerbg.png'), radial-gradient(#4666e5, #4f46e5, #1a2c54);
+  background-image: url('../partners/images/headerbg.png'), radial-gradient(#4666e5, #4f46e5, #1a2c54);
   background-size: 100%; background-position: top center; padding: 70px 0 !important
 }
 .pl_inner { max-width: 1400px; margin: 0 auto; }
