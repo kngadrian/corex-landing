@@ -887,6 +887,8 @@ a { text-decoration: none; }
   .opc_price { font-size: 70px; }
   .oto_alert_bar { font-size: 22px; padding: 12px 20px; }
   .oto_hook_pills { flex-direction: column; align-items: center; }
+  .oto_video_bullets { flex-direction: column; align-items: stretch; gap: 12px; }
+  .oto_video_bullet { width: 100%; font-size: 18px; }
   .oto_price_card_inner { padding: 36px 24px; }
   .inner_head h1 { font-size: 40px; }
   .inner_head p { font-size: 18px; }
