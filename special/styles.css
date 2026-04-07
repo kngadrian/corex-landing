@@ -1152,11 +1152,11 @@ a.white-bg {
   border-bottom: 1px solid #e5e7eb;
 }
 .how_step_screenshot img {
-  width: 90%;
+  width: 100%;
   height: 250px;
   object-fit: cover;
   display: block;
-  margin: 20px auto;
+  margin: 0px auto;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 }
@@ -1213,7 +1213,7 @@ a.white-bg {
   flex: 1;
   display: flex;
   position: relative;
-  background: #f6f6f7;
+  background: transparent;
   border-radius: 50px;
   padding: 28px 36px;
   text-align: center;
@@ -1222,15 +1222,15 @@ a.white-bg {
   width: 100%;
   min-height: 320px;
   overflow: hidden;
-  background-image: url('../partners/images/cornerpattern.png');
+  
   background-position: top right;
   background-repeat: no-repeat;
   background-size: 3490px;
-  border: 1px solid #c0c0c0;
+  border: none;
 }
 .feature_split_photo {
   width: 100%;
-  max-height: 440px;
+  
   height: auto;
   object-fit: cover;
   border-radius: 24px;
