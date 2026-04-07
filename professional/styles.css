@@ -594,7 +594,7 @@ a { text-decoration: none; }
 }
 .oto_mini_card:hover { transform: translateY(-6px); box-shadow: 0 24px 50px rgba(79,70,229,0.1); }
 .oto_mini_img {
-  width: 100%; aspect-ratio: 1/1;
+  width: 100%;
   background: linear-gradient(135deg, #eef0fa, #dde0f8);
   display: flex; align-items: center; justify-content: center;
 }
