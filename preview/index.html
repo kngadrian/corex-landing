@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offer Previews</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background:
+        radial-gradient(1000px 500px at 50% -10%, rgba(79, 70, 229, 0.45), transparent 60%),
+        linear-gradient(135deg, #1a2c54, #4f46e5 55%, #2563eb);
+      color: #e2e8f0;
+      display: grid;
+      min-height: 100vh;
+      place-items: center;
+      padding: 24px;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 760px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 26px;
+    }
+    p {
+      margin: 0 0 18px;
+      color: rgba(226, 232, 240, 0.82);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(79, 70, 229, 0.2);
+      color: #e2e8f0;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    a:hover {
+      border-color: #df4ea6;
+    }
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Affiliate Offer Previews</h1>
+    <p>These pages keep the original design and have purchase links disabled.</p>
+    <div class="grid">
+      <a href="./special/index.html">Special</a>
+      <a href="./professional/index.html">Professional</a>
+      <a href="./club/index.html">Club</a>
+      <a href="./agency/index.html">Agency</a>
+      <a href="./reseller/index.html">Reseller</a>
+      <a href="./bundle/index.html">Bundle</a>
+    </div>
+  </main>
+</body>
+</html>
