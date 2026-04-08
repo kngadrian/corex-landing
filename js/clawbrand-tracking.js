@@ -10,19 +10,19 @@
 
 // =====================================================
 // 1. CONSENT MODE DEFAULTS (must fire before GTM loads)
+// Launch mode: consent is granted by default so GTM/GA/Ads fire.
 // =====================================================
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 
 gtag('consent', 'default', {
-  ad_storage:          'denied',
-  analytics_storage:   'denied',
-  ad_user_data:        'denied',
-  ad_personalization:  'denied',
-  wait_for_update:     500          // give CMP 500ms to load
+  ad_storage:          'granted',
+  analytics_storage:   'granted',
+  ad_user_data:        'granted',
+  ad_personalization:  'granted'
 });
 
-// Call this from your cookie banner / CMP when user accepts
+// Call this from a cookie banner / CMP if you later add one.
 window.cbGrantConsent = function(opts) {
   opts = opts || {};
   gtag('consent', 'update', {
@@ -150,12 +150,39 @@ window.cbTrackViewContent = function(opts) {
 // 4. FUNNEL PRODUCT MAP (for quick reference in calls)
 // =====================================================
 window.CB_PRODUCTS = {
-  FE:   { itemId: 'clawbrand-fe',       itemName: 'ClawBrand AI',               price: 37 },
-  OTO1: { itemId: 'clawbrand-oto1',     itemName: 'ClawBrand AI Unlimited',     price: 67 },
-  OTO2: { itemId: 'clawbrand-oto2',     itemName: 'ClawBrand AI DFY',           price: 97 },
-  OTO3: { itemId: 'clawbrand-oto3',     itemName: 'ClawBrand AI Agency',        price: 67 },
-  OTO4: { itemId: 'clawbrand-oto4',     itemName: 'ClawBrand AI Reseller',      price: 297 }
+  FE:      { itemId: 'clawbrand-fe',      itemName: 'ClawBrand AI',                 price: 47 },
+  OTO1:    { itemId: 'clawbrand-oto1',    itemName: 'ClawBrand AI PRO',             price: 97 },
+  OTO2:    { itemId: 'clawbrand-oto2',    itemName: 'ClawBrand AI Template Club',   price: 67 },
+  OTO3:    { itemId: 'clawbrand-oto3',    itemName: 'ClawBrand AI Agency Mode',     price: 197 },
+  OTO4:    { itemId: 'clawbrand-oto4',    itemName: 'ClawBrand AI Reseller Rights', price: 297 },
+  FASTPASS:{ itemId: 'clawbrand-fastpass',itemName: 'ClawBrand AI FastPass',        price: 247 },
+  BUNDLE:  { itemId: 'clawbrand-bundle',  itemName: 'ClawBrand AI Bundle',          price: 297 }
 };
+
+function _cbProductForPath(pathname) {
+  if (!pathname) return null;
+
+  if (pathname === '/special' || pathname === '/special/') return window.CB_PRODUCTS.FE;
+  if (pathname === '/professional' || pathname === '/professional/') return window.CB_PRODUCTS.OTO1;
+  if (pathname === '/club' || pathname === '/club/') return window.CB_PRODUCTS.OTO2;
+  if (pathname === '/agency' || pathname === '/agency/') return window.CB_PRODUCTS.OTO3;
+  if (pathname === '/reseller' || pathname === '/reseller/') return window.CB_PRODUCTS.OTO4;
+  if (pathname === '/bundle' || pathname === '/bundle/') return window.CB_PRODUCTS.BUNDLE;
+  if (pathname === '/fastpass' || pathname === '/fastpass/') return window.CB_PRODUCTS.FASTPASS;
+
+  return null;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var pageProduct = _cbProductForPath(window.location.pathname);
+
+  document.querySelectorAll('a[href*="jvzoo.com/b/"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (!pageProduct) return;
+      window.cbTrackBeginCheckout(pageProduct);
+    });
+  });
+});
 
 // =====================================================
 // 5. AUTO PAGE_VIEW (fires automatically on load)
