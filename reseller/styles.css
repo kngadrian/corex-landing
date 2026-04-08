@@ -233,16 +233,16 @@ a { text-decoration: none; }
 /* Main CTA — pink-yellow, matches funnel ── */
 .rs_cta_main {
   padding: 18px 44px; border-radius: 14px;
-  font-size: 22px; font-weight: 700; color: #18161a;
+  font-size: 22px; font-weight: 800; color: #18161a;
   display: inline-flex; align-items: center; gap: 12px;
   background-image: var(--rs-btn-grad);
-  box-shadow: none;
+  box-shadow: 0 10px 28px rgba(223,78,166,0.22);
   outline: none;
   text-decoration: none; transition: transform .2s, filter .2s;
 }
 .rs_cta_main:hover {
   transform: translateY(-2px);
-  filter: brightness(1.03);
+  filter: brightness(1.05);
   color: #18161a;
 }
 .rs_cta_micro { font-size: 18px; color: rgba(255,255,255,0.45); }
@@ -731,6 +731,35 @@ a { text-decoration: none; }
   letter-spacing: -1px; font-variant-numeric: tabular-nums;
 }
 
+.rs_urgency_cta_box {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 28px 24px 24px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid var(--rs-divider);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.rs_urgency_cta_box .rs_mini_timer { margin-bottom: 0; }
+.rs_urgency_cta_short {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.55;
+}
+.rs_urgency_cta_box .rs_cta_main {
+  width: 100%;
+  justify-content: center;
+}
+.rs_urgency_cta_guarantee {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
 /* ================================================================ */
 /*  DOWNSELL                                                          */
 /* ================================================================ */
@@ -773,6 +802,15 @@ a { text-decoration: none; }
   color: #18161a;
 }
 .rs_ds_sub { font-size: 14px; color: #aaa; margin-top: 12px; }
+.rs_ds_nothanks {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 14px;
+  color: #9ca3af;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.rs_ds_nothanks:hover { color: #778088; }
 
 /* ================================================================ */
 /*  FINAL CLOSE                                                       */
@@ -869,3 +907,20 @@ a { text-decoration: none; }
   .rs_price_inner { padding: 36px 24px; }
   .rs_downsell_inner { padding: 36px 24px; }
 }
+
+.rs_legal_disclaimer {
+  max-width: 1320px;
+  margin: 24px auto 0;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #151530, #0d0d1b);
+  border: 1px solid rgba(79, 70, 229, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+.rs_legal_disclaimer p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.62);
+}
+.rs_legal_disclaimer strong { color: rgba(255, 255, 255, 0.9); }

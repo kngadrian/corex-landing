@@ -384,10 +384,10 @@ body {
 
 /* Main CTA — yellow-orange gradient */
 .tc_cta_main {
-  padding: 25px 55px;
-  border-radius: 25px;
+  padding: 24px 56px;
+  border-radius: 18px;
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 800;
   color: #0b0b12;
   display: inline-flex;
   align-items: center;
@@ -395,10 +395,10 @@ body {
   background-image: var(--tc-primary-btn-grad);
   box-shadow:
     0 0 0 1px rgba(255,255,255,0.65),
-    inset 0 -10px 0 rgba(255,255,255,0.20),
-    0 20px 70px rgba(124,58,237,0.30),
-    0 14px 44px rgba(245,158,11,0.42);
-  outline: 2px solid rgba(255,255,255,0.12);
+    inset 0 -8px 0 rgba(255,255,255,0.20),
+    0 18px 56px rgba(124,58,237,0.30),
+    0 12px 36px rgba(245,158,11,0.42);
+  outline: 3px solid rgba(255,255,255,0.14);
   text-decoration: none;
   transition: transform .2s, box-shadow .2s;
   position: relative;
@@ -408,9 +408,9 @@ body {
   transform: translateY(-3px);
   box-shadow:
     0 0 0 1px rgba(255,255,255,0.75),
-    inset 0 -10px 0 rgba(255,255,255,0.22),
-    0 26px 90px rgba(124,58,237,0.38),
-    0 18px 55px rgba(245,158,11,0.50);
+    inset 0 -8px 0 rgba(255,255,255,0.22),
+    0 24px 78px rgba(124,58,237,0.38),
+    0 16px 48px rgba(245,158,11,0.50);
   color: #0b0b12;
 }
 
@@ -980,6 +980,35 @@ body {
   letter-spacing: -1px; font-variant-numeric: tabular-nums;
 }
 
+.tc_urgency_cta_box {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 24px 24px;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid #fde68a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.tc_urgency_cta_box .tc_mini_timer { margin-bottom: 0; }
+.tc_urgency_cta_short {
+  font-size: 16px;
+  color: #92400e;
+  margin: 0;
+  line-height: 1.55;
+}
+.tc_urgency_cta_box .tc_cta_main {
+  width: 100%;
+  justify-content: center;
+}
+.tc_urgency_cta_guarantee {
+  font-size: 14px;
+  color: #778088;
+  margin: 0;
+}
+
 /* ================================================================ */
 /*  DOWNSELL — QUARTERLY PLAN                                        */
 /* ================================================================ */
@@ -1055,6 +1084,15 @@ body {
   pointer-events:none;
 }
 .tc_ds_sub { font-size: 14px; color: #aaa; margin-top: 10px; }
+.tc_ds_nothanks {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 14px;
+  color: #9ca3af;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.tc_ds_nothanks:hover { color: #778088; }
 
 /* ================================================================ */
 /*  FINAL CLOSE                                                       */
@@ -1187,3 +1225,20 @@ body {
   .tc_price_inner { padding: 36px 24px; }
   .tc_downsell_inner { padding: 36px 24px; }
 }
+
+.tc_legal_disclaimer {
+  max-width: 1100px;
+  margin: 22px auto 0;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #1a1225, #0d0d1b);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+.tc_legal_disclaimer p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.62);
+}
+.tc_legal_disclaimer strong { color: rgba(255, 255, 255, 0.9); }

@@ -65,9 +65,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="nav_actions">
       <div class="bnd_trust_badge"><i class="ti ti-shield-check"></i> Secure Checkout</div>
-      <a href="#bundle-pricing" class="nav-cta">
+      <a href="https://www.jvzoo.com/b/116103/436791/6" class="nav-cta">
         <i class="ti ti-bolt"></i> Get Bundle - $297
       </a>
+      <img src="https://i.jvzoo.com/116103/436791/6" alt="" width="1px" height="1px" />
     </div>
   </div>
 
@@ -101,7 +102,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="bnd_price_note">One-time payment &nbsp;&middot;&nbsp; No monthly fees &nbsp;&middot;&nbsp; Instant access</span>
     </div>
 
-    <a href="#bundle-pricing" class="bnd_cta_main">
+    <a href="https://www.jvzoo.com/b/116103/436791/6" class="bnd_cta_main">
       <i class="ti ti-bolt"></i> Get ClawBrand AI Bundle Now - $297
     </a>
     <p class="bnd_cta_micro">All 5 products &nbsp;&middot;&nbsp; All bonuses &nbsp;&middot;&nbsp; 30-day money-back guarantee</p>
@@ -392,10 +393,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="bnd_cta_repeat_price">$<em>297</em></div>
     <p class="bnd_cta_repeat_note">One-time &nbsp;&middot;&nbsp; No monthly fees &nbsp;&middot;&nbsp; All 5 products included</p>
 
-    <a href="#" class="bnd_cta_main">
-      <i class="ti ti-bolt"></i> Get Instant Bundle Access - $297
-    </a>
-    <p style="font-size:15px;color:rgba(255,255,255,0.35);margin-top:14px;">30-day money-back guarantee &nbsp;&middot;&nbsp; Secure checkout &nbsp;&middot;&nbsp; Instant delivery</p>
+    <div class="bnd_cta_box">
+      <div class="bnd_cta_timer_box">
+        <i class="ti ti-clock-hour-4"></i>
+        <span>Offer expires in:</span>
+        <strong><span id="bnd_h2">00</span>:<span id="bnd_m2">00</span>:<span id="bnd_s2">00</span></strong>
+      </div>
+      <p class="bnd_cta_short">Complete your bundle checkout now and lock in the full-stack discount.</p>
+      <a href="https://www.jvzoo.com/b/116103/436791/6" class="bnd_cta_main">
+        <i class="ti ti-bolt"></i> Get Instant Bundle Access - $297
+      </a>
+      <p class="bnd_cta_guarantee">30-day money-back guarantee &nbsp;&middot;&nbsp; Secure checkout &nbsp;&middot;&nbsp; Instant delivery</p>
+    </div>
   </div>
 </section>
 
@@ -484,7 +493,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#4f46e5;margin-bottom:8px;">Bundle Price Today</div>
         <div style="font-size:72px;font-weight:900;letter-spacing:-4px;color:#181a1e;line-height:1;">$297</div>
         <div style="font-size:18px;color:#5f6b7a;margin:8px 0 20px;">One-time payment &nbsp;&middot;&nbsp; All 5 products &nbsp;&middot;&nbsp; All bonuses</div>
-        <a href="#" class="bnd_cta_main" style="font-size:20px;padding:22px 50px;">
+        <a href="https://www.jvzoo.com/b/116103/436791/6" class="bnd_cta_main" style="font-size:20px;padding:22px 50px;">
           <i class="ti ti-bolt"></i> Claim Bundle Deal - $297
         </a>
       </div>
@@ -620,7 +629,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Get <em>Everything</em> in One Click</h2>
     <p>Stop buying upgrades one at a time. The bundle gives you every product, every feature, and every bonus - for one payment that&apos;s less than the Agency upgrade alone.</p>
     <div class="bnd_final_price">$<em>297</em></div>
-    <a href="#" class="bnd_cta_main" style="font-size:22px;padding:26px 64px;">
+    <a href="https://www.jvzoo.com/b/116103/436791/6" class="bnd_cta_main" style="font-size:22px;padding:26px 64px;">
       <i class="ti ti-bolt"></i> Get ClawBrand AI Bundle Now - $297
     </a>
     <div class="bnd_final_badges">
@@ -637,6 +646,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============================================================ -->
 <!-- FOOTER                                                        -->
 <!-- ============================================================ -->
+<div class="bnd_legal_disclaimer">
+  <p><strong>Disclaimer:</strong> Please note that this product does not provide any guarantee of income or success. The results achieved by the product owner or any other individuals mentioned are not indicative of future success or earnings. This website is not affiliated with FaceBook or any of its associated entities. Once you navigate away from FaceBook, the responsibility for the content and its usage lies solely with the user. All content on this website, including but not limited to text, images, and multimedia, is protected by copyright law and the Digital Millennium Copyright Act. Unauthorized copying, duplication, modification, or theft, whether intentional or unintentional, is strictly prohibited. Violators will be prosecuted to the fullest extent of the law. We want to clarify that JVZoo serves as the retailer for the products featured on this site. JVZoo&reg; is a registered trademark of BBC Systems Inc., a Florida corporation located at 1809 E. Broadway Street, Suite 125, Oviedo, FL 32765, USA, and is used with permission. The role of JVZoo as a retailer does not constitute an endorsement, approval, or review of these products or any claims, statements, or opinions used in their promotion.</p>
+</div>
 <div class="bnd_footer">
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:0;" class="logo bnd_footer_logo">
     <div class="image" style="background-image:url('../partners/images/logoicon.png');"></div>
@@ -679,9 +691,15 @@ function initTimer() {
     const eh = document.getElementById('bnd_h');
     const em = document.getElementById('bnd_m');
     const es = document.getElementById('bnd_s');
+    const eh2 = document.getElementById('bnd_h2');
+    const em2 = document.getElementById('bnd_m2');
+    const es2 = document.getElementById('bnd_s2');
     if (eh) eh.textContent = fmt(h);
     if (em) em.textContent = fmt(m);
     if (es) es.textContent = fmt(s);
+    if (eh2) eh2.textContent = fmt(h);
+    if (em2) em2.textContent = fmt(m);
+    if (es2) es2.textContent = fmt(s);
     if (diff > 0) setTimeout(tick, 1000);
   }
   tick();

@@ -294,23 +294,23 @@ a { text-decoration: none; }
   color: #fff;
 }
 .oto_cta_main {
-  padding: 25px 55px;
-  border-radius: 25px;
+  padding: 24px 56px;
+  border-radius: 18px;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 800;
   color: #18161a;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   background-image: linear-gradient(90deg, #df4ea6, #fbe364);
-  box-shadow: inset 0 -10px 0 rgba(255,255,255,0.3);
-  outline: 5px solid rgba(26,25,58,0.22);
+  box-shadow: inset 0 -8px 0 rgba(255,255,255,0.26), 0 12px 34px rgba(223,78,166,0.32);
+  outline: 3px solid rgba(26,25,58,0.14);
   text-decoration: none;
   transition: transform .2s, box-shadow .2s;
 }
 .oto_cta_main:hover {
   transform: translateY(-3px);
-  box-shadow: inset 0 -10px 0 rgba(255,255,255,0.3), 0 10px 32px rgba(223,78,166,0.35);
+  box-shadow: inset 0 -8px 0 rgba(255,255,255,0.3), 0 14px 38px rgba(223,78,166,0.4);
   color: #18161a;
 }
 .oto_cta_micro {
@@ -783,6 +783,35 @@ a { text-decoration: none; }
 }
 .oto_mini_timer i { font-size: 20px; color: rgba(255,255,255,0.8); }
 
+.oto_urgency_cta_box {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 24px 24px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #fed7aa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.oto_urgency_cta_box .oto_mini_timer { margin-bottom: 0; }
+.oto_urgency_cta_short {
+  font-size: 16px;
+  color: #8c4a17;
+  line-height: 1.55;
+  margin: 0;
+}
+.oto_urgency_cta_box .oto_cta_main {
+  width: 100%;
+  justify-content: center;
+}
+.oto_urgency_cta_guarantee {
+  font-size: 14px;
+  color: #778088;
+  margin: 0;
+}
+
 /* ================================================================ */
 /*  FINAL CLOSE SECTION                                              */
 /* ================================================================ */
@@ -893,3 +922,20 @@ a { text-decoration: none; }
   .inner_head h1 { font-size: 40px; }
   .inner_head p { font-size: 18px; }
 }
+
+.oto_legal_disclaimer {
+  max-width: 1100px;
+  margin: 22px auto 0;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #151530, #0d0d1b);
+  border: 1px solid rgba(79, 70, 229, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+.oto_legal_disclaimer p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.62);
+}
+.oto_legal_disclaimer strong { color: rgba(255, 255, 255, 0.9); }
