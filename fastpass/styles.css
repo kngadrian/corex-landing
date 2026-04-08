@@ -789,6 +789,20 @@ a { text-decoration: none; }
   .bnd_products_intro { padding: 0 20px; }
 }
 
+@media (max-width: 920px) {
+  .bnd_value_table_wrap { padding: 0 18px; }
+  .bnd_value_table thead th,
+  .bnd_value_table tbody td { padding: 14px 14px; }
+  .bnd_value_table thead th:nth-child(2),
+  .bnd_value_table tbody td:nth-child(2) { display: none; }
+  .bnd_value_table thead th:last-child,
+  .bnd_value_table tbody td:last-child { font-size: 14px; white-space: nowrap; }
+  .bnd_vt_name { font-size: 15px; }
+  .bnd_vt_desc { font-size: 13px; }
+  .bnd_value_total_row td { font-size: 16px !important; }
+  .bnd_value_total_row td:last-child { font-size: 22px !important; }
+}
+
 .bnd_legal_disclaimer {
   max-width: 1360px;
   margin: 22px auto 0;
