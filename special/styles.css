@@ -34,6 +34,11 @@ body {
   overflow-x: hidden;
 }
 
+/* Page content width - matches header / hero container boxing */
+:root {
+  --sp-content-max: 1320px;
+}
+
 .container {
   padding: 70px 0 !important;
 }
@@ -214,15 +219,12 @@ a.white-bg {
 .hero_video_wrapper {
   position: relative;
   width: 100%;
-  max-width:950px;
-  margin: ;
+  max-width: 950px;
   padding: 15px;
   border-radius: 40px;
   background: #ffffff1f;
   border: 1px solid #ffffff40;
   margin: 50px auto;
-  
-  
 }
 
 .hero_video_inner:after {
@@ -362,7 +364,7 @@ a.white-bg {
 /* ========================= */
 /* CONTAINER */
 /* ========================= */
-.container { padding: 70px 80px; max-width: 1400px; margin: 0 auto; }
+.container { padding: 70px 80px; max-width: var(--sp-content-max); margin: 0 auto; width: 100%; box-sizing: border-box; }
  
 /* ========================= */
 /* NAV */
@@ -580,7 +582,7 @@ a.white-bg {
 /* FUNNEL */
 /* ========================= */
 .funnel_wrap { background: #f6f7f9; padding: 100px 80px; }
-.funnel_inner { max-width: 1240px; margin: 0 auto; }
+.funnel_inner { max-width: var(--sp-content-max); margin: 0 auto; width: 100%; box-sizing: border-box; }
 .funnel_flow { display: flex; flex-direction: column; gap: 0; }
 .funnel_step {
   background: #fff; border: 1px solid #e5e7eb; border-left: 3px solid #2563eb;
@@ -1018,8 +1020,10 @@ a.white-bg {
   padding: 100px 80px;
 }
 .pain_inner {
-  max-width: 1300px;
+  max-width: var(--sp-content-max);
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
@@ -1126,7 +1130,7 @@ a.white-bg {
   background-repeat: no-repeat;
   background-size: 3490px;
 }
-.how_inner { max-width: 1300px; margin: 0 auto; }
+.how_inner { max-width: var(--sp-content-max); margin: 0 auto; width: 100%; box-sizing: border-box; }
 .how_head { text-align: center; margin-bottom: 70px; }
 .how_steps {
   display: grid;
@@ -1181,8 +1185,10 @@ a.white-bg {
   flex-direction: row;
   gap: 80px;
   align-items: center;
-  max-width: 1400px;
+  max-width: var(--sp-content-max);
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 .feature_split.flipped { flex-direction: row-reverse; }
 .feature_split_text {
@@ -1247,13 +1253,13 @@ a.white-bg {
   border-bottom: 1px solid #e5e7eb;
   padding: 100px 80px;
 }
-.sp_assets_inner { max-width: 1300px; margin: 0 auto; }
+.sp_assets_inner { max-width: var(--sp-content-max); margin: 0 auto; width: 100%; box-sizing: border-box; }
 .sp_assets_block {
-  margin-bottom: 28px;
-  padding: 26px;
-  border: 1px solid #e5e7eb;
+  margin-bottom: 100px;
+  padding: 0;
+  border: none;
   border-radius: 28px;
-  background: #f9fafb;
+  background: transparent;
 }
 .sp_assets_block:last-child { margin-bottom: 0; }
 .sp_assets_block h2 {
@@ -1261,7 +1267,15 @@ a.white-bg {
   font-weight: 700;
   letter-spacing: -1.4px;
   color: #181a1e;
-  margin: 0 0 16px;
+  margin: 0 0 12px;
+}
+.sp_assets_block_desc {
+  margin: 0 0 28px;
+  max-width: 62ch;
+  font-size: 18px;
+  font-weight: 300;
+  color: #778088;
+  line-height: 1.65;
 }
 .sp_assets_grid {
   display: grid;
@@ -1286,12 +1300,25 @@ a.white-bg {
   object-fit: cover;
   display: block;
 }
+.sp_asset_body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 .sp_asset_card h4 {
   margin: 0;
-  padding: 14px 16px 16px;
+  padding: 0;
   font-size: 18px;
   font-weight: 600;
   color: #222b3a;
+}
+.sp_asset_desc {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: #778088;
+  line-height: 1.5;
 }
 
 .asset_actions {
@@ -1373,8 +1400,10 @@ a.white-bg {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
-  max-width: 1400px;
+  max-width: var(--sp-content-max);
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 .feature_mini_card {
   background: #f5f5f6ed;
@@ -1405,7 +1434,7 @@ a.white-bg {
   border-bottom: 1px solid #cccccc42;
   padding: 100px 80px;
 }
-.proof_inner { max-width: 1300px; margin: 0 auto; }
+.proof_inner { max-width: var(--sp-content-max); margin: 0 auto; width: 100%; box-sizing: border-box; }
 .proof_data_bar {
   display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;
   background: #fff; border: 1px solid #3333332b; border-radius: 25px;
@@ -1461,8 +1490,10 @@ a.white-bg {
   padding: 100px 80px;
 }
 .tech_inner {
-  max-width: 1300px;
+  max-width: var(--sp-content-max);
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 90px;
@@ -1523,7 +1554,7 @@ a.white-bg {
 /* Uses funnel_step pattern  */
 /* ========================= */
 .offer_section { padding: 100px 80px; background: #fff; }
-.offer_inner { max-width: 1200px; margin: 0 auto; }
+.offer_inner { max-width: var(--sp-content-max); margin: 0 auto; width: 100%; box-sizing: border-box; }
 .offer_head { text-align: center; margin-bottom: 60px; }
 .offer_stack_wrap {
   background: #f6f7f9;
@@ -1584,7 +1615,7 @@ a.white-bg {
   background-image: url('../partners/images/cornerpattern.png');
   background-position: top center; background-repeat: no-repeat; background-size: 3490px;
 }
-.pricing_inner { max-width: 980px; margin: 0 auto; text-align: center; }
+.pricing_inner { max-width: var(--sp-content-max); margin: 0 auto; text-align: center; width: 100%; box-sizing: border-box; }
 .pricing_card {
   background: #fff;
   border: 1px solid #3333332b;
@@ -1621,7 +1652,7 @@ a.white-bg {
 /* GUARANTEE                 */
 /* ========================= */
 .guarantee_section { background: #fff; padding: 80px; border-top: 1px solid #e5e7eb; }
-.guarantee_inner { max-width: 960px; margin: 0 auto; display: flex; gap: 70px; align-items: center; }
+.guarantee_inner { max-width: var(--sp-content-max); margin: 0 auto; display: flex; gap: 70px; align-items: center; width: 100%; box-sizing: border-box; }
 .guarantee_badge_wrap { flex-shrink: 0; }
 .guarantee_seal {
   width: 170px; height: 170px; border-radius: 50%;
@@ -1649,7 +1680,7 @@ a.white-bg {
   background: radial-gradient(circle, rgba(79,70,229,0.22) 0%, transparent 70%);
   pointer-events: none;
 }
-.urgency_inner { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+.urgency_inner { max-width: var(--sp-content-max); margin: 0 auto; text-align: center; position: relative; z-index: 1; width: 100%; box-sizing: border-box; }
 .urgency_kicker {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
@@ -1683,7 +1714,7 @@ a.white-bg {
   background-position: top center; background-repeat: no-repeat; background-size: 3490px;
 }
 .final_inner {
-  max-width: 1200px; margin: 0 auto;
+  max-width: var(--sp-content-max); margin: 0 auto; width: 100%; box-sizing: border-box;
   display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
 }
 .final_left { display: flex; flex-direction: column; gap: 0; }
@@ -1725,6 +1756,7 @@ a.white-bg {
   .pain_section h2, .tech_section h2, .urgency_section h2,
   .final_left h2 { font-size: 36px; letter-spacing: -1.5px; }
   .sp_assets_block h2 { font-size: 30px; }
+  .sp_assets_block_desc { font-size: 16px; margin-bottom: 22px; }
   .how_steps { grid-template-columns: 1fr; }
   .proof_grid { grid-template-columns: 1fr; }
   .proof_data_bar { gap: 25px; padding: 24px; }
@@ -1761,7 +1793,7 @@ a.white-bg {
   border-bottom: 1px solid #e5e7eb;
 }
 .shift_inner {
-  max-width: 1300px; margin: 0 auto;
+  max-width: var(--sp-content-max); margin: 0 auto; width: 100%; box-sizing: border-box;
   display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
 }
 .shift_kicker {
@@ -1835,7 +1867,7 @@ a.white-bg {
   border-top: 1px solid #e5e7eb;
   border-bottom: 1px solid #e5e7eb;
 }
-.bundle_inner { max-width: 1300px; margin: 0 auto; }
+.bundle_inner { max-width: var(--sp-content-max); margin: 0 auto; width: 100%; box-sizing: border-box; }
 .bundle_img_wrap {
   width: 100%; border-radius: 28px; overflow: hidden;
   box-shadow: 0 40px 100px rgba(79,70,229,0.15);
@@ -1851,7 +1883,7 @@ a.white-bg {
   padding: 100px 80px;
   border-top: 1px solid #e5e7eb;
 }
-.agents_inner { max-width: 1400px; margin: 0 auto; }
+.agents_inner { max-width: var(--sp-content-max); margin: 0 auto; width: 100%; box-sizing: border-box; }
 
 /* CSS grid masonry layout — all 5 cards filling full width */
 .agents_masonry {
