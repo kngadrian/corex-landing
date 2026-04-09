@@ -71,9 +71,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Video -->
       <div class="oto_video_wrap">
         <div class="oto_video_inner">
-          <div class="oto_video_placeholder">
-            <img src="../professional/images/claw-brand-mockups-png.png" alt="PRO features walkthrough" style="width:100%;height:100%;object-fit:cover;">
-          </div>
+          <iframe id="heroVimeo" src="https://player.vimeo.com/video/1181657115?autoplay=1&muted=1&loop=1&autopause=0&background=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          <button type="button" class="video_sound_btn" id="soundToggle" onclick="toggleSound()">
+            <span class="beep_dot"></span>
+            <i class="ti ti-volume-off" id="soundIcon"></i>
+            <span id="soundLabel">Click to unmute</span>
+          </button>
         </div>
       </div>
       <p class="oto_video_caption">Watch how PRO turns basic mockups into cinematic brand visuals in seconds</p>
@@ -537,7 +540,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         ClawBrandAI
       </div>
       <div class="footer_links">
-        <a href="index.html" target="_blank" rel="noopener noreferrer">Back to Main Page</a>
         <a href="https://clawbrandai.com/support" target="_blank" rel="noopener noreferrer">Support</a>
         <a href="../privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         <a href="../tos.html" target="_blank" rel="noopener noreferrer">Terms of Service</a>
@@ -551,6 +553,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============================================================ -->
 <!-- SCRIPTS                                                       -->
 <!-- ============================================================ -->
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+let heroPlayer, isMuted = true;
+function toggleSound() {
+  if (!heroPlayer) return;
+  isMuted = !isMuted;
+  heroPlayer.setMuted(isMuted);
+  document.getElementById('soundIcon').className = isMuted ? 'ti ti-volume-off' : 'ti ti-volume';
+  document.getElementById('soundLabel').textContent = isMuted ? 'Click to unmute' : 'Sound on';
+}
+</script>
 <script>
 /* Mini countdown timer (session-based) */
 function initOtoTimer() {
@@ -593,6 +606,8 @@ function initReveal() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+  const iframe = document.getElementById('heroVimeo');
+  if (iframe) heroPlayer = new Vimeo.Player(iframe);
   initOtoTimer();
   initReveal();
 });

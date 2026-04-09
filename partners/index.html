@@ -58,10 +58,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="hero_video_wrapper">
       <div class="hero_video_inner">
-        <iframe id="heroVimeo" src="https://player.vimeo.com/video/1177111988?autoplay=1&muted=1&loop=1&background=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-        <button class="video_sound_btn" id="soundToggle" onclick="toggleSound()">
+        <iframe id="heroVimeo" src="https://player.vimeo.com/video/1181657115?autoplay=1&muted=1&loop=1&autopause=0&background=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <button type="button" class="video_sound_btn" id="soundToggle" onclick="toggleSound()">
+          <span class="beep_dot"></span>
           <i class="ti ti-volume-off" id="soundIcon"></i>
-          <span id="soundLabel">Click for Sound</span>
+          <span id="soundLabel">Click to unmute</span>
         </button>
       </div>
     </div>
@@ -922,10 +923,10 @@ function toggleSound() {
   const label = document.getElementById('soundLabel');
   if (isMuted) {
     icon.className = 'ti ti-volume-off';
-    label.textContent = 'Click for Sound';
+    label.textContent = 'Click to unmute';
   } else {
     icon.className = 'ti ti-volume';
-    label.textContent = 'Sound On';
+    label.textContent = 'Sound on';
   }
 }
 </script>

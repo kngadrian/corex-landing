@@ -60,10 +60,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Video -->
     <div class="tc_video_wrap">
       <div class="tc_video_inner">
-        <div class="tc_video_placeholder">
-          <div class="tc_play_btn"><i class="ti ti-player-play-filled"></i></div>
-          <span>See how new templates instantly upgrade your brand visuals</span>
-        </div>
+        <iframe id="heroVimeo" src="https://player.vimeo.com/video/1181657115?autoplay=1&muted=1&loop=1&autopause=0&background=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <button type="button" class="video_sound_btn" id="soundToggle" onclick="toggleSound()">
+          <span class="beep_dot"></span>
+          <i class="ti ti-volume-off" id="soundIcon"></i>
+          <span id="soundLabel">Click to unmute</span>
+        </button>
       </div>
     </div>
     <p class="tc_video_caption">See how new templates instantly upgrade your brand visuals every single month</p>
@@ -542,10 +544,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <p class="tc_ds_risk">Try it for one quarter. If you don&apos;t love it&hellip; cancel anytime. Zero risk.</p>
-    <a href="https://www.jvzoo.com/b/116103/436865/6" class="tc_ds_cta">
+    <a href="https://www.jvzoo.com/b/116103/436865/1" class="tc_ds_cta">
       <i class="ti ti-calendar"></i> Start Quarterly Plan - $37
+      <img src="https://i.jvzoo.com/116103/436865/1" alt="ClawBrand AI Template Club - Quarterly" border="0" width="1" height="1" style="position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none;" />
     </a>
-    <img src="https://i.jvzoo.com/116103/436865/6" alt="" width="1px" height="1px" />
     <p class="tc_ds_sub">Or <a href="#tc-pricing" style="color:var(--tc-purple);font-weight:600;">go annual for $67</a> and unlock everything including early access, credits, and voting rights.</p>
     <a href="/agency" class="tc_ds_nothanks">No thanks, I don't wanna take advantage of this one-time offer - access purchase</a>
   </div>
@@ -612,7 +614,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         ClawBrandAI
       </div>
       <div class="footer_links">
-        <a href="index.html" target="_blank" rel="noopener noreferrer">Back to Main Page</a>
         <a href="https://clawbrandai.com/support" target="_blank" rel="noopener noreferrer">Support</a>
         <a href="../privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         <a href="../tos.html" target="_blank" rel="noopener noreferrer">Terms of Service</a>
@@ -626,6 +627,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============================================================ -->
 <!-- SCRIPTS                                                       -->
 <!-- ============================================================ -->
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+let heroPlayer, isMuted = true;
+function toggleSound() {
+  if (!heroPlayer) return;
+  isMuted = !isMuted;
+  heroPlayer.setMuted(isMuted);
+  document.getElementById('soundIcon').className = isMuted ? 'ti ti-volume-off' : 'ti ti-volume';
+  document.getElementById('soundLabel').textContent = isMuted ? 'Click to unmute' : 'Sound on';
+}
+</script>
 <script>
 function initTimer() {
   const key = 'tc_end';
@@ -666,6 +678,8 @@ function initReveal() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const iframe = document.getElementById('heroVimeo');
+  if (iframe) heroPlayer = new Vimeo.Player(iframe);
   initTimer();
   initReveal();
 });
