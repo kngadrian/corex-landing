@@ -445,6 +445,28 @@ a.white-bg {
   font-weight: 300;
   line-height: 1.6;
 }
+
+.partners_demo_section {
+  padding: 18px 0 40px;
+}
+
+.partners_demo_head {
+  margin-bottom: 30px;
+}
+
+.partners_demo_head h1 {
+  max-width: 1040px;
+}
+
+.partners_demo_head p {
+  max-width: 900px;
+  text-align: center;
+}
+
+.partners_demo_video {
+  margin: 0 auto 24px;
+}
+
 .showcase_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
