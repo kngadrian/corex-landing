@@ -27,10 +27,10 @@ a { text-decoration: none; }
 }
 .logo .image {
   width: 48px; height: 48px; border-radius: 50%;
-  background: url('../partners/images/logo2.png') center/100% no-repeat;
+  background: url('../../partners/images/logo2.png') center/100% no-repeat;
 }
 .footer_logo { color: var(--ink); }
-.footer_logo .image { background-image: url('../partners/images/logoicon.png'); }
+.footer_logo .image { background-image: url('../../partners/images/logoicon.png'); }
 
 /* ── Container ── */
 .bnd_wrap { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
@@ -67,7 +67,7 @@ a { text-decoration: none; }
 /*  HERO HEADER                                      */
 /* ──────────────────────────────────────────────── */
 .bnd_hero {
-  background-image: url('../images/mockupsbg.png'), radial-gradient(ellipse at 50% 0%, #173ed8 0%, #361abc 50%, #274fee 100%);
+  background-image: url('../../images/mockupsbg.png'), radial-gradient(ellipse at 50% 0%, #173ed8 0%, #361abc 50%, #274fee 100%);
   
   background-position: top center;
   padding-bottom: 0;

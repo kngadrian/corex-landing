@@ -18,11 +18,11 @@ a { text-decoration: none; }
 }
 .logo .image {
   width: 50px; height: 50px; border-radius: 25px;
-  background-image: url('../partners/images/logo2.png');
+  background-image: url('../../partners/images/logo2.png');
   background-repeat: no-repeat; background-size: 100%; background-position: center;
 }
 .footer_inner .logo { color: #1a1a1a; }
-.footer_inner .logo .image { background-image: url('../partners/images/logoicon.png'); }
+.footer_inner .logo .image { background-image: url('../../partners/images/logoicon.png'); }
 
 /* ── Container — matches reference: 1400px max, 70px 80px ── */
 .ag_container { max-width: 1400px; margin: 0 auto; padding: 70px 80px; }
@@ -48,7 +48,7 @@ a { text-decoration: none; }
 
 /* ── Header — dark charcoal gradient, NOT green ── */
 .ag_header {
-  background-image: url('../partners/images/headerbg.png'), radial-gradient(ellipse at 50% 0%, #34321e 0%, #15141c 50%, #000 100%);
+  background-image: url('../../partners/images/headerbg.png'), radial-gradient(ellipse at 50% 0%, #34321e 0%, #15141c 50%, #000 100%);
   background-size: 100%;
   background-position: top center;
   padding-bottom: 0;
@@ -400,7 +400,7 @@ a { text-decoration: none; }
 /* ================================================================ */
 .ag_table_section {
   background: #f9f9fb; padding: 100px 80px; border-top: 1px solid #e5e7eb;
-  background-image: url('images/cornerpattern.png');
+  background-image: url('../../images/cornerpattern.png');
   background-position: top center; background-repeat: no-repeat; background-size: 3490px;
 }
 .ag_table_inner { max-width: 1400px; margin: 0 auto; }
@@ -466,7 +466,7 @@ a { text-decoration: none; }
 /* ================================================================ */
 .ag_pricing_section {
   background: #f9f9fb; padding: 100px 80px; border-top: 1px solid #e5e7eb;
-  background-image: url('images/cornerpattern.png');
+  background-image: url('../../images/cornerpattern.png');
   background-position: top center; background-repeat: no-repeat; background-size: 3490px;
 }
 .ag_pricing_inner { max-width: 900px; margin: 0 auto; text-align: center; }

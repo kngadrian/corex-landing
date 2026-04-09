@@ -49,13 +49,13 @@ body {
   border-top: 1px solid #ccc6;
   border-bottom: 1px solid #cccccc42;
   padding:60px;
-  background-image:url('../partners/images/cornerpattern.png');
+  background-image:url('../../partners/images/cornerpattern.png');
   background-position:top center;
   background-repeat:no-repeat;
   background-size:3490px;
 }
 .header {
-  background-image : url('../partners/images/headerbg.png'), radial-gradient(#4666e5,#4f46e5 , #1a2c54);
+  background-image : url('../../partners/images/headerbg.png'), radial-gradient(#4666e5,#4f46e5 , #1a2c54);
   box-sizing: border-box;
   display: flex;
   background-size: 100%;
@@ -91,7 +91,7 @@ body {
   display: flex;
   background: transparent;
   border-radius: 25px;
-  background-image: url('../partners/images/logo2.png');
+  background-image: url('../../partners/images/logo2.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
@@ -100,7 +100,7 @@ body {
 
 .footer_inner .logo .image {
  
-  background-image:url('../partners/images/logoicon.png');
+  background-image:url('../../partners/images/logoicon.png');
   
 
 }
@@ -484,7 +484,7 @@ a.white-bg {
 /* ========================= */
 
 .purple_width_section {
-  background-image: url('../partners/images/headerbg.png'), radial-gradient(#4f46e5 75% , #ac56dd);
+  background-image: url('../../partners/images/headerbg.png'), radial-gradient(#4f46e5 75% , #ac56dd);
   box-sizing: border-box;
   display: flex;
   background-size: 100%;
@@ -543,7 +543,7 @@ a.white-bg {
   width: 100%;
   min-height: 320px;
   overflow: hidden;
-  background-image: url('../partnersimages/cornerpattern.png');
+  background-image: url('../../partnersimages/cornerpattern.png');
   background-position: top right;
   background-repeat: no-repeat;
   background-size: 3490px;
@@ -1125,7 +1125,7 @@ a.white-bg {
   border-top: 1px solid #ccc6;
   border-bottom: 1px solid #cccccc42;
   padding: 100px 80px;
-  background-image: url('../partners/images/cornerpattern.png');
+  background-image: url('../../partners/images/cornerpattern.png');
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 3490px;
@@ -1612,7 +1612,7 @@ a.white-bg {
   background: #f9f9f9;
   padding: 100px 80px;
   border-top: 1px solid #ccc6;
-  background-image: url('../partners/images/cornerpattern.png');
+  background-image: url('../../partners/images/cornerpattern.png');
   background-position: top center; background-repeat: no-repeat; background-size: 3490px;
 }
 .pricing_inner { max-width: var(--sp-content-max); margin: 0 auto; text-align: center; width: 100%; box-sizing: border-box; }
@@ -1710,7 +1710,7 @@ a.white-bg {
   background: #f9f9f9;
   padding: 100px 80px;
   border-top: 1px solid #ccc6;
-  background-image: url('../partners/images/cornerpattern.png');
+  background-image: url('../../partners/images/cornerpattern.png');
   background-position: top center; background-repeat: no-repeat; background-size: 3490px;
 }
 .final_inner {

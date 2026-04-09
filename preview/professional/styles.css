@@ -29,14 +29,14 @@ a { text-decoration: none; }
   display: flex;
   background: transparent;
   border-radius: 25px;
-  background-image: url('../partners/images/logo2.png');
+  background-image: url('../../partners/images/logo2.png');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
 }
 
 .footer_inner .image {
-  background-image: url('../partners/images/logoicon.png');
+  background-image: url('../../partners/images/logoicon.png');
 }
 
 .nav_actions {
@@ -111,7 +111,7 @@ a { text-decoration: none; }
 
 /* ── OTO Header (white, no gradient bg) ── */
 .oto_header {
-  background-image: url('../partners/images/headerbg.png'), radial-gradient(#46e5c0,#4f46e5,#0e55f2);
+  background-image: url('../../partners/images/headerbg.png'), radial-gradient(#46e5c0,#4f46e5,#0e55f2);
   background-size: 100%;
   background-position: top center;
   padding-bottom: 0;
@@ -656,7 +656,7 @@ a { text-decoration: none; }
   background: #f9f9fb;
   padding: 100px 80px;
   border-top: 1px solid #e5e7eb;
-  background-image: url('images/cornerpattern.png');
+  background-image: url('../../images/cornerpattern.png');
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 3490px;
