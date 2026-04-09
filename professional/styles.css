@@ -725,8 +725,21 @@ a { text-decoration: none; }
   font-size: 17px; color: rgba(255,255,255,0.85);
 }
 .opc_inc_item i { font-size: 18px; color: #deff68; flex-shrink: 0; }
+.opc_trust_row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.opc_trust_row .oto_trust_item {
+  color: rgba(255,255,255,0.9);
+}
 .opc_downsell {
-  text-align: center; margin-top: 20px;
+  display: block;
+  text-align: center;
+  margin-top: 0;
+  padding: 0 60px 28px;
   font-size: 14px; color: rgba(255,255,255,0.35); text-decoration: underline; cursor: pointer;
 }
 .opc_downsell:hover { color: rgba(255,255,255,0.55); }
