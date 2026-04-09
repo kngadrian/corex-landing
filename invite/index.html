@@ -856,7 +856,7 @@
           const urlParams = new URLSearchParams(window.location.search);
           const aid = urlParams.get('aid') || '';
           
-          fetch('https://callflujent.app.n8n.cloud/webhook-test/41b1879c-4f87-4f7e-8ab0-f705634cc71d', {
+          fetch('https://callflujent.app.n8n.cloud/webhook/41b1879c-4f87-4f7e-8ab0-f705634cc71d', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -865,6 +865,15 @@
               aid: aid
             })
           }).catch(err => console.error(err));
+          
+          if (nameInput && nameInput.value) {
+            const redirectFields = form.querySelectorAll('input[name="redirect"], input[name="meta_redirect_onlist"]');
+            redirectFields.forEach(el => {
+              if (el.value && !el.value.includes('?name=')) {
+                el.value = el.value + (el.value.includes('?') ? '&' : '?') + 'name=' + encodeURIComponent(nameInput.value.trim());
+              }
+            });
+          }
         });
       });
     });

@@ -31,7 +31,17 @@
     <section class="ty_hero">
       <div class="ty_wrap">
         <div class="ty_badge"><i class="ti ti-circle-check"></i> Registration Confirmed</div>
-        <h1>You're officially in for the <span>ClawBrandAI Live Webinar</span>.</h1>
+        <h1 id="ty_headline">You're officially in for the <br/><span>ClawBrandAI Live Webinar</span>.</h1>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var params = new URLSearchParams(window.location.search);
+            var n = params.get('name');
+            if (n) {
+              n = n.charAt(0).toUpperCase() + n.slice(1);
+              document.getElementById('ty_headline').innerHTML = 'Hey ' + n + '! You\'re officially in for the <br/><span>ClawBrandAI Live Webinar</span>.';
+            }
+          });
+        </script>
         <p class="ty_sub">
           Thanks for joining us. Save your seat by adding this event to your calendar now, then make sure you join us LIVE when it starts so you do not miss the full walkthrough.
         </p>
