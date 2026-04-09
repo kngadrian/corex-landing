@@ -772,18 +772,73 @@ img { max-width: 100%; }
 /* ──────────────────────────────────────────────── */
 /*  FOOTER                                          */
 /* ──────────────────────────────────────────────── */
-.pl_footer { border-top: 1px solid #e5e7eb; padding: 60px 80px 40px; }
-.pl_footer_inner {
-  max-width: 1400px; margin: 0 auto;
-  display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center;
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 80px 32px;
 }
-.pl_footer_logo { display: inline-flex; align-items: center; gap: 12px; color: #181a1e; font-weight: 700; font-size: 20px; }
-.pl_footer_logo .image { width: 40px; height: 40px; border-radius: 50%; background: url('../partners/images/logoicon.png') center/100% no-repeat; }
-.pl_footer_links { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
-.pl_footer_links a { color: #aab0b8; font-size: 15px; font-weight: 300; transition: color .2s; }
-.pl_footer_links a:hover { color: #181a1e; }
-.pl_footer > .pl_footer_inner > p { font-size: 14px; font-weight: 300; color: #aab0b8; max-width: 700px; line-height: 1.65; }
-.pl_footer_copy { font-size: 13px; color: #d1d5db; }
+.footer_inner { border-top: 1px solid #e5e7eb; padding-top: 28px; text-align: center; }
+.footer_inner .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #181a1e;
+  font-weight: 700;
+  font-size: 20px;
+}
+.footer_inner .logo .image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url('../partners/images/logoicon.png') center/100% no-repeat;
+}
+.footer_links { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin: 20px 0 16px; }
+.footer_links a { color: #aab0b8; font-size: 15px; font-weight: 300; transition: color .2s; }
+.footer_links a:hover { color: #181a1e; }
+.footer_inner p { font-size: 14px; font-weight: 300; color: #aab0b8; max-width: 900px; line-height: 1.65; margin: 0 auto 10px; }
+.footer_copy { font-size: 13px; color: #d1d5db; }
+.sp_legal_disclaimer {
+  max-width: 1320px;
+  margin: 28px auto 0;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #151530, #0d0d1b);
+  border: 1px solid rgba(143, 120, 255, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+.sp_legal_disclaimer p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.62);
+}
+.sp_legal_disclaimer strong { color: rgba(255, 255, 255, 0.9); }
+
+.footer_dark_wrap {
+  background: linear-gradient(180deg, #0f1325, #0a0e1a);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 28px;
+  padding-bottom: 24px;
+}
+.footer_dark_wrap .sp_legal_disclaimer {
+  margin-top: 0;
+  margin-bottom: 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(143, 120, 255, 0.32);
+}
+.footer_dark_wrap .container {
+  padding-top: 42px;
+  padding-bottom: 24px;
+}
+.footer_dark_wrap .footer_inner {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 42px;
+}
+.footer_dark_wrap .footer_inner .logo { color: #fff; }
+.footer_dark_wrap .footer_links a { color: rgba(255, 255, 255, 0.72); }
+.footer_dark_wrap .footer_links a:hover { color: #fff; }
+.footer_dark_wrap .footer_inner p { color: rgba(255, 255, 255, 0.6); }
+.footer_dark_wrap .footer_copy { color: rgba(255, 255, 255, 0.45); }
 
 /* ──────────────────────────────────────────────── */
 /*  RESPONSIVE                                       */
@@ -797,7 +852,7 @@ img { max-width: 100%; }
   .pl_bottom_optin { padding: 80px 40px; }
   .pl_bottom_inner { grid-template-columns: 1fr; gap: 50px; }
   .pl_speaker_inner { grid-template-columns: 280px 1fr; gap: 50px; }
-  .pl_footer { padding: 50px 40px 32px; }
+  .container { padding: 40px; }
 }
 @media (max-width: 992px) {
   .pl_agenda_grid { grid-template-columns: repeat(2, 1fr); }
@@ -820,7 +875,7 @@ img { max-width: 100%; }
   .pl_hero { padding: 40px 20px 0; }
   .pl_section { padding: 70px 20px; }
   .pl_bottom_optin { padding: 70px 20px; }
-  .pl_footer { padding: 40px 20px; }
+  .container { padding: 32px 20px; }
   .pl_hero_left h1 { font-size: 38px; letter-spacing: -1.5px; }
   .pl_hero_left h2 { font-size: 17px; }
   .pl_countdown_bar { height: auto; padding: 10px 16px; gap: 8px; }
