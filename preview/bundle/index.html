@@ -81,10 +81,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="hero_video_wrapper">
         <div class="hero_video_inner">
-          <iframe id="heroVimeo" src="https://player.vimeo.com/video/1179143984?autoplay=1&muted=1&loop=1&background=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          <iframe id="heroVimeo" src="https://player.vimeo.com/video/1181657115?autoplay=1&muted=1&loop=1&autopause=0&background=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
           <button class="video_sound_btn" id="soundToggle" onclick="toggleSound()">
+            <span class="beep_dot"></span>
             <i class="ti ti-volume-off" id="soundIcon"></i>
-            <span id="soundLabel">Click for Sound</span>
+            <span id="soundLabel">Click to unmute</span>
           </button>
         </div>
       </div>
@@ -116,7 +117,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<!-- ============================================================ -->
 <!-- WHAT'S INCLUDED                                               -->
 <!-- ============================================================ -->
 <section class="bnd_products_section">
@@ -481,6 +481,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+  <!-- ============================================================ -->
+  <!-- DEMO VIDEO SECTION                                            -->
+  <!-- ============================================================ -->
+  <section class="demo_video_section">
+    <div class="demo_video_inner bnd_wrap">
+      <div class="bnd_section_head demo_section_head">
+        <div class="bnd_section_pill"><i class="ti ti-player-play-filled"></i> Live Product Demo</div>
+        <h2>See How Your Brand Turns Into Agency-Level Mockups in 60 Seconds</h2>
+        <p>Watch the ClawBrand Engine&trade; take a simple logo and instantly generate photorealistic visuals - fully branded, perfectly styled, and ready to use.</p>
+      </div>
+
+      <div class="hero_video_wrapper demo_player_wrap">
+        <div class="hero_video_inner">
+          <iframe src="https://player.vimeo.com/video/1181657115?autoplay=0&muted=0&loop=0&autopause=1&background=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 <!-- ============================================================ -->
 <!-- VALUE STACK TABLE                                             -->
 <!-- ============================================================ -->
@@ -744,7 +764,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============================================================ -->
 <!-- SCRIPTS                                                       -->
 <!-- ============================================================ -->
+<script src="https://player.vimeo.com/api/player.js"></script>
 <script>
+let heroPlayer;
+let isMuted = true;
+
+function initHeroVideo() {
+  const iframe = document.getElementById('heroVimeo');
+  if (!iframe || typeof Vimeo === 'undefined') return;
+  heroPlayer = new Vimeo.Player(iframe);
+  heroPlayer.setMuted(true);
+}
+
+function toggleSound() {
+  if (!heroPlayer) return;
+  isMuted = !isMuted;
+  heroPlayer.setMuted(isMuted);
+  document.getElementById('soundIcon').className = isMuted ? 'ti ti-volume-off' : 'ti ti-volume';
+  document.getElementById('soundLabel').textContent = isMuted ? 'Click to unmute' : 'Sound on';
+}
+
 /* Countdown timer - session-based */
 function initTimer() {
   const key = 'bundle_end';
@@ -801,6 +840,7 @@ function initReveal() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  initHeroVideo();
   initTimer();
   initReveal();
 });
