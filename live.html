@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClawBrand AI — Live Webinar Bundle Deal · $100 OFF</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+/* ================================================================ */
+/*  CLAWBRAND AI — LIVE WEBINAR DEAL PAGE                           */
+/* ================================================================ */
+:root {
+  --btn-grad: linear-gradient(90deg, #df4ea6, #fbe364);
+  --blue-grad: linear-gradient(90deg, #4f46e5, #2563eb);
+  --ink: #181a1e;
+  --purple: #4f46e5;
+  --text-muted: #2d3238;
+  --border: #e5e7eb;
+  --bg-light: #f9f9fb;
+  --yellow-hl: #deff68;
+  --hero-bg: radial-gradient(ellipse at 50% 0%, #173ed8 0%, #361abc 50%, #274fee 100%);
+  --alert-bg: linear-gradient(90deg, #090909, #1a1a1a, #090909);
+  --dark-bg: #0a0a0a;
+  --card-header-bg: linear-gradient(135deg, #4f46e5, #2563eb);
+  --cta-bg: linear-gradient(90deg, #df4ea6, #fbe364);
+  --cta-color: #18161a;
+  --cta-radius: 18px;
+  --cta-padding: 24px 56px;
+  --cta-shadow: inset 0 -8px 0 rgba(255,255,255,.3), 0 14px 36px rgba(223,78,166,.35);
+  --cta-font-size: 24px;
+  --cta-font-weight: 900;
+  --pill-bg: linear-gradient(90deg, #4f46e5, #2563eb);
+  --pill-color: #fff;
+  --pill-radius: 30px;
+  --pill-padding: 9px 20px;
+  --pill-font-size: 15px;
+  --pill-font-weight: 600;
+  --pill-letter-spacing: 1.5px;
+  --pill-text-transform: uppercase;
+  --price-big-size: 87px;
+  --price-big-weight: 900;
+  --coupon-border: 1.5px dashed rgba(222, 255, 104, 0.4);
+  --coupon-bg: rgba(255, 255, 255, 0.04);
+  --timer-bg: rgba(255, 255, 255, 0.08);
+  --timer-radius: 10px;
+  --trust-bg: rgba(255, 255, 255, 0.06);
+  --font: 'Inter', sans-serif;
+  --h1-size: 52px;
+  --h1-weight: 900;
+  --wrap-max: 1100px;
+  --wrap-padding: 0 40px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); background: #fff; color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; }
+img { display: block; max-width: 100%; }
+.live_wrap { max-width: var(--wrap-max); margin: 0 auto; padding: var(--wrap-padding); }
+
+/* Logo (reused in footer) */
+.logo {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: #fff; font-weight: 700; font-size: 24px; letter-spacing: -0.8px;
+}
+.logo .image {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: url('partners/images/logo2.png') center/100% no-repeat;
+}
+.live_logo {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: #fff; font-weight: 700; font-size: 22px; letter-spacing: -0.8px;
+}
+.live_logo .live_logo_img {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: url('partners/images/logo2.png') center/100% no-repeat;
+}
+
+/* ──────────────────────────────────────────────── */
+/*  SECTION 1 — ALERT BAR                           */
+/* ──────────────────────────────────────────────── */
+.live_alert {
+  background: var(--alert-bg);
+  border-bottom: 2px solid #ef4444;
+  padding: 0 24px; height: 52px;
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  transition: background .4s, border-color .4s;
+}
+.live_alert.live_alert_urgent {
+  background: linear-gradient(90deg, #1a0505, #2d0a0a, #1a0505);
+  border-bottom-color: #dc2626;
+  animation: alertFlash 2s ease-in-out infinite;
+}
+@keyframes alertFlash {
+  0%, 100% { border-bottom-color: #dc2626; }
+  50% { border-bottom-color: #fbbf24; }
+}
+.live_alert_badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #ef4444; border-radius: 20px; padding: 4px 12px;
+  font-size: 12px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.live_alert_badge::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%; background: #fff;
+  animation: livePulse 1.2s ease-in-out infinite;
+}
+@keyframes livePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.live_alert_text {
+  font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.85); white-space: nowrap;
+}
+.live_alert_text strong { color: #fff; }
+.live_alert_timer {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--timer-bg); border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--timer-radius); padding: 5px 12px;
+  font-size: 18px; font-weight: 900; color: var(--yellow-hl);
+  font-variant-numeric: tabular-nums; letter-spacing: -0.5px; white-space: nowrap;
+}
+
+/* ──────────────────────────────────────────────── */
+/*  SECTION 2 — HERO                                */
+/* ──────────────────────────────────────────────── */
+.live_hero {
+  background-image: url('images/mockupsbg.png'), var(--hero-bg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding-top: 52px;
+}
+.live_hero_nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 60px; max-width: 1400px; margin: 0 auto;
+}
+.live_nav_secure {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 15px; color: rgba(255,255,255,0.5); font-weight: 500;
+}
+.live_nav_secure i { font-size: 16px; }
+.live_hero_inner {
+  max-width: 900px; margin: 0 auto; text-align: center; padding: 50px 20px 70px;
+}
+.live_kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: var(--pill-font-size); font-weight: var(--pill-font-weight);
+  text-transform: var(--pill-text-transform); letter-spacing: var(--pill-letter-spacing);
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+  color: var(--pill-color); border-radius: var(--pill-radius); padding: var(--pill-padding);
+  margin-bottom: 28px;
+}
+.live_kicker::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%; background: #fff;
+  animation: livePulse 1.2s ease-in-out infinite;
+}
+.live_hero_inner h1 {
+  font-size: clamp(36px, 5vw, var(--h1-size)); font-weight: var(--h1-weight);
+  letter-spacing: -2px; line-height: 1.1; color: #fff; margin-bottom: 18px;
+}
+.live_hero_inner h1 .live_hl { color: var(--yellow-hl); }
+.live_hero_inner .live_sub {
+  font-size: clamp(16px, 2vw, 18px); font-weight: 400;
+  color: rgba(255,255,255,0.7); line-height: 1.65; max-width: 640px; margin: 0 auto 32px;
+}
+
+/* Coupon box */
+.live_coupon {
+  border: var(--coupon-border); background: var(--coupon-bg);
+  border-radius: 14px; padding: 20px 32px; max-width: 420px; margin: 0 auto 28px;
+}
+.live_coupon_label { font-size: 14px; color: rgba(255,255,255,0.55); margin-bottom: 6px; }
+.live_coupon_code { font-size: 28px; font-weight: 900; color: var(--yellow-hl); letter-spacing: 3px; margin-bottom: 6px; }
+.live_coupon_note { font-size: 14px; color: rgba(255,255,255,0.45); }
+
+/* ── Progress Bar Scarcity Meter ── */
+.live_meter_wrap {
+  max-width: 480px; margin: 0 auto 28px;
+}
+.live_meter_header {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 10px;
+}
+.live_meter_label {
+  font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.7);
+}
+.live_meter_count {
+  font-size: 22px; font-weight: 900; color: #fff;
+  font-variant-numeric: tabular-nums;
+  transition: color .3s;
+}
+.live_meter_count .live_spots_remaining { color: var(--yellow-hl); }
+.live_meter_count.live_meter_warn .live_spots_remaining { color: #ef4444; }
+.live_meter_track {
+  width: 100%; height: 18px; border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  overflow: hidden; position: relative;
+}
+.live_meter_fill {
+  height: 100%; border-radius: 12px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  transition: width 0.8s cubic-bezier(.4,0,.2,1);
+  position: relative;
+  box-shadow: 0 0 12px rgba(34,197,94,0.3);
+}
+.live_meter_fill::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, transparent 60%);
+}
+.live_meter_fill.live_meter_low {
+  background: linear-gradient(90deg, #f59e0b, #ef4444);
+  box-shadow: 0 0 16px rgba(239,68,68,0.4);
+  animation: meterPulseGlow 1.5s ease-in-out infinite;
+}
+@keyframes meterPulseGlow {
+  0%, 100% { box-shadow: 0 0 16px rgba(239,68,68,0.4); }
+  50% { box-shadow: 0 0 28px rgba(239,68,68,0.7); }
+}
+.live_meter_footer {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 8px; font-size: 12px; color: rgba(255,255,255,0.35);
+}
+.live_meter_footer_warn {
+  color: #fbbf24; font-weight: 700;
+  animation: spotsWarn 1s ease-in-out infinite;
+}
+@keyframes spotsWarn {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Price display */
+.live_price_display {
+  display: flex; flex-direction: column; align-items: center; gap: 4px; margin-bottom: 28px;
+}
+.live_price_was { font-size: 20px; color: rgba(255,255,255,0.4); text-decoration: line-through; }
+.live_price_big {
+  font-size: clamp(60px, 8vw, var(--price-big-size)); font-weight: var(--price-big-weight);
+  letter-spacing: -4px; color: #fff; line-height: 1;
+}
+.live_price_note { font-size: 16px; color: rgba(255,255,255,0.55); font-weight: 300; }
+
+/* CTA Button */
+.live_cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: var(--cta-padding); border-radius: var(--cta-radius);
+  font-size: var(--cta-font-size); font-weight: var(--cta-font-weight);
+  color: var(--cta-color); background: var(--cta-bg);
+  box-shadow: var(--cta-shadow);
+  outline: 3px solid rgba(26,25,58,0.16);
+  text-decoration: none; border: none; cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  animation: ctaPulse 2s ease-in-out infinite;
+}
+.live_cta:hover {
+  transform: translateY(-3px);
+  box-shadow: inset 0 -8px 0 rgba(255,255,255,.3), 0 16px 50px rgba(223,78,166,.55);
+  color: var(--cta-color);
+}
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: inset 0 -8px 0 rgba(255,255,255,.3), 0 14px 36px rgba(223,78,166,.35); }
+  50% { box-shadow: inset 0 -8px 0 rgba(255,255,255,.3), 0 14px 50px rgba(223,78,166,.55); }
+}
+.live_cta_micro { font-size: 14px; color: rgba(255,255,255,0.45); margin-top: 14px; }
+
+/* Trust row */
+.live_trust_row {
+  display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 20px;
+}
+.live_trust_item {
+  display: flex; align-items: center; gap: 7px;
+  background: var(--trust-bg); border-radius: 50px; padding: 8px 16px;
+  font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.7);
+}
+.live_trust_item i { font-size: 15px; color: rgba(255,255,255,0.5); }
+.live_trust_item.gold i { color: #f6c90e; }
+
+/* ──────────────────────────────────────────────── */
+/*  SECTION 3 — VALUE STACK                          */
+/* ──────────────────────────────────────────────── */
+.live_value_section {
+  background: var(--bg-light); padding: 60px 0; border-top: 4px solid var(--ink);
+}
+.live_section_pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: var(--pill-font-size); font-weight: var(--pill-font-weight);
+  text-transform: var(--pill-text-transform); letter-spacing: var(--pill-letter-spacing);
+  background: var(--pill-bg); color: var(--pill-color);
+  border-radius: var(--pill-radius); padding: var(--pill-padding);
+  margin-bottom: 16px;
+}
+.live_section_head { text-align: center; margin-bottom: 40px; }
+.live_section_head h2 {
+  font-size: clamp(28px, 4vw, 36px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.15; color: var(--ink);
+}
+
+/* Bundle image showcase above value table */
+.live_bundle_showcase {
+  max-width: 680px; margin: 0 auto 40px;
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 16px 50px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.04);
+  border: 1px solid var(--border);
+}
+.live_bundle_showcase img { width: 100%; height: auto; display: block; }
+
+.live_stack_card {
+  max-width: 780px; margin: 0 auto;
+  background: #fff; border: 1px solid var(--border); border-radius: 16px;
+  overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+}
+.live_stack_row {
+  display: grid; grid-template-columns: 1fr auto auto;
+  align-items: center; gap: 16px;
+  padding: 16px 24px; border-bottom: 1px solid #f0f0f5;
+}
+.live_stack_row:last-of-type { border-bottom: none; }
+.live_stack_name {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 15px; font-weight: 700; color: var(--ink);
+}
+.live_stack_dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.live_stack_desc { font-size: 13px; color: #999; font-weight: 400; margin-top: 2px; }
+.live_stack_value { font-size: 14px; color: var(--text-muted); font-weight: 600; white-space: nowrap; }
+.live_stack_check { font-size: 14px; font-weight: 700; color: #22c55e; white-space: nowrap; }
+.live_stack_row_hl { background: #fffbeb; }
+.live_stack_total {
+  display: grid; grid-template-columns: 1fr auto; gap: 8px; padding: 20px 24px;
+  border-top: 2px solid var(--border);
+}
+.live_stack_total_line {
+  display: flex; justify-content: space-between; align-items: center; grid-column: 1 / -1;
+}
+.live_stack_total_label { font-size: 15px; font-weight: 700; color: var(--ink); }
+.live_stack_total_val { font-size: 15px; font-weight: 700; color: var(--text-muted); text-decoration: line-through; }
+.live_stack_total_active .live_stack_total_label { font-size: 18px; font-weight: 900; }
+.live_stack_total_active .live_stack_total_val {
+  font-size: 22px; font-weight: 900; color: var(--ink); text-decoration: none;
+}
+.live_stack_total_active .live_stack_total_val .live_hl_inline {
+  background: var(--yellow-hl); color: var(--ink); padding: 2px 8px; border-radius: 6px;
+}
+.live_stack_total_save .live_stack_total_val {
+  color: #22c55e; text-decoration: none; font-size: 18px; font-weight: 800;
+}
+.live_value_cta { text-align: center; margin-top: 36px; }
+
+/* ──────────────────────────────────────────────── */
+/*  SECTION 4 — PRICE COMPARISON                    */
+/* ──────────────────────────────────────────────── */
+.live_compare_section { background: var(--dark-bg); padding: 56px 0; }
+.live_compare_section .live_section_head h2 { color: #fff; }
+.live_compare_grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  max-width: 900px; margin: 0 auto;
+}
+.live_compare_card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 30px 24px; text-align: center;
+  display: flex; flex-direction: column; gap: 12px; align-items: center;
+  transition: transform .25s;
+}
+.live_compare_card_title { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; }
+.live_compare_card_price { font-size: 40px; font-weight: 900; color: rgba(255,255,255,0.35); letter-spacing: -2px; }
+.live_compare_card_details { font-size: 14px; color: rgba(255,255,255,0.3); line-height: 1.6; }
+.live_compare_card_active {
+  background: var(--card-header-bg);
+  border: 2px solid rgba(222, 255, 104, 0.5);
+  transform: scale(1.05); position: relative;
+}
+.live_compare_card_active .live_compare_card_title { color: rgba(255,255,255,0.8); }
+.live_compare_card_active .live_compare_card_price { color: #fff; font-size: 48px; }
+.live_compare_card_active .live_compare_card_details { color: rgba(255,255,255,0.7); }
+.live_compare_savings { font-size: 15px; font-weight: 700; color: var(--yellow-hl); }
+.live_compare_badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #ef4444; border-radius: 20px; padding: 4px 12px;
+  font-size: 11px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.live_compare_badge::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%; background: #fff;
+  animation: livePulse 1.2s ease-in-out infinite;
+}
+.live_compare_mini_cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 28px; border-radius: 14px;
+  font-size: 15px; font-weight: 800; color: var(--cta-color);
+  background: var(--cta-bg); text-decoration: none;
+  box-shadow: inset 0 -4px 0 rgba(255,255,255,.25);
+  transition: transform .2s;
+}
+.live_compare_mini_cta:hover { transform: translateY(-2px); color: var(--cta-color); }
+.live_compare_note { text-align: center; margin-top: 28px; font-size: 14px; color: rgba(255,255,255,0.4); }
+
+/* ──────────────────────────────────────────────── */
+/*  SECTION 5 — SOCIAL PROOF                        */
+/* ──────────────────────────────────────────────── */
+.live_proof_section { background: var(--bg-light); padding: 44px 0; border-top: 1px solid var(--border); }
+.live_proof_grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  max-width: 900px; margin: 0 auto;
+}
+.live_proof_card {
+  background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 24px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.live_proof_stars { display: flex; gap: 3px; }
+.live_proof_stars i { font-size: 16px; color: #f6c90e; }
+.live_proof_quote {
+  font-size: 15px; font-weight: 400; color: var(--text-muted); line-height: 1.7; flex: 1; font-style: italic;
+}
+.live_proof_author { display: flex; align-items: center; gap: 12px; }
+.live_proof_avatar {
+  width: 40px; height: 40px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+  border: 2px solid #fff; box-shadow: 0 4px 12px rgba(15,23,42,0.12);
+}
+.live_proof_avatar img { width: 100%; height: 100%; object-fit: cover; }
+.live_proof_name { font-size: 14px; font-weight: 700; color: var(--ink); }
+.live_proof_role { font-size: 12px; color: #aaa; display: block; }
+
+/* ──────────────────────────────────────────────── */
+/*  SECTION 6 — GUARANTEE + FINAL CTA               */
+/* ──────────────────────────────────────────────── */
+.live_guarantee_section { background: var(--dark-bg); padding: 60px 0 80px; }
+.live_guarantee_grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+  max-width: 960px; margin: 0 auto; padding: 0 40px;
+}
+.live_guarantee_left { color: #fff; }
+.live_guarantee_badge {
+  width: 110px; height: 110px; border-radius: 50%;
+  background: linear-gradient(135deg, #0f766e, #059669);
+  border: 3px solid #22c55e;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  margin-bottom: 20px; box-shadow: 0 10px 40px rgba(34,197,94,0.2);
+}
+.live_guarantee_badge_num { font-size: 34px; font-weight: 900; color: #fff; line-height: 1; }
+.live_guarantee_badge_lbl { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.7); }
+.live_guarantee_left h3 { font-size: 28px; font-weight: 800; letter-spacing: -1px; margin-bottom: 14px; }
+.live_guarantee_left p { font-size: 16px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 12px; }
+.live_guarantee_left .live_bold_line { font-weight: 700; color: #fff; font-size: 17px; }
+
+.live_final_card { background: var(--card-header-bg); border-radius: 20px; padding: 36px 28px; text-align: center; }
+.live_final_card_badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #ef4444; border-radius: 20px; padding: 5px 14px;
+  font-size: 12px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.live_final_card_badge::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%; background: #fff;
+  animation: livePulse 1.2s ease-in-out infinite;
+}
+.live_final_card_img {
+  max-width: 280px; margin: 0 auto 20px; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+.live_final_card_img img { width: 100%; height: auto; }
+.live_final_prices_crossed { font-size: 20px; color: rgba(255,255,255,0.4); text-decoration: line-through; margin-bottom: 4px; }
+.live_final_card_price { font-size: 60px; font-weight: 900; color: #fff; letter-spacing: -3px; line-height: 1; margin-bottom: 6px; }
+.live_final_card_coupon { font-size: 14px; color: var(--yellow-hl); font-weight: 600; margin-bottom: 24px; }
+.live_final_card .live_cta { width: 100%; font-size: 20px; padding: 22px 24px; }
+.live_final_trust { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 14px; }
+.live_final_spots { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 16px; font-weight: 600; transition: color .3s; }
+.live_final_spots.live_spots_warn { color: #fbbf24; animation: spotsWarn 1s ease-in-out infinite; }
+
+/* Toast notification */
+.live_toast {
+  position: fixed; bottom: 24px; left: 24px; z-index: 9998;
+  background: rgba(15,15,20,0.92); backdrop-filter: blur(12px);
+  border: 1px solid rgba(239,68,68,0.3); border-radius: 14px;
+  padding: 14px 20px; display: flex; align-items: center; gap: 10px;
+  font-size: 14px; font-weight: 600; color: #fff;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  transform: translateY(120%); opacity: 0;
+  transition: transform .4s cubic-bezier(.4,0,.2,1), opacity .4s ease;
+  pointer-events: none;
+}
+.live_toast.show { transform: translateY(0); opacity: 1; }
+.live_toast_dot {
+  width: 8px; height: 8px; border-radius: 50%; background: #ef4444; flex-shrink: 0;
+  animation: livePulse 1s ease-in-out infinite;
+}
+
+/* ──────────────────────────────────────────────── */
+/*  FOOTER (matches /bundle page)                   */
+/* ──────────────────────────────────────────────── */
+.sp_legal_disclaimer {
+  max-width: 1360px; margin: 22px auto 0; padding: 16px 20px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #151530, #0d0d1b);
+  border: 1px solid rgba(79, 70, 229, 0.28);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+.sp_legal_disclaimer p { margin: 0; font-size: 13px; line-height: 1.55; color: rgba(255, 255, 255, 0.62); }
+.sp_legal_disclaimer strong { color: rgba(255, 255, 255, 0.9); }
+.footer_dark_wrap {
+  background: linear-gradient(180deg, #0f1325, #0a0e1a);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 28px; padding-bottom: 24px;
+}
+.footer_dark_wrap .sp_legal_disclaimer {
+  margin-top: 0; margin-bottom: 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(143, 120, 255, 0.32);
+}
+.footer_dark_wrap .container { max-width: 1400px; margin: 0 auto; padding: 42px 80px 24px; }
+.footer_dark_wrap .footer_inner { border-top: 1px solid rgba(255, 255, 255, 0.12); padding-top: 42px; }
+.footer_dark_wrap .footer_inner .logo { color: #fff; }
+.footer_dark_wrap .footer_inner .image { background-image: url('partners/images/logoicon.png'); }
+.footer_links { display: flex; flex-wrap: wrap; gap: 18px; margin: 20px 0 16px; }
+.footer_dark_wrap .footer_links a { color: rgba(255, 255, 255, 0.72); font-weight: 500; font-size: 15px; text-decoration: none; }
+.footer_dark_wrap .footer_links a:hover { color: #fff; }
+.footer_dark_wrap .footer_inner p { color: rgba(255, 255, 255, 0.6); line-height: 1.7; margin: 0 0 12px; max-width: 900px; font-size: 14px; }
+.footer_copy { color: rgba(255, 255, 255, 0.45); font-size: 13px; }
+
+/* ──────────────────────────────────────────────── */
+/*  RESPONSIVE                                       */
+/* ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .live_alert { height: auto; padding: 8px 14px; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .live_alert_text { font-size: 12px; text-align: center; white-space: normal; }
+  .live_alert_timer { font-size: 15px; padding: 4px 10px; }
+  .live_hero_nav { padding: 12px 20px; }
+  .live_hero_inner { padding: 40px 20px 50px; }
+  .live_hero_inner h1 { font-size: 32px; letter-spacing: -1px; }
+  .live_hero_inner .live_sub { font-size: 15px; }
+  .live_coupon { padding: 16px 20px; }
+  .live_coupon_code { font-size: 22px; }
+  .live_meter_wrap { max-width: 100%; }
+  .live_price_big { font-size: 60px; }
+  .live_cta { font-size: 18px; padding: 20px 32px; width: 100%; }
+  .live_trust_row { gap: 8px; }
+  .live_trust_item { font-size: 12px; padding: 6px 12px; }
+  .live_bundle_showcase { max-width: 100%; border-radius: 14px; margin-bottom: 28px; }
+  .live_stack_row { grid-template-columns: 1fr; gap: 6px; padding: 14px 18px; }
+  .live_stack_value { font-size: 13px; }
+  .live_compare_grid { grid-template-columns: 1fr; gap: 16px; max-width: 400px; }
+  .live_compare_card_active { transform: scale(1); order: -1; }
+  .live_proof_grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .live_guarantee_grid { grid-template-columns: 1fr; gap: 32px; padding: 0 20px; }
+  .live_guarantee_left { text-align: center; }
+  .live_guarantee_badge { margin: 0 auto 20px; }
+  .live_final_card { order: -1; }
+  .live_section_head h2 { font-size: 26px; }
+  .live_value_section, .live_compare_section, .live_proof_section, .live_guarantee_section { padding-left: 20px; padding-right: 20px; }
+  .live_final_card .live_cta { font-size: 17px; padding: 18px 20px; }
+  .live_final_card_price { font-size: 48px; }
+  .live_toast { left: 12px; right: 12px; bottom: 12px; font-size: 13px; }
+  .footer_dark_wrap .container { padding: 32px 20px 20px; }
+}
+@media (max-width: 480px) {
+  .live_alert_badge { font-size: 10px; padding: 3px 8px; }
+  .live_hero_inner h1 { font-size: 28px; }
+  .live_compare_card_price { font-size: 32px; }
+  .live_compare_card_active .live_compare_card_price { font-size: 40px; }
+}
+
+.live_reveal {
+  opacity: 0; transform: translateY(18px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- SECTION 1: URGENCY ALERT BAR (Fixed)                          -->
+<!-- ============================================================ -->
+<div class="live_alert" id="liveAlert">
+  <div class="live_alert_badge">LIVE</div>
+  <div class="live_alert_text">
+    Your $100 OFF Coupon Is Active &mdash; Only <strong><span class="live_spots_remaining">24</span> of 30</strong> Spots Remaining
+  </div>
+  <div class="live_alert_timer"><span class="live_timer">30:00</span></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 2: HERO                                                -->
+<!-- ============================================================ -->
+<div class="live_hero">
+  <nav class="live_hero_nav">
+    <div class="live_logo">
+      <div class="live_logo_img"></div>
+      ClawBrandAI
+    </div>
+    <div class="live_nav_secure">
+      <i class="ti ti-lock"></i> Secure Checkout
+    </div>
+  </nav>
+
+  <div class="live_hero_inner">
+    <div class="live_kicker">LIVE WEBINAR EXCLUSIVE</div>
+
+    <h1>Claim Your ClawBrand AI Bundle &mdash; <span class="live_hl">$100 OFF</span> for the First 30 People</h1>
+
+    <p class="live_sub">Everything you just saw in the training &mdash; the full platform, PRO, Template Club, Agency Mode &amp; Reseller Rights &mdash; unlocked for one discounted payment.</p>
+
+    <div class="live_coupon">
+      <div class="live_coupon_label">Your $100 OFF coupon code:</div>
+      <div class="live_coupon_code">LIVE100</div>
+      <div class="live_coupon_note">Auto-applied at checkout &middot; Only <span class="live_spots_remaining">24</span> of 30 remaining</div>
+    </div>
+
+    <!-- Progress bar scarcity meter -->
+    <div class="live_meter_wrap">
+      <div class="live_meter_header">
+        <span class="live_meter_label">Coupon Availability</span>
+        <span class="live_meter_count" id="meterCount"><span class="live_spots_remaining">24</span> / 30 left</span>
+      </div>
+      <div class="live_meter_track">
+        <div class="live_meter_fill" id="meterFill" style="width:80%"></div>
+      </div>
+      <div class="live_meter_footer">
+        <span>Claimed</span>
+        <span id="meterStatus">Coupons going fast</span>
+        <span>Available</span>
+      </div>
+    </div>
+
+    <div class="live_price_display">
+      <span class="live_price_was">$847 if bought separately</span>
+      <span class="live_price_was">$397 regular bundle price</span>
+      <div class="live_price_big">$297</div>
+      <span class="live_price_note">with LIVE100 coupon &middot; one-time payment</span>
+    </div>
+
+    <a href="https://www.jvzoo.com/b/116103/436791/6" class="live_cta">
+      <i class="ti ti-bolt"></i> Claim My $100 OFF Bundle Deal Now
+    </a>
+    <p class="live_cta_micro"><i class="ti ti-lock"></i> Secure checkout &middot; 30-day money-back guarantee &middot; Instant access</p>
+
+    <div class="live_trust_row">
+      <div class="live_trust_item"><i class="ti ti-package"></i> All 5 Products</div>
+      <div class="live_trust_item"><i class="ti ti-shield-check"></i> 30-Day Guarantee</div>
+      <div class="live_trust_item"><i class="ti ti-bolt"></i> Instant Access</div>
+      <div class="live_trust_item gold"><i class="ti ti-star-filled"></i> 4.8/5 Rating</div>
+      <div class="live_trust_item"><i class="ti ti-lock"></i> Secure Checkout</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 3: VALUE STACK                                         -->
+<!-- ============================================================ -->
+<section class="live_value_section">
+  <div class="live_wrap">
+    <div class="live_section_head">
+      <div class="live_section_pill"><i class="ti ti-package"></i> EVERYTHING INCLUDED</div>
+      <h2>Here&rsquo;s Everything You&rsquo;re Getting Today</h2>
+    </div>
+
+    <!-- Bundle image showcase -->
+    <div class="live_bundle_showcase live_reveal">
+      <img src="bundle/images/corebundle.jpg" alt="ClawBrand AI Complete Bundle">
+    </div>
+
+    <div class="live_stack_card live_reveal">
+      <div class="live_stack_row">
+        <div class="live_stack_name">
+          <span class="live_stack_dot" style="background:#4f46e5;"></span>
+          <div>ClawBrand AI &mdash; Core Platform<div class="live_stack_desc">166 templates, brand kit, AI mockups in 60 sec</div></div>
+        </div>
+        <div class="live_stack_value">$47 value</div>
+        <div class="live_stack_check"><i class="ti ti-circle-check"></i> Included</div>
+      </div>
+      <div class="live_stack_row">
+        <div class="live_stack_name">
+          <span class="live_stack_dot" style="background:#1a1c2e;"></span>
+          <div>ClawBrand AI PRO<div class="live_stack_desc">Cinematic scenes, SceneScaper AI, 775 credits</div></div>
+        </div>
+        <div class="live_stack_value">$97 value</div>
+        <div class="live_stack_check"><i class="ti ti-circle-check"></i> Included</div>
+      </div>
+      <div class="live_stack_row">
+        <div class="live_stack_name">
+          <span class="live_stack_dot" style="background:#7c3aed;"></span>
+          <div>Template Club<div class="live_stack_desc">Monthly template drops, seasonal packs, +225 credits/mo</div></div>
+        </div>
+        <div class="live_stack_value">$67 value</div>
+        <div class="live_stack_check"><i class="ti ti-circle-check"></i> Included</div>
+      </div>
+      <div class="live_stack_row">
+        <div class="live_stack_name">
+          <span class="live_stack_dot" style="background:#059669;"></span>
+          <div>Agency Mode<div class="live_stack_desc">Unlimited clients, 10 team members, white-label</div></div>
+        </div>
+        <div class="live_stack_value">$197 value</div>
+        <div class="live_stack_check"><i class="ti ti-circle-check"></i> Included</div>
+      </div>
+      <div class="live_stack_row">
+        <div class="live_stack_name">
+          <span class="live_stack_dot" style="background:#d4a612;"></span>
+          <div>Reseller Rights<div class="live_stack_desc">100 licenses, DFY sales page, keep 100% profit</div></div>
+        </div>
+        <div class="live_stack_value">$297 value</div>
+        <div class="live_stack_check"><i class="ti ti-circle-check"></i> Included</div>
+      </div>
+      <div class="live_stack_row live_stack_row_hl">
+        <div class="live_stack_name">
+          <span class="live_stack_dot" style="background:#f59e0b;"></span>
+          <div><i class="ti ti-gift" style="font-size:16px;color:#f59e0b;margin-right:4px;vertical-align:middle;"></i>All 15+ Bonuses<div class="live_stack_desc">Prompt vaults, masterclasses, onboarding kits, marketing kit</div></div>
+        </div>
+        <div class="live_stack_value">$1,481 value</div>
+        <div class="live_stack_check"><i class="ti ti-circle-check"></i> Included</div>
+      </div>
+
+      <div class="live_stack_total">
+        <div class="live_stack_total_line">
+          <span class="live_stack_total_label">Total Value:</span>
+          <span class="live_stack_total_val">$2,186</span>
+        </div>
+        <div class="live_stack_total_line live_stack_total_active">
+          <span class="live_stack_total_label">You Pay Today:</span>
+          <span class="live_stack_total_val"><span class="live_hl_inline">$297 with coupon LIVE100</span></span>
+        </div>
+        <div class="live_stack_total_line live_stack_total_save">
+          <span class="live_stack_total_label">You Save:</span>
+          <span class="live_stack_total_val">$1,889</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="live_value_cta live_reveal">
+      <a href="https://www.jvzoo.com/b/116103/436791/6" class="live_cta" style="font-size:20px;padding:22px 44px;">
+        <i class="ti ti-bolt"></i> Yes! Give Me Everything for $297 &rarr;
+      </a>
+      <p style="font-size:13px;color:#999;margin-top:10px;">One-time payment &middot; Instant access &middot; 30-day guarantee</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 4: PRICE COMPARISON                                    -->
+<!-- ============================================================ -->
+<section class="live_compare_section">
+  <div class="live_wrap">
+    <div class="live_section_head" style="margin-bottom:36px;">
+      <h2>Why the Bundle Is a No-Brainer</h2>
+    </div>
+
+    <div class="live_compare_grid live_reveal">
+      <div class="live_compare_card">
+        <div class="live_compare_card_title">Buy Separately</div>
+        <div class="live_compare_card_price">$847+</div>
+        <div class="live_compare_card_details">5 separate checkouts<br>Full price each<br>No bundle bonuses</div>
+      </div>
+      <div class="live_compare_card">
+        <div class="live_compare_card_title">Regular Bundle</div>
+        <div class="live_compare_card_price">$397</div>
+        <div class="live_compare_card_details">One checkout<br>All 5 products<br>All bonuses included</div>
+      </div>
+      <div class="live_compare_card live_compare_card_active">
+        <div class="live_compare_badge">LIVE DEAL</div>
+        <div class="live_compare_card_title">Your Price Right Now</div>
+        <div class="live_compare_card_price">$297</div>
+        <div class="live_compare_savings">Save $550 vs buying separately</div>
+        <div class="live_compare_card_details">One checkout &middot; All 5 products<br>All bonuses &middot; $100 OFF applied</div>
+        <a href="https://www.jvzoo.com/b/116103/436791/6" class="live_compare_mini_cta">Claim This Deal &rarr;</a>
+      </div>
+    </div>
+
+    <p class="live_compare_note"><i class="ti ti-alert-triangle" style="font-size:14px;vertical-align:middle;margin-right:4px;"></i> The $100 OFF coupon expires when all 30 spots are claimed or the webinar session ends.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 5: SOCIAL PROOF STRIP                                  -->
+<!-- ============================================================ -->
+<section class="live_proof_section">
+  <div class="live_wrap">
+    <div class="live_proof_grid">
+      <div class="live_proof_card live_reveal">
+        <div class="live_proof_stars"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i></div>
+        <p class="live_proof_quote">&ldquo;Landed a $497 client in my first week using Agency Mode. The bundle paid for itself on day three.&rdquo;</p>
+        <div class="live_proof_author">
+          <div class="live_proof_avatar"><img src="images/user1.png" alt="Marcus T."></div>
+          <div><span class="live_proof_name">Marcus T.</span><span class="live_proof_role">Brand Strategist</span></div>
+        </div>
+      </div>
+      <div class="live_proof_card live_reveal">
+        <div class="live_proof_stars"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i></div>
+        <p class="live_proof_quote">&ldquo;Sold 8 reseller licenses at $97 each in two weeks. $776 back from a $297 investment.&rdquo;</p>
+        <div class="live_proof_author">
+          <div class="live_proof_avatar"><img src="images/user2.png" alt="Priya S."></div>
+          <div><span class="live_proof_name">Priya S.</span><span class="live_proof_role">Digital Product Seller</span></div>
+        </div>
+      </div>
+      <div class="live_proof_card live_reveal">
+        <div class="live_proof_stars"><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i><i class="ti ti-star-filled"></i></div>
+        <p class="live_proof_quote">&ldquo;Template Club alone is worth the bundle price. New designs every month. My clients love it.&rdquo;</p>
+        <div class="live_proof_author">
+          <div class="live_proof_avatar"><img src="images/user3.png" alt="Jasmine W."></div>
+          <div><span class="live_proof_name">Jasmine W.</span><span class="live_proof_role">Ecommerce Seller</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 6: GUARANTEE + FINAL CTA                               -->
+<!-- ============================================================ -->
+<section class="live_guarantee_section">
+  <div class="live_guarantee_grid">
+    <div class="live_guarantee_left live_reveal">
+      <div class="live_guarantee_badge">
+        <div class="live_guarantee_badge_num">30</div>
+        <div class="live_guarantee_badge_lbl">DAY GUARANTEE</div>
+      </div>
+      <h3>Zero Risk. Full 30-Day Guarantee.</h3>
+      <p>Use every feature across all 5 products for 30 full days. Create mockups. Pitch clients. Sell licenses. If you&rsquo;re not satisfied for ANY reason &mdash; full refund, no questions asked.</p>
+      <p class="live_bold_line">If it doesn&rsquo;t pay for itself, you don&rsquo;t pay. Period.</p>
+    </div>
+
+    <div class="live_final_card live_reveal">
+      <div class="live_final_card_badge">LIVE EXCLUSIVE</div>
+      <div class="live_final_card_img">
+        <img src="bundle/images/corebundle.jpg" alt="ClawBrand AI Bundle">
+      </div>
+      <div class="live_final_prices_crossed">$847</div>
+      <div class="live_final_prices_crossed">$397</div>
+      <div class="live_final_card_price">$297</div>
+      <div class="live_final_card_coupon">with coupon LIVE100</div>
+      <a href="https://www.jvzoo.com/b/116103/436791/6" class="live_cta">
+        <i class="ti ti-bolt"></i> Claim My $100 OFF Bundle &mdash; $297 &rarr;
+      </a>
+      <div class="live_final_trust"><i class="ti ti-lock"></i> Secure &middot; <i class="ti ti-bolt"></i> Instant Access &middot; <i class="ti ti-shield-check"></i> 30-Day Guarantee</div>
+      <div class="live_final_spots" id="finalSpots"><span class="live_spots_remaining">24</span> of 30 coupon spots remaining</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FOOTER (matches /bundle page exactly)                          -->
+<!-- ============================================================ -->
+<div class="footer_dark_wrap">
+  <div class="sp_legal_disclaimer">
+    <p><strong>Disclaimer:</strong> Please note that this product does not provide any guarantee of income or success. The results achieved by the product owner or any other individuals mentioned are not indicative of future success or earnings. This website is not affiliated with FaceBook or any of its associated entities. Once you navigate away from FaceBook, the responsibility for the content and its usage lies solely with the user. All content on this website, including but not limited to text, images, and multimedia, is protected by copyright law and the Digital Millennium Copyright Act. Unauthorized copying, duplication, modification, or theft, whether intentional or unintentional, is strictly prohibited. Violators will be prosecuted to the fullest extent of the law. We want to clarify that JVZoo serves as the retailer for the products featured on this site. JVZoo&reg; is a registered trademark of BBC Systems Inc., a Florida corporation located at 1809 E. Broadway Street, Suite 125, Oviedo, FL 32765, USA, and is used with permission. The role of JVZoo as a retailer does not constitute an endorsement, approval, or review of these products or any claims, statements, or opinions used in their promotion.</p>
+  </div>
+  <div class="container">
+    <div class="footer_inner">
+      <div class="logo">
+        <div class="image"></div>
+        ClawBrandAI
+      </div>
+      <div class="footer_links">
+        <a href="https://clawbrandai.com/support" target="_blank" rel="noopener noreferrer">Support</a>
+        <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <a href="tos.html" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+        <a href="#">Earnings Disclaimer</a>
+      </div>
+      <p>ClawBrand AI Bundle includes access to all five products in the ClawBrand AI funnel. Template Club is a one-time upgrade ($67 one-time). Reseller income figures are illustrative scenarios and not guaranteed earnings. Results vary based on effort, audience, and marketing strategy. Nvidia and OpenClaw are trademarks of their respective owners. ClawBrand AI is an independent product.</p>
+      <div class="footer_copy">&copy; 2026 Claw Brand AI &middot; ClawBrandAI.com &middot; All rights reserved.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast notification -->
+<div class="live_toast" id="liveToast">
+  <span class="live_toast_dot"></span>
+  <span id="toastMsg"></span>
+</div>
+
+<!-- ============================================================ -->
+<!-- SCRIPTS                                                        -->
+<!-- ============================================================ -->
+<script>
+(function() {
+  var TOTAL = 30;
+  var START = 24;
+  var FLOOR = 3;
+  var WARN_AT = 5;
+
+  /*
+   * AGGRESSIVE scarcity engine.
+   * Spots burn FAST — the whole sequence from 24→3 plays out in ~8-14 min.
+   *
+   * Pacing:
+   *   24→15 (blitz):  5-12s each → ~45-108s total (feels like a rush)
+   *   15→8  (fast):   12-25s each → ~84-175s total
+   *    8→5  (medium): 25-50s each → ~75-150s total (tension builds)
+   *    5→3  (slow):   60-120s each → ~120-240s total (crawl at peak scarcity)
+   *
+   * Between claims, random "social proof" toasts fire to simulate live
+   * activity even when no spot is being claimed.
+   */
+
+  function seededRandom(seed) {
+    var s = seed;
+    return function() {
+      s = (s * 16807 + 0) % 2147483647;
+      return (s - 1) / 2147483646;
+    };
+  }
+
+  function generateSchedule(startTime, seed) {
+    var rng = seededRandom(seed);
+    var schedule = [];
+    var t = startTime;
+
+    for (var spot = START; spot > FLOOR; spot--) {
+      var minD, maxD;
+      if (spot > 15) { minD = 5; maxD = 12; }
+      else if (spot > 8) { minD = 12; maxD = 25; }
+      else if (spot > WARN_AT) { minD = 25; maxD = 50; }
+      else { minD = 60; maxD = 120; }
+      var delay = (minD + rng() * (maxD - minD)) * 1000;
+      t += delay;
+      schedule.push({ time: Math.round(t), spotsAfter: spot - 1 });
+    }
+    return schedule;
+  }
+
+  var stateKey = 'live_scarcity_v3';
+  var state;
+
+  function loadState() {
+    try {
+      var raw = sessionStorage.getItem(stateKey);
+      if (raw) {
+        state = JSON.parse(raw);
+        if (state && state.schedule && state.startTime) return;
+      }
+    } catch(e) {}
+    var now = Date.now();
+    var seed = (now % 100000) + 42;
+    state = {
+      startTime: now,
+      seed: seed,
+      schedule: generateSchedule(now, seed)
+    };
+    sessionStorage.setItem(stateKey, JSON.stringify(state));
+  }
+
+  function getCurrentSpots() {
+    var now = Date.now();
+    var spots = START;
+    for (var i = 0; i < state.schedule.length; i++) {
+      if (now >= state.schedule[i].time) {
+        spots = state.schedule[i].spotsAfter;
+      } else { break; }
+    }
+    return Math.max(spots, FLOOR);
+  }
+
+  function getNextClaimTime() {
+    var now = Date.now();
+    for (var i = 0; i < state.schedule.length; i++) {
+      if (now < state.schedule[i].time) return state.schedule[i].time;
+    }
+    return null;
+  }
+
+  /* ── Progress bar update ── */
+  function updateMeter(spots) {
+    var pct = (spots / TOTAL) * 100;
+    var fill = document.getElementById('meterFill');
+    var count = document.getElementById('meterCount');
+    var status = document.getElementById('meterStatus');
+    if (fill) {
+      fill.style.width = pct + '%';
+      if (spots <= WARN_AT) fill.classList.add('live_meter_low');
+      else fill.classList.remove('live_meter_low');
+    }
+    if (count) {
+      if (spots <= WARN_AT) count.classList.add('live_meter_warn');
+      else count.classList.remove('live_meter_warn');
+    }
+    if (status) {
+      if (spots <= FLOOR) {
+        status.textContent = 'Almost gone!';
+        status.className = 'live_meter_footer_warn';
+      } else if (spots <= WARN_AT) {
+        status.textContent = 'Almost gone — act now!';
+        status.className = 'live_meter_footer_warn';
+      } else if (spots <= 12) {
+        status.textContent = 'Going fast!';
+        status.className = '';
+      } else {
+        status.textContent = 'Coupons going fast';
+        status.className = '';
+      }
+    }
+  }
+
+  /* ── Display update ── */
+  function updateDisplay(spots) {
+    document.querySelectorAll('.live_spots_remaining').forEach(function(el) {
+      el.textContent = spots;
+    });
+    updateMeter(spots);
+
+    var isUrgent = spots <= WARN_AT;
+    var alertEl = document.getElementById('liveAlert');
+    if (alertEl) {
+      if (isUrgent) alertEl.classList.add('live_alert_urgent');
+      else alertEl.classList.remove('live_alert_urgent');
+    }
+    document.querySelectorAll('.live_final_spots').forEach(function(el) {
+      if (isUrgent) el.classList.add('live_spots_warn');
+      else el.classList.remove('live_spots_warn');
+    });
+  }
+
+  /* ── Toast notifications ── */
+  var toastQueue = [];
+  var toastBusy = false;
+  var names = [
+    'Sarah M.','Mike R.','Jessica K.','David L.','Amanda P.','Chris B.',
+    'Taylor S.','Jordan W.','Alex H.','Nina G.','Ryan C.','Emma T.',
+    'Jake F.','Olivia D.','Sam N.','Mia V.','Leo Z.','Ava Q.',
+    'Noah J.','Zoe X.','Liam B.','Sofia R.','Ethan K.','Chloe P.',
+    'Mason D.','Ella W.','Lucas F.','Grace H.','Aiden T.','Riley N.'
+  ];
+  var usedNames = [];
+
+  function pickName() {
+    if (usedNames.length >= names.length) usedNames = [];
+    var available = names.filter(function(n) { return usedNames.indexOf(n) === -1; });
+    var name = available[Math.floor(Math.random() * available.length)];
+    usedNames.push(name);
+    return name;
+  }
+
+  function showClaimToast(spots) {
+    var name = pickName();
+    var templates = [
+      '<strong>' + name + '</strong> just claimed coupon LIVE100 &mdash; <strong>' + spots + ' left</strong>',
+      'Coupon claimed by <strong>' + name + '</strong>! Only <strong>' + spots + '</strong> remaining',
+      '<strong>' + name + '</strong> grabbed spot #' + (TOTAL - spots) + ' &mdash; <strong>' + spots + ' left</strong>',
+      'Another one gone! <strong>' + name + '</strong> just locked in $100 OFF &mdash; <strong>' + spots + '</strong> left'
+    ];
+    toastQueue.push(templates[Math.floor(Math.random() * templates.length)]);
+    drainToast();
+  }
+
+  function showProofToast() {
+    var name = pickName();
+    var proofs = [
+      '<strong>' + name + '</strong> is viewing the bundle deal right now',
+      '<strong>' + name + '</strong> just opened this page',
+      '<strong>12 people</strong> are viewing this deal right now',
+      '<strong>' + name + '</strong> added the bundle to cart',
+      '<strong>3 coupons</strong> were claimed in the last 2 minutes'
+    ];
+    toastQueue.push(proofs[Math.floor(Math.random() * proofs.length)]);
+    drainToast();
+  }
+
+  function drainToast() {
+    if (toastBusy || toastQueue.length === 0) return;
+    toastBusy = true;
+    var el = document.getElementById('liveToast');
+    var msgEl = document.getElementById('toastMsg');
+    if (!el || !msgEl) { toastBusy = false; return; }
+    msgEl.innerHTML = toastQueue.shift();
+    el.classList.add('show');
+    setTimeout(function() {
+      el.classList.remove('show');
+      setTimeout(function() { toastBusy = false; drainToast(); }, 400);
+    }, 3200);
+  }
+
+  /* ── Background social proof loop ── */
+  function proofLoop() {
+    var delay = (15 + Math.random() * 25) * 1000;
+    setTimeout(function() {
+      if (!toastBusy && toastQueue.length === 0) showProofToast();
+      proofLoop();
+    }, delay);
+  }
+
+  /* ── Main tick loop ── */
+  var prevSpots = null;
+
+  function tick() {
+    var spots = getCurrentSpots();
+
+    if (prevSpots === null) {
+      updateDisplay(spots);
+    } else if (spots < prevSpots) {
+      updateDisplay(spots);
+      showClaimToast(spots);
+    }
+    prevSpots = spots;
+
+    var next = getNextClaimTime();
+    if (next) {
+      var wait = Math.max(300, next - Date.now() + 50);
+      setTimeout(tick, wait);
+    } else {
+      setTimeout(tick, 5000);
+    }
+  }
+
+  /* ── Session Countdown Timer (30 min) ── */
+  function initTimer() {
+    var key = 'live_timer_end';
+    var end = sessionStorage.getItem(key);
+    if (!end) {
+      end = Date.now() + 30 * 60 * 1000;
+      sessionStorage.setItem(key, end);
+    } else {
+      end = parseInt(end, 10);
+    }
+    function t() {
+      var diff = Math.max(0, end - Date.now());
+      var m = Math.floor(diff / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      var fmt = function(n) { return String(n).padStart(2, '0'); };
+      document.querySelectorAll('.live_timer').forEach(function(el) {
+        if (diff > 0) {
+          el.textContent = fmt(m) + ':' + fmt(s);
+        } else {
+          el.textContent = 'EXPIRED';
+          el.style.color = '#ef4444';
+        }
+      });
+      if (diff > 0) setTimeout(t, 1000);
+    }
+    t();
+  }
+
+  /* ── Scroll Reveal ── */
+  function initReveal() {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.06 });
+    document.querySelectorAll('.live_reveal').forEach(function(el) { obs.observe(el); });
+  }
+
+  /* ── Init ── */
+  document.addEventListener('DOMContentLoaded', function() {
+    loadState();
+    tick();
+    initTimer();
+    initReveal();
+    setTimeout(proofLoop, 8000);
+  });
+})();
+</script>
+</body>
+</html>
