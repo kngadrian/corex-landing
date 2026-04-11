@@ -53,7 +53,7 @@
       margin: 20px auto;
     }
     .login_panel {
-      max-width: 560px;
+      max-width: 860px;
       margin: 0 auto 48px;
       padding: clamp(28px, 5vw, 44px) clamp(22px, 4vw, 40px);
       background:rgba(255, 255, 255, 0.2);
@@ -79,15 +79,23 @@
       margin-bottom: 22px;
     }
     .login_badge i { font-size: 16px; }
-    .thankyou_video_wrap {
+
+    .video_box {
       margin: 28px auto 0;
       max-width: 900px;
+      border: 1px solid rgba(255, 255, 255, 0.33);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      padding: 25px;
+      border-radius: 40px;
+      background: #ffffff1f;
+    }
+    .thankyou_video_wrap {
+      border-radius: 25px;
       position: relative;
       aspect-ratio: 16 / 9;
-      border-radius: 16px;
+     
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      
       line-height: 0;
     }
     .thankyou_video_wrap iframe {
@@ -98,7 +106,7 @@
       display: block;
     }
     .login_details {
-      max-width: 560px;
+      max-width: 860px;
       margin: 40px auto 28px;
       text-align: center;
     }
@@ -370,10 +378,12 @@
     <div class="logo"><div class="image"></div>ClawBrandAI</div>
     <h1>You&rsquo;re In. Let&rsquo;s Get You Live in <span class="h1_accent">3 Minutes</span></h1>
     <p class="sub">Watch this short welcome video to find your login details, access your training, and generate your first result fast.</p>
+    
+    <div class="video_box">
     <div class="thankyou_video_wrap">
       <iframe src="https://player.vimeo.com/video/1181546346?autoplay=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
     </div>
-
+  </div>
     <section class="login_details" aria-labelledby="login-details-heading">
       <div class="login_details_badge"><i class="ti ti-mail"></i> Login Details</div>
       <h2 id="login-details-heading" class="login_details_title">Where Your Login Details Are</h2>
