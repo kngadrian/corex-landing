@@ -61,6 +61,8 @@ body {
   background-size: 100%;
   background-position: top center;
   margin-bottom:80px;
+  flex-direction:column;
+  
 }
 .header > .container {
   
@@ -163,7 +165,7 @@ a.white-bg {
 }
 
 .hero h1 {
-  font-size: 80px;
+  font-size: 75px;
   font-weight: 600;
   letter-spacing: -5%;
   line-height: 1.15;
