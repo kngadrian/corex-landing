@@ -193,7 +193,7 @@
           </div>
           <div class="pl_seats_bar">
             <i class="ti ti-flame"></i>
-            Limited seats: <strong>847 registered</strong> Don't lose your spot
+            Limited seats: <strong><span class="pl_reg_count">847</span> registered</strong> Don't lose your spot
           </div>
         </div>
         <div class="pl_preview_list">
@@ -796,6 +796,15 @@
     </div>
   </div>
 
+  <!-- Registration toast notification -->
+  <div class="pl_toast" id="plToast">
+    <div class="pl_toast_accent"><i class="ti ti-user-plus"></i></div>
+    <div class="pl_toast_body">
+      <span class="pl_toast_dot"></span>
+      <span id="plToastMsg"></span>
+    </div>
+  </div>
+
   <!-- ============================================================ -->
   <!-- SCRIPTS                                                       -->
   <!-- ============================================================ -->
@@ -843,9 +852,148 @@
       });
     }
 
+    /* ── Registration Counter (dynamic, sessionStorage-persisted) ── */
+    function initRegCounter() {
+      var KEY = 'pl_reg_state';
+      var BASE = 847;
+      var state = JSON.parse(sessionStorage.getItem(KEY) || 'null');
+      if (!state) {
+        state = { startTime: Date.now(), baseCount: BASE, added: 0 };
+        sessionStorage.setItem(KEY, JSON.stringify(state));
+      }
+      var current = state.baseCount + state.added;
+
+      function updateAll(val, animate) {
+        document.querySelectorAll('.pl_reg_count').forEach(function(el) {
+          el.textContent = val.toLocaleString();
+          if (animate) {
+            el.classList.remove('pl_count_bump');
+            void el.offsetWidth;
+            el.classList.add('pl_count_bump');
+          }
+        });
+      }
+
+      function scheduleNext() {
+        var delay = (Math.random() * 30 + 20) * 1000;
+        setTimeout(function() {
+          current++;
+          state.added++;
+          sessionStorage.setItem(KEY, JSON.stringify(state));
+          updateAll(current, true);
+          queueRegToast(current);
+          scheduleNext();
+        }, delay);
+      }
+
+      var elapsed = Date.now() - state.startTime;
+      var catchUp = Math.floor(elapsed / 35000);
+      if (catchUp > state.added) {
+        var extra = catchUp - state.added;
+        state.added += extra;
+        current += extra;
+        sessionStorage.setItem(KEY, JSON.stringify(state));
+      }
+
+      updateAll(current, false);
+      scheduleNext();
+    }
+
+    /* ── Registration Toast Notifications ── */
+    var regToastQueue = [];
+    var regToastBusy = false;
+
+    var regNames = [
+      'Sarah M. from Texas', 'Marcus T. from Florida', 'Priya S. from California',
+      'Jasmine W. from New York', 'David L. from Chicago', 'Aisha K. from Atlanta',
+      'Ryan P. from Denver', 'Megan H. from Seattle', 'Carlos R. from Miami',
+      'Emma J. from Portland', 'Tyler B. from Austin', 'Sophia N. from Boston',
+      'James F. from Nashville', 'Olivia G. from Phoenix', 'Noah D. from Dallas',
+      'Chloe A. from San Diego', 'Liam C. from Charlotte', 'Zara E. from Detroit',
+      'Ethan V. from Minneapolis', 'Hannah Q. from Raleigh', 'Grace P. from Tampa',
+      'Leo W. from Houston', 'Mia R. from Sacramento', 'Jake S. from Columbus',
+      'Isabella T. from San Antonio', 'Lucas M. from Las Vegas', 'Amara B. from Philly',
+      'Brandon K. from Indianapolis', 'Natalie F. from Jacksonville', 'Derek H. from Memphis'
+    ];
+    var usedRegNames = [];
+
+    function pickRegName() {
+      if (usedRegNames.length >= regNames.length) usedRegNames = [];
+      var pool = regNames.filter(function(n) { return usedRegNames.indexOf(n) === -1; });
+      var name = pool[Math.floor(Math.random() * pool.length)];
+      usedRegNames.push(name);
+      return name;
+    }
+
+    function queueRegToast(count) {
+      var r = Math.random();
+      var msg;
+      if (r < 0.5) {
+        msg = pickRegName() + ' just registered';
+      } else if (r < 0.75) {
+        var n = Math.floor(Math.random() * 8) + 5;
+        msg = n + ' people registered in the last hour';
+      } else {
+        msg = pickRegName() + ' just secured a free seat';
+      }
+      regToastQueue.push(msg);
+      drainRegToast();
+    }
+
+    function showRegToast(msg) {
+      var toast = document.getElementById('plToast');
+      var msgEl = document.getElementById('plToastMsg');
+      if (!toast || !msgEl) { regToastBusy = false; return; }
+      msgEl.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(function() {
+        toast.classList.remove('show');
+        setTimeout(function() {
+          regToastBusy = false;
+          drainRegToast();
+        }, 500);
+      }, 3500);
+    }
+
+    function drainRegToast() {
+      if (regToastBusy || regToastQueue.length === 0) return;
+      regToastBusy = true;
+      showRegToast(regToastQueue.shift());
+    }
+
+    function initRegToasts() {
+      function proofLoop() {
+        var delay = (Math.random() * 20 + 15) * 1000;
+        setTimeout(function() {
+          var r = Math.random();
+          var msg;
+          if (r < 0.45) {
+            msg = pickRegName() + ' just registered';
+          } else if (r < 0.7) {
+            var n = Math.floor(Math.random() * 12) + 3;
+            msg = n + ' people registered in the last hour';
+          } else if (r < 0.85) {
+            msg = pickRegName() + ' just secured a free seat';
+          } else {
+            msg = 'Seats are filling up fast. Register now';
+          }
+          regToastQueue.push(msg);
+          drainRegToast();
+          proofLoop();
+        }, delay);
+      }
+      setTimeout(function() {
+        regToastQueue.push(pickRegName() + ' just registered');
+        drainRegToast();
+        proofLoop();
+      }, (Math.random() * 2000 + 6000));
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       initCountdown();
       initReveal();
+      initRegCounter();
+      initRegToasts();
       
       const forms = document.querySelectorAll('form.af-form-wrapper');
       forms.forEach(form => {

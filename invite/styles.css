@@ -893,3 +893,66 @@ img { max-width: 100%; }
   .pl_speaker_stats { grid-template-columns: 1fr 1fr; }
   .pl_event_strip { flex-direction: column; align-items: flex-start; gap: 10px; }
 }
+
+/* ──────────────────────────────────────────────── */
+/*  REGISTRATION TOAST NOTIFICATION                 */
+/* ──────────────────────────────────────────────── */
+.pl_toast {
+  position: fixed; bottom: 24px; left: 24px; z-index: 9998;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(79,70,229,0.35);
+  border-radius: 16px;
+  padding: 0; display: flex; align-items: stretch; gap: 0;
+  font-size: 14px; font-weight: 600; color: #fff;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06) inset, 0 0 20px rgba(79,70,229,0.15);
+  transform: translateX(-120%); opacity: 0;
+  transition: transform .45s cubic-bezier(.22,1,.36,1), opacity .35s ease;
+  pointer-events: none; max-width: 400px; overflow: hidden;
+}
+.pl_toast.show { transform: translateX(0); opacity: 1; }
+.pl_toast_accent {
+  width: 48px; flex-shrink: 0;
+  background: linear-gradient(180deg, #4f46e5, #7c3aed);
+  display: flex; align-items: center; justify-content: center;
+}
+.pl_toast_accent i { font-size: 20px; color: #fff; }
+.pl_toast_dot {
+  width: 10px; height: 10px; border-radius: 50%; background: #22c55e; flex-shrink: 0;
+  animation: plToastDot 1.2s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(34,197,94,0.5);
+}
+@keyframes plToastDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+.pl_toast_body {
+  padding: 14px 18px 14px 14px; display: flex; align-items: center; gap: 10px;
+  flex: 1; min-width: 0;
+}
+.pl_toast_body span { line-height: 1.45; }
+
+/* Dynamic counter animation */
+.pl_reg_count {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.pl_reg_count.pl_count_bump {
+  animation: plCountBump 0.4s ease;
+}
+@keyframes plCountBump {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.15); color: #22c55e; }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .pl_toast { left: 12px; right: 12px; bottom: 12px; font-size: 13px; max-width: 100%; }
+  .pl_toast_accent { width: 40px; }
+  .pl_toast_accent i { font-size: 17px; }
+  .pl_toast_body { padding: 12px 14px 12px 12px; }
+}
+@media (max-width: 480px) {
+  .pl_toast { border-radius: 12px; }
+  .pl_toast_body { font-size: 12px; gap: 8px; }
+}
