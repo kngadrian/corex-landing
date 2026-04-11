@@ -47,10 +47,9 @@
         </p>
 
         <div class="ty_actions">
-          <a href="#" class="ty_btn ty_btn_primary"><i class="ti ti-calendar-event"></i> Add to Google Calendar</a>
-          <a href="#" class="ty_btn ty_btn_secondary"><i class="ti ti-calendar-plus"></i> Add to Outlook / iCal</a>
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=ClawBrand+AI+Launch&dates=20260414T150000Z/20260414T160000Z&details=ClawBrand+AI+is+launching!+Get+access+to+your+AI-powered+brand+team+for+mockups,+scenes,+and+complete+visual+assets.&location=https://clawbrandai.com" target="_blank" rel="noopener" class="ty_btn ty_btn_primary"><i class="ti ti-calendar-event"></i> Add to Google Calendar</a>
+          <button onclick="downloadICS()" class="ty_btn ty_btn_secondary" style="cursor:pointer;font-family:inherit;font-size:inherit;"><i class="ti ti-calendar-plus"></i> Add to Outlook / iCal</button>
         </div>
-        <p class="ty_note">Tip: calendar links can be updated later with your final webinar date/time.</p>
       </div>
     </section>
 
@@ -99,6 +98,17 @@
       </div>
     </section>
 
+    <section class="ty_planner">
+      <div class="ty_wrap">
+        <div class="ty_planner_card">
+          <div class="ty_planner_badge"><i class="ti ti-gift"></i> Your Free Bonus Is Ready</div>
+          <h2>Access the AI Profit Planner App</h2>
+          <p>As promised, your free ClawBrand AI Profit Planner is ready to use right now. Map out your AI brand profits before we even launch.</p>
+          <a href="https://planner-app.clawbrandai.com" target="_blank" rel="noopener" class="ty_btn ty_btn_primary ty_planner_cta"><i class="ti ti-rocket"></i> Open Profit Planner App</a>
+        </div>
+      </div>
+    </section>
+
     <div class="footer_dark_wrap">
       <div class="container">
         <div class="footer_inner">
@@ -116,5 +126,31 @@
       </div>
     </div>
   </main>
+
+  <script>
+    function downloadICS() {
+      var lines = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//ClawBrand AI//Launch//EN',
+        'BEGIN:VEVENT',
+        'DTSTART:20260414T150000Z',
+        'DTEND:20260414T160000Z',
+        'SUMMARY:ClawBrand AI Launch',
+        'DESCRIPTION:ClawBrand AI is launching! Get access to your AI-powered brand team for mockups\\, scenes\\, and complete visual assets.',
+        'URL:https://clawbrandai.com',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ];
+      var blob = new Blob([lines.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
+      var link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'clawbrand-ai-launch.ics';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(link.href);
+    }
+  </script>
 </body>
 </html>

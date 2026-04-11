@@ -88,40 +88,185 @@
 
     .sub {
       max-width: 760px;
-      margin: 0 auto 28px;
+      margin: 0 auto 32px;
       font-size: clamp(18px, 2.4vw, 24px);
       font-weight: 300;
       line-height: 1.55;
       color: rgba(255, 255, 255, 0.85);
     }
 
-    .launch {
+    .early-access {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 36px 28px;
+      border-radius: 24px;
+      border: 1px solid rgba(222, 255, 104, 0.3);
+      background: linear-gradient(135deg, rgba(222, 255, 104, 0.1), rgba(79, 70, 229, 0.16));
+      box-shadow: 0 12px 44px rgba(0, 0, 0, 0.28);
+      text-align: center;
+    }
+
+    .early-access .ea-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid rgba(239, 68, 68, 0.45);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #deff68;
+      margin-bottom: 18px;
+    }
+
+    .ea-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ef4444;
+      animation: livePulse 1.2s ease-in-out infinite;
+    }
+
+    @keyframes livePulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .early-access h2 {
+      font-size: clamp(24px, 4.2vw, 36px);
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+    }
+
+    .early-access .ea-sub {
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 540px;
+      margin: 0 auto 28px;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .countdown .cd-unit {
+      min-width: 72px;
+      padding: 14px 10px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .countdown .cd-num {
+      display: block;
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1;
+      color: #deff68;
+    }
+
+    .countdown .cd-label {
+      display: block;
+      margin-top: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .ea-cta {
       display: inline-flex;
       align-items: center;
       gap: 10px;
+      padding: 18px 44px;
+      border-radius: 16px;
+      background: linear-gradient(90deg, #df4ea6, #fbe364);
+      color: #18161a;
       font-size: 18px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: inset 0 -6px 0 rgba(255, 255, 255, 0.3), 0 12px 32px rgba(223, 78, 166, 0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: ctaPulse 2.5s ease-in-out infinite;
+    }
+
+    .ea-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: inset 0 -6px 0 rgba(255, 255, 255, 0.3), 0 16px 44px rgba(223, 78, 166, 0.5);
+    }
+
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: inset 0 -6px 0 rgba(255,255,255,.3), 0 12px 32px rgba(223,78,166,.35); }
+      50% { box-shadow: inset 0 -6px 0 rgba(255,255,255,.3), 0 12px 48px rgba(223,78,166,.55); }
+    }
+
+    .ea-cta i { font-size: 20px; }
+
+    .ea-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 17px;
       font-weight: 700;
-      border-radius: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.26);
-      background: rgba(255, 255, 255, 0.12);
-      padding: 14px 20px;
-      margin-bottom: 26px;
-    }
-
-    .card {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 22px 20px;
-      border-radius: 24px;
+      border-radius: 14px;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      background: rgba(255, 255, 255, 0.1);
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.24);
+      background: rgba(255, 255, 255, 0.08);
+      padding: 12px 18px;
+      margin-bottom: 14px;
     }
 
-    .card p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.88);
+    .ea-cal-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .cal-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.06);
+      transition: background 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+
+    .cal-btn:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .cal-btn i { font-size: 16px; }
+    .cal-btn.google i { color: #4285f4; }
+    .cal-btn.apple i { color: #deff68; }
+
+    .ea-expired { display: none; }
+    .ea-expired.show { display: block; }
+    .ea-expired p {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 6px;
     }
   </style>
 </head>
@@ -141,18 +286,112 @@
       Coming Soon
     </div>
 
-    <h1>ClawBrand AI Is <span>Launching</span> Soon</h1>
+    <h1>ClawBrand AI Is<br><span>Launching Soon</span></h1>
     <p class="sub">Your AI brand team for mockups, scenes, and complete visual assets is almost ready.</p>
 
-    <div class="launch">
-      <i class="ti ti-calendar-event"></i>
-      April 14th, 2026 at 11:00 AM EST
-    </div>
+    <div class="early-access">
+      <div class="ea-badge">Early Access Open</div>
+      <h2>Register for the LIVE Reveal</h2>
+      <p class="ea-sub">Get a front-row seat to the official ClawBrand AI launch. Join the live reveal, see the full platform walkthrough, and lock in launch-day pricing.</p>
 
-    <div class="card">
-      <p>We are putting the final touches on launch assets and partner materials. Please check back at launch time for full access.</p>
+      <div class="ea-date">
+        <i class="ti ti-calendar-event"></i>
+        April 14th, 2026 at 11:00 AM EST
+      </div>
+
+      <div class="ea-cal-links">
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=ClawBrand+AI+Launch&dates=20260414T150000Z/20260414T160000Z&details=ClawBrand+AI+is+launching!+Get+access+to+your+AI-powered+brand+team+for+mockups,+scenes,+and+complete+visual+assets.&location=https://clawbrandai.com" target="_blank" rel="noopener" class="cal-btn google">
+          <i class="ti ti-brand-google"></i>
+          Add to Google Calendar
+        </a>
+        <button onclick="downloadICS()" class="cal-btn apple">
+          <i class="ti ti-calendar-down"></i>
+          Add to Apple / Outlook
+        </button>
+      </div>
+
+      <div class="countdown" id="countdown">
+        <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Days</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">Hours</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">Minutes</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">Seconds</span></div>
+      </div>
+
+      <a href="/invite" class="ea-cta" id="ea-cta">
+        <i class="ti ti-bolt"></i>
+        Register Now — It's Free
+      </a>
+
+      <div class="ea-expired" id="ea-expired">
+        <p>The countdown has ended — we're LIVE! Head to the reveal now.</p>
+      </div>
     </div>
 
   </main>
+
+  <script>
+    function downloadICS() {
+      var lines = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//ClawBrand AI//Launch//EN',
+        'BEGIN:VEVENT',
+        'DTSTART:20260414T150000Z',
+        'DTEND:20260414T160000Z',
+        'SUMMARY:ClawBrand AI Launch',
+        'DESCRIPTION:ClawBrand AI is launching! Get access to your AI-powered brand team for mockups\\, scenes\\, and complete visual assets.',
+        'URL:https://clawbrandai.com',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ];
+      var blob = new Blob([lines.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
+      var link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'clawbrand-ai-launch.ics';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(link.href);
+    }
+
+    (function() {
+      var target = new Date('2026-04-14T14:00:00Z').getTime(); // April 14, 10:00 AM EST
+      var days = document.getElementById('cd-days');
+      var hours = document.getElementById('cd-hours');
+      var mins = document.getElementById('cd-mins');
+      var secs = document.getElementById('cd-secs');
+      var cta = document.getElementById('ea-cta');
+      var expired = document.getElementById('ea-expired');
+      var countdown = document.getElementById('countdown');
+
+      function pad(n) { return n < 10 ? '0' + n : n; }
+
+      function tick() {
+        var now = Date.now();
+        var diff = target - now;
+
+        if (diff <= 0) {
+          countdown.style.display = 'none';
+          expired.classList.add('show');
+          cta.innerHTML = '<i class="ti ti-bolt"></i> Join the LIVE Reveal Now';
+          return;
+        }
+
+        var d = Math.floor(diff / 86400000);
+        var h = Math.floor((diff % 86400000) / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+
+        days.textContent = pad(d);
+        hours.textContent = pad(h);
+        mins.textContent = pad(m);
+        secs.textContent = pad(s);
+
+        requestAnimationFrame(tick);
+      }
+
+      tick();
+    })();
+  </script>
 </body>
 </html>
