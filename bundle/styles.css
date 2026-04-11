@@ -1388,6 +1388,7 @@ a { text-decoration: none; }
   background: #76b900;
   border-radius: 999px;
   padding: 8px 14px;
+  margin-bottom:25px;
 }
 .bnd_openclaw_mini i { font-size: 16px; }
 .bnd_cta_row_openclaw {
