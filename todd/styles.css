@@ -9,7 +9,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: "Inter", sans-serif; background: #fff; color: #181a1e; overflow-x: hidden; }
+html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+body { font-family: "Inter", sans-serif; background: #fff; color: #181a1e; }
 a { text-decoration: none; }
 img { max-width: 100%; }
 
@@ -876,7 +877,21 @@ img { max-width: 100%; }
   .pl_section { padding: 70px 20px; }
   .pl_bottom_optin { padding: 70px 20px; }
   .container { padding: 32px 20px; }
+  .pl_hero,
+  .pl_section,
+  .pl_bottom_optin,
+  .container,
+  .pl_hero_inner,
+  .pl_hero_left,
+  .pl_video_wrap,
+  .pl_optin_card,
+  .pl_form_wrap,
+  .pl_countdown_bar {
+    width: 100%;
+    max-width: 100%;
+  }
   .pl_hero_left h1 { font-size: 38px; letter-spacing: -1.5px; }
+  .pl_hero_left h1[style] { font-size: 32px !important; line-height: 1.2; }
   .pl_hero_left h2 { font-size: 17px; }
   .pl_video_wrap {
     padding: 8px;
@@ -896,6 +911,10 @@ img { max-width: 100%; }
   .pl_bottom_left h2 { font-size: 34px; }
 }
 @media (max-width: 540px) {
+  .pl_hero { padding: 28px 14px 0; }
+  .pl_section, .pl_bottom_optin, .container { padding-left: 14px; padding-right: 14px; }
+  .pl_hero_left h1 { font-size: 32px; letter-spacing: -1px; }
+  .pl_hero_left h1[style] { font-size: 28px !important; }
   .pl_uc_grid, .pl_uc_grid_2 { grid-template-columns: 1fr; }
   .pl_speaker_stats { grid-template-columns: 1fr 1fr; }
   .pl_event_strip { flex-direction: column; align-items: flex-start; gap: 10px; }

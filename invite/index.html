@@ -109,11 +109,9 @@
                 var overlay = document.getElementById('vimeo_overlay');
                 if (!iframe) return;
 
-                var isMobile = window.matchMedia('(max-width: 768px)').matches;
-                var saveData = navigator.connection && navigator.connection.saveData;
                 var vimeoId = iframe.getAttribute('data-vimeo-id');
                 var baseParams = 'muted=1&title=0&byline=0&portrait=0&controls=1&playsinline=1&dnt=1';
-                var modeParams = (isMobile || saveData) ? 'autoplay=0&loop=0' : 'autoplay=1&loop=1';
+                var modeParams = 'autoplay=1&loop=1';
                 iframe.src = 'https://player.vimeo.com/video/' + vimeoId + '?' + modeParams + '&' + baseParams;
 
                 window.unmuteVimeo = function () {
