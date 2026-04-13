@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="/js/clawbrand-tracking.js"></script>  <!-- GTM snippet goes here, AFTER the tracking script -->
+  <script>
+    cbTrackLead({ leadType: 'webinar_registration', pageType: 'webinar_confirmation' });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KZSW4D35');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>You're In! Webinar Confirmation | ClawBrandAI</title>
+  <meta name="description" content="Thanks for joining the ClawBrandAI webinar. Add it to your calendar and join us live.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="stylesheet" href="../invite/thankyou/styles.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZSW4D35"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <main class="ty_page">
+    <section class="ty_hero">
+      <div class="ty_wrap">
+        <div class="ty_badge"><i class="ti ti-circle-check"></i> Registration Confirmed</div>
+        <h1 id="ty_headline">You're officially in for the <br/><span>ClawBrandAI Live Webinar</span>.</h1>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var params = new URLSearchParams(window.location.search);
+            var n = params.get('name');
+            if (n) {
+              n = n.charAt(0).toUpperCase() + n.slice(1);
+              document.getElementById('ty_headline').innerHTML = 'Hey ' + n + '! You\'re officially in for the <br/><span>ClawBrandAI Live Webinar</span>.';
+            }
+          });
+        </script>
+        <p class="ty_sub">
+          Thanks for joining us. Save your seat by adding this event to your calendar now, then make sure you join us LIVE when it starts so you do not miss the full walkthrough.
+        </p>
+
+        <div class="ty_actions">
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=ClawBrand+AI+Launch&dates=20260414T150000Z/20260414T160000Z&details=ClawBrand+AI+is+launching!+Get+access+to+your+AI-powered+brand+team+for+mockups,+scenes,+and+complete+visual+assets.&location=https://clawbrandai.com" target="_blank" rel="noopener" class="ty_btn ty_btn_primary"><i class="ti ti-calendar-event"></i> Add to Google Calendar</a>
+          <button onclick="downloadICS()" class="ty_btn ty_btn_secondary" style="cursor:pointer;font-family:inherit;font-size:inherit;"><i class="ti ti-calendar-plus"></i> Add to Outlook / iCal</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="ty_video_section">
+      <div class="ty_wrap">
+        <div class="ty_video_card">
+          <div class="ty_video_head">
+            <h2>Quick message before we go live</h2>
+            <p>Watch this short video so you know exactly what to expect during the webinar.</p>
+          </div>
+          <div class="ty_video_shell">
+            <iframe
+              src="https://player.vimeo.com/video/1181543770?title=0&byline=0&portrait=0"
+              title="Webinar thank you video"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ty_reminder">
+      <div class="ty_wrap ty_reminder_inner">
+        <div class="ty_point">
+          <i class="ti ti-alarm"></i>
+          <div>
+            <h3>Show up live</h3>
+            <p>Live attendees get full context, bonus details, and priority Q&A support.</p>
+          </div>
+        </div>
+        <div class="ty_point">
+          <i class="ti ti-bolt"></i>
+          <div>
+            <h3>Bring your questions</h3>
+            <p>Come ready with your use-case so you can apply everything immediately.</p>
+          </div>
+        </div>
+        <div class="ty_point">
+          <i class="ti ti-device-laptop"></i>
+          <div>
+            <h3>Join from desktop if possible</h3>
+            <p>You will see all demos clearly and get the best webinar experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ty_planner">
+      <div class="ty_wrap">
+        <div class="ty_planner_card">
+          <div class="ty_planner_badge"><i class="ti ti-gift"></i> Your Free Bonus Is Ready</div>
+          <h2>Access the AI Profit Planner App</h2>
+          <p>As promised, your free ClawBrand AI Profit Planner is ready to use right now. Map out your AI brand profits before we even launch.</p>
+          <a href="https://planner-app.clawbrandai.com" target="_blank" rel="noopener" class="ty_btn ty_btn_primary ty_planner_cta"><i class="ti ti-rocket"></i> Open Profit Planner App</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer_dark_wrap">
+      <div class="container">
+        <div class="footer_inner">
+          <div class="logo">
+            <div class="image"></div>
+            ClawBrandAI
+          </div>
+          <div class="footer_links">
+            <a href="../index.html" target="_blank" rel="noopener noreferrer">Webinar Page</a>
+            <a href="../../privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+            <a href="../../tos.html" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+          </div>
+          <div class="footer_copy">&copy; 2026 Claw Brand AI &middot; ClawBrandAI.com &middot; All rights reserved.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function downloadICS() {
+      var lines = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//ClawBrand AI//Launch//EN',
+        'BEGIN:VEVENT',
+        'DTSTART:20260414T150000Z',
+        'DTEND:20260414T160000Z',
+        'SUMMARY:ClawBrand AI Launch',
+        'DESCRIPTION:ClawBrand AI is launching! Get access to your AI-powered brand team for mockups\\, scenes\\, and complete visual assets.',
+        'URL:https://clawbrandai.com',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ];
+      var blob = new Blob([lines.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
+      var link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'clawbrand-ai-launch.ics';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(link.href);
+    }
+  </script>
+</body>
+</html>
