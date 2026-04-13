@@ -8,7 +8,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
 body { font-family: "Inter", sans-serif; background: #fff; color: #181a1e; }
 a { text-decoration: none; }
@@ -915,6 +915,29 @@ img { max-width: 100%; }
   .pl_section, .pl_bottom_optin, .container { padding-left: 14px; padding-right: 14px; }
   .pl_hero_left h1 { font-size: 32px; letter-spacing: -1px; }
   .pl_hero_left h1[style] { font-size: 28px !important; }
+  .pl_hero_kicker {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.35;
+  }
+  .pl_countdown_bar {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+  }
+  .pl_cd_label, .pl_cd_date {
+    width: 100%;
+    text-align: center;
+  }
+  .pl_timer {
+    width: 100%;
+    justify-content: center;
+  }
+  .pl_gift_hero_text h2 span {
+    white-space: normal !important;
+  }
   .pl_uc_grid, .pl_uc_grid_2 { grid-template-columns: 1fr; }
   .pl_speaker_stats { grid-template-columns: 1fr 1fr; }
   .pl_event_strip { flex-direction: column; align-items: flex-start; gap: 10px; }
@@ -981,4 +1004,21 @@ img { max-width: 100%; }
 @media (max-width: 480px) {
   .pl_toast { border-radius: 12px; }
   .pl_toast_body { font-size: 12px; gap: 8px; }
+}
+
+@media (max-width: 420px) {
+  html, body {
+    overflow-x: hidden !important;
+  }
+  .pl_hero,
+  .pl_section,
+  .pl_bottom_optin,
+  .pl_hero_inner,
+  .pl_video_wrap,
+  .pl_optin_card {
+    overflow-x: hidden;
+  }
+  .pl_toast {
+    display: none !important;
+  }
 }
