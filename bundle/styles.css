@@ -386,7 +386,7 @@ a { text-decoration: none; }
 /* ──────────────────────────────────────────────── */
 .bnd_products_section {
   background: var(--bg-light); padding: 100px 0;
-  border-top: 4px solid var(--ink);
+  
 }
 .bnd_products_intro {
   max-width: 1100px; margin: 0 auto 60px; padding: 0 40px; text-align: center;
