@@ -872,6 +872,11 @@ img { max-width: 100%; }
   .pl_speaker_stats { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 768px) {
+
+  .pl_form_wrap input.submit, .pl_form_wrap #webFormSubmitButton {
+    padding: 18px 10px !important;
+    font-size: 15px !important;
+  }
   .pl_nav { padding: 12px 20px; }
   .pl_hero { padding: 40px 20px 0; }
   .pl_section { padding: 70px 20px; }
