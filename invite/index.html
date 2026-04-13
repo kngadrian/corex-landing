@@ -1014,11 +1014,12 @@
 
           var submitted = false;
           var formRef = this;
+          var nativeSubmit = HTMLFormElement.prototype.submit;
 
           function submitToAweber() {
             if (submitted) return;
             submitted = true;
-            formRef.submit();
+            nativeSubmit.call(formRef);
           }
 
           var nameInput = form.querySelector('input[name="name"]');
