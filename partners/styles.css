@@ -691,6 +691,34 @@ a.white-bg {
 .prize_card.bronze .prize_amount { color: #cd7f32; }
 .prize_card p { font-size: 16px; font-weight: 300; color: #778088; }
 .prize_card.gold p, .prize_card.silver p, .prize_card.bronze p { color: rgba(255,255,255,0.5); }
+
+/* Opening contest custom arrangement */
+.contest_subhead h3 {
+  font-size: 20px;
+  padding: 12px 24px;
+}
+.opening_contest_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.opening_contest_wrap .prize_tiers {
+  margin-bottom: 0;
+  justify-content: center;
+  width: 100%;
+}
+.opening_top {
+  max-width: 1080px;
+}
+.opening_bottom {
+  max-width: 700px;
+}
+.opening_top .prize_card,
+.opening_bottom .prize_card {
+  flex: 0 1 300px;
+}
  
 .prize_remaining { background: #f6f7f9; border: 1px solid #e5e7eb; border-radius: 20px; padding: 30px 40px; margin-bottom: 60px; }
 .prize_remaining_inner { display: flex; flex-direction: row; align-items: center; gap: 20px; }
@@ -877,6 +905,22 @@ a.white-bg {
 .footer_links a { color: #aab0b8; text-decoration: none; font-size: 15px; font-weight: 300; transition: color .2s; }
 .footer_links a:hover { color: #181a1e; }
 .footer_copy { font-size: 13px; color: #d1d5db; }
+
+.footer_dark_wrap {
+  background: linear-gradient(180deg, #0f1325, #0a0e1a);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 28px;
+  padding-bottom: 24px;
+}
+.footer_dark_wrap .footer_inner {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 42px;
+}
+.footer_dark_wrap .footer_inner .logo { color: #fff; }
+.footer_dark_wrap .footer_links a { color: rgba(255, 255, 255, 0.72); }
+.footer_dark_wrap .footer_links a:hover { color: #fff; }
+.footer_dark_wrap .footer_inner p { color: rgba(255, 255, 255, 0.6); }
+.footer_dark_wrap .footer_copy { color: rgba(255, 255, 255, 0.45); }
  
 /* ========================= */
 /* RESPONSIVE */
@@ -900,6 +944,11 @@ a.white-bg {
   .team_expanded_inner { grid-template-columns: 200px 1fr; }
   .prize_tiers { display: grid; grid-template-columns: repeat(3,1fr); align-items: stretch; }
   .prize_card.gold, .prize_card.silver { padding: 40px 25px; }
+  .opening_top { max-width: 100%; }
+  .opening_bottom {
+    max-width: 100%;
+    grid-template-columns: repeat(2,1fr);
+  }
   .showcase_grid { grid-template-columns: repeat(2, 1fr); }
   .showcase_section_head h2 { font-size: 34px; }
 }
@@ -917,6 +966,7 @@ a.white-bg {
   .funnel_price { font-size: 30px; }
   .funnel_summary { grid-template-columns: 1fr; }
   .prize_tiers { grid-template-columns: repeat(2,1fr); }
+  .contest_subhead h3 { font-size: 17px; padding: 10px 18px; }
   .team_expanded_inner { grid-template-columns: 1fr; }
   .team_portrait { aspect-ratio: 16/9; }
   .blue_cta_inner h1 { font-size: 44px; letter-spacing: -1.5px; }
