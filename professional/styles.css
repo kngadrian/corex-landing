@@ -201,7 +201,7 @@ a { text-decoration: none; }
   font-weight: 300;
   color: #d5defb;
   line-height: 1.6;
-  max-width: 600px;
+  max-width: 900px;
   margin: 0 auto 40px;
 }
 
@@ -659,6 +659,62 @@ a { text-decoration: none; }
 .oto_mini_body h4 { font-size: 19px; font-weight: 700; color: #181a1e; margin-bottom: 8px; letter-spacing: -.3px; }
 .oto_mini_body p { font-size: 22px; font-weight: 300; color: #778088; line-height: 1.6; margin: 0; }
 
+/* Testimonial strip uses existing cards with lightweight overrides */
+.oto_testimonials_section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.oto_testimonials_section .inner_head {
+  align-items: center;
+  margin-bottom: 24px;
+}
+.oto_testimonial_card .oto_mini_body h4 {
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+.oto_testimonial_card .oto_mini_body > p {
+  font-size: 18px;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+.oto_testimonial_author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #ececf2;
+}
+.oto_testimonial_avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #dde0f0;
+  flex-shrink: 0;
+}
+.oto_testimonial_avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.oto_testimonial_author p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.35;
+}
+.oto_testimonial_author strong {
+  display: block;
+  font-size: 16px;
+  color: #181a1e;
+  font-weight: 700;
+}
+.oto_testimonial_author span {
+  display: block;
+  color: #778088;
+  font-size: 14px;
+}
+
 /* ================================================================ */
 /*  BONUS SECTION                                                    */
 /* ================================================================ */
@@ -742,7 +798,6 @@ a { text-decoration: none; }
   gap: 50px;
   align-items: center;
 }
-.opc_left {}
 .opc_kicker {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
@@ -1068,10 +1123,25 @@ a { text-decoration: none; }
   .nav_actions { flex-direction: column; align-items: flex-end; gap: 8px; }
   .oto_hero h1 { font-size: 42px; letter-spacing: -1.5px; }
   .oto_hero h2 { font-size: 18px; }
-  .oto_cta_main { font-size: 18px; padding: 18px 30px; }
+  .nav-cta { font-size: 16px; padding: 8px 14px; }
+  .oto_cta_main {
+    font-size: 16px;
+    padding: 14px 20px;
+    border-radius: 14px;
+    line-height: 1.3;
+  }
+  .opc_cta,
+  .oto_close_cta,
+  .pro_ds_cta {
+    font-size: 16px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    line-height: 1.35;
+  }
   .oto_hook_section, .oto_table_section, .oto_features_section,
   .oto_bonus_section, .oto_pricing_section, .oto_urgency_section,
-  .oto_close_section, .pro_downsell_section { padding: 70px 20px; }
+  .oto_close_section, .pro_downsell_section { padding: 56px 14px; }
+  .oto_testimonials_section { padding-top: 32px; padding-bottom: 32px; }
   .pro_downsell_inner { padding: 28px 18px; }
   .pro_downsell_inner h2 { font-size: 32px; }
   .pro_downsell_inner > p { font-size: 17px; }
@@ -1081,17 +1151,31 @@ a { text-decoration: none; }
   .oto_close_left h2 { font-size: 36px; }
   .oto_mini_grid { grid-template-columns: 1fr; }
   .oto_bonus_grid { grid-template-columns: 1fr; }
-  .oto_compare_table { font-size: 14px; }
-  .oto_compare_table thead tr th { padding: 16px 14px; font-size: 22px; }
-  .oto_compare_table tbody td { padding: 14px 14px; font-size: 14px; }
+  .oto_compare_table { font-size: 12px; }
+  .oto_compare_table thead tr th { padding: 10px 8px; font-size: 14px; }
+  .oto_compare_table thead tr th:first-child { width: 42%; }
+  .oto_compare_table thead tr th:nth-child(2),
+  .oto_compare_table thead tr th.pro_col { text-align: center; }
+  .pro_col_title { font-size: 14px; }
+  .pro_col_badge { font-size: 9px; padding: 4px 8px; }
+  .oto_compare_table tbody td { padding: 10px 8px; font-size: 12px; }
+  .table_feat_name { font-size: 12px; line-height: 1.25; }
+  .table_feat_desc { font-size: 10px; line-height: 1.3; }
+  .tbl_check, .tbl_cross { font-size: 16px; }
+  .tbl_pro_val { font-size: 12px; gap: 5px; line-height: 1.25; }
+  .tbl_pro_val i { font-size: 13px; }
+  .oto_table_conversion { font-size: 14px; line-height: 1.4; }
   .opc_price { font-size: 70px; }
-  .oto_alert_bar { font-size: 22px; padding: 12px 20px; }
+  .oto_alert_bar { font-size: 14px; padding: 10px 12px; }
+  .oto_alert_bar i { font-size: 16px; }
   .oto_hook_pills { flex-direction: column; align-items: center; }
   .oto_video_bullets { flex-direction: column; align-items: stretch; gap: 12px; }
   .oto_video_bullet { width: 100%; font-size: 18px; }
   .oto_price_card_inner { padding: 36px 24px; }
-  .inner_head h1 { font-size: 40px; }
-  .inner_head p { font-size: 18px; }
+  .inner_head h1 { font-size: 34px; }
+  .inner_head p { font-size: 16px; }
+  .oto_mini_body { padding: 18px; }
+  .oto_testimonial_card .oto_mini_body > p { font-size: 16px; }
 }
 
 .oto_legal_disclaimer,
