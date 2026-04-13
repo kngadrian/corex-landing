@@ -1049,14 +1049,19 @@
             timestamp: new Date().toISOString()
           };
 
+          console.log('[n8n webhook] sending payload:', payload);
+
           fetch('https://callflujent.app.n8n.cloud/webhook/41b1879c-4f87-4f7e-8ab0-f705634cc71d', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
           })
-          .then(function() { submitToAweber(); })
+          .then(function(res) {
+            console.log('[n8n webhook] success:', res.status);
+            submitToAweber();
+          })
           .catch(function(err) {
-            console.error('[n8n webhook]', err);
+            console.error('[n8n webhook] failed:', err);
             submitToAweber();
           });
 
