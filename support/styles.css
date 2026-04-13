@@ -114,7 +114,7 @@ body {
 .ty_video_shell { aspect-ratio: 16 / 9; background: #0a0a14; border-radius: 16px; overflow: hidden; }
 .ty_video_shell iframe { width: 100%; height: 100%; border: 0; display: block; }
 
-.ty_reminder { padding: 22px 0 68px; }
+.ty_reminder { padding: 22px 0 28px; }
 .ty_reminder_inner {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -131,6 +131,67 @@ body {
 .ty_point i { font-size: 24px; color: var(--ty-accent); margin-top: 2px; }
 .ty_point h3 { margin: 0 0 6px; font-size: 18px; }
 .ty_point p { margin: 0; color: rgba(255,255,255,0.75); font-size: 15px; line-height: 1.55; }
+
+/* HelpDesk form — matches thankyou page support widget */
+.support_widget_section {
+  margin: 0 auto 0;
+  padding: 8px 0 56px;
+  max-width: 980px;
+  width: min(980px, calc(100% - 40px));
+  text-align: center;
+}
+.support_widget_badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+}
+.support_widget_title {
+  font-size: clamp(24px, 3.8vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin: 0 0 10px;
+  color: #fff;
+}
+.support_widget_sub {
+  margin: 0 auto 22px;
+  max-width: 46em;
+  font-size: clamp(15px, 1.7vw, 17px);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.82);
+}
+.support_widget_frame {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+  padding: 8px;
+}
+.support_widget_frame iframe {
+  display: block;
+  width: 100%;
+  min-height: 660px;
+  border: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+@media (max-width: 768px) {
+  .support_widget_frame iframe { min-height: 700px; }
+}
 
 @media (max-width: 900px) {
   .ty_reminder_inner { grid-template-columns: 1fr; }
