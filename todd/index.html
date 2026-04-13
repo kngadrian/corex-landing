@@ -1006,31 +1006,66 @@
       initRegToasts();
       
       const forms = document.querySelectorAll('form.af-form-wrapper');
+      const urlParams = new URLSearchParams(window.location.search);
+
       forms.forEach(form => {
-        form.addEventListener('submit', function() {
-          const nameInput = form.querySelector('input[name="name"]');
-          const emailInput = form.querySelector('input[name="email"]');
-          const urlParams = new URLSearchParams(window.location.search);
-          const aid = urlParams.get('aid') || '';
-          
-          fetch('https://callflujent.app.n8n.cloud/webhook/41b1879c-4f87-4f7e-8ab0-f705634cc71d', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              name: nameInput ? nameInput.value : '',
-              email: emailInput ? emailInput.value : '',
-              aid: aid
-            })
-          }).catch(err => console.error(err));
-          
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          var submitted = false;
+          var formRef = this;
+          var nativeSubmit = HTMLFormElement.prototype.submit;
+
+          function submitToAweber() {
+            if (submitted) return;
+            submitted = true;
+            nativeSubmit.call(formRef);
+          }
+
+          var nameInput = form.querySelector('input[name="name"]');
+          var emailInput = form.querySelector('input[name="email"]');
+
           if (nameInput && nameInput.value) {
-            const redirectFields = form.querySelectorAll('input[name="redirect"], input[name="meta_redirect_onlist"]');
-            redirectFields.forEach(el => {
+            form.querySelectorAll('input[name="redirect"], input[name="meta_redirect_onlist"]').forEach(function(el) {
               if (el.value && !el.value.includes('?name=')) {
                 el.value = el.value + (el.value.includes('?') ? '&' : '?') + 'name=' + encodeURIComponent(nameInput.value.trim());
               }
             });
           }
+
+          var payload = {
+            name: nameInput ? nameInput.value.trim() : '',
+            email: emailInput ? emailInput.value.trim() : '',
+            aid: urlParams.get('aid') || '',
+            utm_source: urlParams.get('utm_source') || '',
+            utm_medium: urlParams.get('utm_medium') || '',
+            utm_campaign: urlParams.get('utm_campaign') || '',
+            utm_term: urlParams.get('utm_term') || '',
+            utm_content: urlParams.get('utm_content') || '',
+            referrer: document.referrer || '',
+            page_url: window.location.href,
+            landing_page: window.location.pathname,
+            form_location: formRef.closest('.pl_bottom_optin') ? 'bottom_cta' : 'hero',
+            timestamp: new Date().toISOString()
+          };
+
+          console.log('[n8n webhook] sending payload:', payload);
+
+          fetch('https://callflujent.app.n8n.cloud/webhook/41b1879c-4f87-4f7e-8ab0-f705634cc71d', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          })
+          .then(function(res) {
+            console.log('[n8n webhook] success:', res.status);
+            submitToAweber();
+          })
+          .catch(function(err) {
+            console.error('[n8n webhook] failed:', err);
+            submitToAweber();
+          });
+
+          setTimeout(submitToAweber, 3000);
         });
       });
     });
