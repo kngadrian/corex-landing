@@ -18,6 +18,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <link rel="stylesheet" href="../bundle/styles.css">
+<style>
+.inner_head { display: flex; flex-direction: column; justify-content: center; align-items: center; margin-bottom: 50px; }
+.inner_head h3 { font-size: 18px; font-weight: 400; background-image: linear-gradient(to right, #2563eb, #4b44db); width: fit-content; border-radius: 25px; padding: 15px 25px; border: none; color: #fff; margin-bottom: 20px; }
+.inner_head h1 { font-size: 60px; font-weight: 700; color: #181a1e; text-align: center; letter-spacing: -0.05em; max-width: 1050px; }
+.inner_head p { font-size: 22px; font-weight: 400; opacity: .7; line-height: 1.5; }
+.logo_showcase_section { background: radial-gradient(1200px 500px at 50% 0%, rgba(221,219,255,0.45), rgba(255,255,255,0.96)); border-top: 1px solid rgba(79,70,229,0.12); border-bottom: 1px solid rgba(79,70,229,0.1); padding: 70px 20px; }
+.logo_showcase_inner { max-width: 1200px; margin: 0 auto; }
+.logo_showcase_section .inner_head h3 { color: #4f46e5; border-color: rgba(79,70,229,0.25); background: rgba(79,70,229,0.07); }
+.logo_showcase_section .inner_head h1, .logo_showcase_section .inner_head p { color: #181a1e; }
+.logo_showcase_section .inner_head p { color: #4b5563; }
+.logo_showcase_flow { margin-top: 32px; display: grid; grid-template-columns: minmax(300px,1fr) auto minmax(300px,1fr); gap: 22px; align-items: center; }
+.logo_showcase_left { position: relative; border-radius: 24px; border: 1px solid rgba(79,70,229,0.22); background: #fff; box-shadow: 0 24px 60px rgba(79,70,229,0.18); padding: 18px; }
+.logo_showcase_label { position: absolute; top: 16px; left: 16px; z-index: 2; display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.2); background: rgba(12,16,36,0.75); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .3px; text-transform: uppercase; }
+.logo_showcase_left img { width: 100%; aspect-ratio: 1/1; height: auto; object-fit: cover; border-radius: 18px; display: block; }
+.logo_showcase_arrow { display: flex; align-items: center; justify-content: center; width: 33px; height: 33px; border-radius: 999px; border: 2px solid rgba(79,70,229,0.28); background: #6d5cff; color: #fff; font-size: 24px; }
+.logo_showcase_right { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+.logo_showcase_card { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid rgba(79,70,229,0.18); background: #fff; }
+.logo_showcase_card img { display: block; width: 100%; aspect-ratio: 1/1; height: auto; object-fit: cover; }
+.logo_showcase_caption { margin-top: 14px; font-size: 13px; font-weight: 600; color: #6b7280; text-align: left; letter-spacing: 0.2px; }
+.logo_showcase_flow_second { margin-top: 26px; }
+.logo_showcase_flow_reverse .logo_showcase_right { grid-column: 1; grid-row: 1; }
+.logo_showcase_flow_reverse .logo_showcase_arrow { grid-column: 2; grid-row: 1; }
+.logo_showcase_flow_reverse .logo_showcase_left { grid-column: 3; grid-row: 1; }
+@media (max-width: 992px) {
+  .logo_showcase_flow { grid-template-columns: 1fr; gap: 16px; }
+  .logo_showcase_arrow { margin: 0 auto; transform: rotate(90deg); }
+  .logo_showcase_flow_reverse .logo_showcase_right, .logo_showcase_flow_reverse .logo_showcase_arrow, .logo_showcase_flow_reverse .logo_showcase_left { grid-column: auto; grid-row: auto; }
+  .inner_head h1 { font-size: 38px; }
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -55,27 +85,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- HERO                                                          -->
 <!-- ============================================================ -->
 <div class="bnd_hero">
-  <div class="bnd_hero_nav">
-    <div class="logo">
-      <div class="image"></div>
-      ClawBrandAI
-    </div>
-    <div class="nav_actions">
-      <div class="bnd_trust_badge"><i class="ti ti-shield-check"></i> Secure Checkout</div>
-      <a href="https://www.jvzoo.com/b/116103/436791/6" class="nav-cta nav-cta--priced">
-        <span class="nav-cta_primary"><i class="ti ti-bolt"></i> Get My Bundle &mdash; $397</span>
-        <span class="nav-cta_sub">$297 with code CLAWBUNDLE at checkout</span>
-      </a>
-      <img src="https://i.jvzoo.com/116103/436791/6" alt="" width="1px" height="1px" />
-    </div>
-  </div>
 
   <div class="bnd_hero_inner">
     <div class="bnd_hero_kicker">
       <i class="ti ti-player-play"></i> Exclusive Webinar Replay - Limited Time
     </div>
-    <h1>How a NEW Nvidia-Powered AI Creates AND Sells <span>$500 Brand Mockup Packs</span> in 60 Seconds</h1>
-    <h2>In this free training, you&apos;ll see exactly how ClawBrand AI uses Nvidia&apos;s OpenClaw agentic framework to turn any logo into photorealistic brand assets - and how everyday people are turning it into a real income stream using the agency tools, reseller license, and done-for-you sales system included in today&apos;s special bundle.</h2>
+    <h1>How to Turn Any Logo Into <br/><span>$500 Brand Mockup Packs</span></h1>
+    <h2>See how ClawBrand AI helps you create premium brand assets fast and turn them into a sellable offer and claim all upgrades with special bundle deal.</h2>
 
    
     <div class="hero_video_wrapper bnd_hero_webinar">
@@ -137,23 +153,72 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ============================================================ -->
-<!-- WHAT IS CLAWBRAND AI                                           -->
+<!-- LOGO TO ASSETS SHOWCASE                                       -->
 <!-- ============================================================ -->
-<section class="bnd_explainer_section">
-  <div class="bnd_wrap">
-    <div class="bnd_section_head">
-      <div class="bnd_section_pill"><i class="ti ti-help-circle"></i> What Is ClawBrand AI?</div>
-      <h2>The World&apos;s First Agentic AI Brand Mockup Platform - Powered by <em>Nvidia OpenClaw</em></h2>
-      <p>ClawBrand AI is a cloud-based platform that lets anyone turn a simple logo into photorealistic, agency-quality brand mockups in under 60 seconds. No Photoshop. No designers. No design experience needed.</p>
-      <p style="margin-top:14px;">It&apos;s built on Nvidia&apos;s OpenClaw framework - a breakthrough agentic AI system where 5 specialized AI agents work together like a full creative team. One agent handles your brand identity, another generates the mockup, another builds the scene, another manages your assets, and another remembers your preferences.</p>
-      <p style="margin-top:14px;">The result: brand visuals that look like they cost $500 from an agency - delivered in a minute, for a fraction of the price.</p>
+<section class="logo_showcase_section">
+  <div class="logo_showcase_inner">
+    <div class="inner_head">
+      <h3>Instant Branding Without Design Skills</h3>
+      <h1>Transform Any Logo into <br/><span style="display:inline-block;margin-top:12px;background:#181a1e;color:#deff68;padding:10px 28px;border-radius:50px;font-size:inherit;font-weight:inherit;line-height:inherit;">$300+ Premium Brand Mockups</span></h1>
+      <p style="max-width:820px;text-align:center">ClawBrand AI turns a simple logo into polished mockups, merch visuals, and branded scenes in minutes.</p>
     </div>
-    <div class="bnd_explainer_stats">
-      <div class="bnd_explainer_stat"><i class="ti ti-layout-grid"></i><strong>166 Templates</strong><span>12 categories: devices, apparel, packaging, signage, print, and more</span></div>
-      <div class="bnd_explainer_stat"><i class="ti ti-clock-bolt"></i><strong>60 Seconds</strong><span>Per mockup generation - not hours, not days</span></div>
-      <div class="bnd_explainer_stat"><i class="ti ti-currency-dollar"></i><strong>$0 Extra</strong><span>No subscriptions, no per-image fees, no hidden costs</span></div>
+
+    <div class="logo_showcase_flow">
+      <div class="logo_showcase_left">
+        <div class="logo_showcase_label">Your Logo</div>
+        <img src="../special/images/burger-hoursLOGO.webp" alt="Source logo upload example" loading="lazy" decoding="async" />
+      </div>
+
+      <div class="logo_showcase_arrow" aria-hidden="true">
+        <i class="ti ti-arrow-right"></i>
+      </div>
+
+      <div class="logo_showcase_right">
+        <div class="logo_showcase_card"><img src="../special/images/Burger-House---Food-&-Beverage-Pack---Professional-Scenes-Hero-Scene-8bfc9d99.webp" alt="Generated branded lifestyle scene" loading="lazy" decoding="async" /></div>
+        <div class="logo_showcase_card"><img src="../special/images/Burger-House---Food-&-Beverage-Pack---Small-Product-Box-72f282b1.webp" alt="Generated branded product box" loading="lazy" decoding="async" /></div>
+        <div class="logo_showcase_card"><img src="../special/images/Burger-House---Food-&-Beverage-Pack---Merchandise-2d1b55e1.webp" alt="Generated branded merchandise visual" loading="lazy" decoding="async" /></div>
+        <div class="logo_showcase_card"><img src="../special/images/Burger-House---Food-&-Beverage-Pack---Shipping-Box-0b7ae081.webp" alt="Generated branded shipping box mockup" loading="lazy" decoding="async" /></div>
+      </div>
     </div>
-    <p class="bnd_explainer_foot">Powered by Nvidia OpenClaw Agentic AI - the same caliber of technology used by Fortune 500 creative teams.</p>
+    <p class="logo_showcase_caption">Burger house branding assets</p>
+
+    <div class="logo_showcase_flow logo_showcase_flow_second logo_showcase_flow_reverse">
+      <div class="logo_showcase_right">
+        <div class="logo_showcase_card"><img src="../special/images/coolbeans1.webp" alt="Cool Beans branded visual one" loading="lazy" decoding="async" /></div>
+        <div class="logo_showcase_card"><img src="../special/images/coolbeans2.webp" alt="Cool Beans branded visual two" loading="lazy" decoding="async" /></div>
+        <div class="logo_showcase_card"><img src="../special/images/coolbeans3.webp" alt="Cool Beans branded visual three" loading="lazy" decoding="async" /></div>
+        <div class="logo_showcase_card"><img src="../special/images/coolbeams5.webp" alt="Cool Beans branded visual four" loading="lazy" decoding="async" /></div>
+      </div>
+
+      <div class="logo_showcase_arrow" aria-hidden="true">
+        <i class="ti ti-arrow-left"></i>
+      </div>
+
+      <div class="logo_showcase_left">
+        <div class="logo_showcase_label">Your Logo</div>
+        <img src="../special/images/Cool Beans Coffee House.webp" alt="Cool Beans Coffee House logo upload example" loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <p class="logo_showcase_caption">Cool Beans coffee house branding assets</p>
+
+    <div class="logo_showcase_flow logo_showcase_flow_second">
+      <div class="logo_showcase_left">
+        <div class="logo_showcase_label">Your Logo</div>
+        <img src="../special/images/dentallogo.webp" alt="Dental logo upload example" loading="lazy" decoding="async" />
+      </div>
+
+      <div class="logo_showcase_arrow" aria-hidden="true">
+        <i class="ti ti-arrow-right"></i>
+      </div>
+
+      <div class="logo_showcase_right">
+        <div class="logo_showcase_card"><img src="../special/images/dental1.webp" alt="Dental branded visual one" loading="lazy" decoding="async" /></div>
+        <div class="logo_showcase_card"><img src="../special/images/dental2.webp" alt="Dental branded visual two" loading="lazy" decoding="async" /></div>
+        <div class="logo_showcase_card"><img src="../special/images/dental3.webp" alt="Dental branded visual three" loading="lazy" decoding="async" /></div>
+        <div class="logo_showcase_card"><img src="../special/images/dental4.webp" alt="Dental branded visual four" loading="lazy" decoding="async" /></div>
+      </div>
+    </div>
+    <p class="logo_showcase_caption">Dental clinic branding assets</p>
   </div>
 </section>
 
