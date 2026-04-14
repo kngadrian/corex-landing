@@ -758,10 +758,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============================================================ -->
 <div class="sp_sticky_cta" role="region" aria-label="Limited-time offer">
   <div class="sp_sticky_inner">
-    <span class="sp_sticky_txt">Launch pricing: <strong style="color:#fff;">$47</strong> one-time &middot; Price rises every hour</span>
+    <span class="sp_sticky_txt">Get $10 Off Now with Coupon Code <strong style="color:#deff68;">&ldquo;BRAND10&rdquo;</strong></span>
     <a class="sp_sticky_btn" href="https://www.jvzoo.com/b/116103/436449/6"><i class="ti ti-bolt"></i> Get Instant Access - $47</a>
   </div>
 </div>
+
+<!-- Toast notification -->
+<div class="sp_toast" id="spToast">
+  <div class="sp_toast_accent"><i class="ti ti-flame"></i></div>
+  <div class="sp_toast_body">
+    <span class="sp_toast_dot"></span>
+    <span id="spToastMsg"></span>
+  </div>
+</div>
+
+<style>
+.sp_toast {
+  position: fixed; bottom: 76px; left: 24px; z-index: 9997;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(34,192,126,0.4);
+  border-radius: 16px;
+  padding: 0; display: flex; align-items: stretch; gap: 0;
+  font-size: 14px; font-weight: 600; color: #fff;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06) inset, 0 0 20px rgba(34,192,126,0.15);
+  transform: translateX(-120%); opacity: 0;
+  transition: transform .45s cubic-bezier(.22,1,.36,1), opacity .35s ease;
+  pointer-events: none; max-width: 380px; overflow: hidden;
+}
+.sp_toast.show { transform: translateX(0); opacity: 1; }
+.sp_toast_accent {
+  width: 48px; flex-shrink: 0;
+  background: linear-gradient(180deg, #22c07e, #16a34a);
+  display: flex; align-items: center; justify-content: center;
+}
+.sp_toast_accent i { font-size: 20px; color: #fff; }
+.sp_toast_dot {
+  width: 10px; height: 10px; border-radius: 50%; background: #22c55e; flex-shrink: 0;
+  animation: spToastPulse 1.2s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(34,197,94,0.5);
+}
+@keyframes spToastPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+.sp_toast_body {
+  padding: 14px 18px 14px 14px; display: flex; align-items: center; gap: 10px;
+  flex: 1; min-width: 0;
+}
+.sp_toast_body span { line-height: 1.45; }
+@media (max-width: 768px) {
+  .sp_toast { left: 12px; right: 12px; bottom: 68px; font-size: 13px; max-width: 100%; }
+  .sp_toast_accent { width: 40px; }
+  .sp_toast_accent i { font-size: 17px; }
+  .sp_toast_body { padding: 12px 14px 12px 12px; }
+}
+</style>
 
 <!-- ============================================================ -->
 <!-- SCRIPTS                                                       -->
@@ -856,6 +908,79 @@ document.addEventListener('click', function(e) {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeAssetModal();
 });
+</script>
+
+<script>
+(function() {
+  var toastQueue = [];
+  var toastBusy = false;
+  var names = [
+    'Sarah M.','Mike R.','Jessica K.','David L.','Amanda P.','Chris B.',
+    'Taylor S.','Jordan W.','Alex H.','Nina G.','Ryan C.','Emma T.',
+    'Jake F.','Olivia D.','Sam N.','Mia V.','Leo Z.','Ava Q.',
+    'Noah J.','Zoe X.','Liam B.','Sofia R.','Ethan K.','Chloe P.',
+    'Mason D.','Ella W.','Lucas F.','Grace H.','Aiden T.','Riley N.'
+  ];
+  var usedNames = [];
+  var cities = [
+    'New York','Los Angeles','London','Toronto','Sydney','Austin',
+    'Miami','Chicago','Berlin','Dubai','Singapore','Denver',
+    'Atlanta','Vancouver','Dublin','Nashville','Portland','Amsterdam'
+  ];
+
+  function pickName() {
+    if (usedNames.length >= names.length) usedNames = [];
+    var available = names.filter(function(n) { return usedNames.indexOf(n) === -1; });
+    var name = available[Math.floor(Math.random() * available.length)];
+    usedNames.push(name);
+    return name;
+  }
+  function pickCity() { return cities[Math.floor(Math.random() * cities.length)]; }
+  function randMinutes() { return Math.floor(Math.random() * 12) + 1; }
+
+  function showProofToast() {
+    var name = pickName();
+    var city = pickCity();
+    var mins = randMinutes();
+    var proofs = [
+      '<strong>' + name + '</strong> from ' + city + ' just got access',
+      '<strong>' + name + '</strong> purchased ClawBrand AI ' + mins + ' min ago',
+      '<strong>' + name + '</strong> just unlocked their account',
+      '<strong>' + name + '</strong> from ' + city + ' started creating mockups',
+      '<strong>' + Math.floor(Math.random() * 8 + 5) + ' people</strong> are viewing this page right now',
+      '<strong>' + name + '</strong> just applied coupon BRAND10',
+      '<strong>' + name + '</strong> from ' + city + ' joined ' + mins + ' min ago',
+      '<strong>' + name + '</strong> just downloaded their first mockup pack'
+    ];
+    toastQueue.push(proofs[Math.floor(Math.random() * proofs.length)]);
+    drainToast();
+  }
+
+  function drainToast() {
+    if (toastBusy || toastQueue.length === 0) return;
+    toastBusy = true;
+    var el = document.getElementById('spToast');
+    var msgEl = document.getElementById('spToastMsg');
+    if (!el || !msgEl) { toastBusy = false; return; }
+    msgEl.innerHTML = toastQueue.shift();
+    el.classList.add('show');
+    setTimeout(function() {
+      el.classList.remove('show');
+      setTimeout(function() { toastBusy = false; drainToast(); }, 400);
+    }, 3500);
+  }
+
+  function proofLoop() {
+    var delay = (12 + Math.random() * 20) * 1000;
+    setTimeout(function() {
+      if (!toastBusy && toastQueue.length === 0) showProofToast();
+      proofLoop();
+    }, delay);
+  }
+
+  setTimeout(function() { showProofToast(); }, 8000);
+  proofLoop();
+})();
 </script>
 </body>
 </html>
