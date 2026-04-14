@@ -1129,14 +1129,14 @@ document.addEventListener('DOMContentLoaded', () => {
     var city = pickCity();
     var mins = randMinutes();
     var proofs = [
-      '<strong>' + name + '</strong> from ' + city + ' just grabbed the bundle',
-      '<strong>' + name + '</strong> claimed the CLAWBUNDLE discount ' + mins + ' min ago',
-      '<strong>' + name + '</strong> from ' + city + ' upgraded to the full bundle',
-      '<strong>' + name + '</strong> just unlocked all 5 upgrades',
-      '<strong>' + Math.floor(Math.random() * 8 + 5) + ' people</strong> are viewing this bundle deal right now',
-      '<strong>' + name + '</strong> from ' + city + ' applied code CLAWBUNDLE',
-      '<strong>' + name + '</strong> secured the agency + reseller license ' + mins + ' min ago',
-      '<strong>' + name + '</strong> from ' + city + ' saved $100 on the bundle just now'
+      '<strong>' + name + '</strong> from ' + city + ' just secured the Bundle Deal with <strong>$100 OFF</strong>',
+      '<strong>' + name + '</strong> secured the Bundle Deal with <strong>$100 OFF</strong> ' + mins + ' min ago',
+      '<strong>' + name + '</strong> from ' + city + ' locked in the secured Bundle Deal &mdash; <strong>$100 OFF</strong>',
+      '<strong>Only a few coupons left</strong> &mdash; Bundle Deal still includes <strong>$100 OFF</strong>',
+      '<strong>' + Math.floor(Math.random() * 8 + 5) + ' people</strong> are viewing this Bundle Deal with <strong>$100 OFF</strong> right now',
+      '<strong>Hurry:</strong> just a few <strong>$100 OFF</strong> bundle coupons remaining',
+      '<strong>' + name + '</strong> from ' + city + ' claimed the secured Bundle Deal with <strong>$100 OFF</strong>',
+      '<strong>Limited spots:</strong> Bundle Deal coupons running low &mdash; <strong>$100 OFF</strong> while it lasts'
     ];
     toastQueue.push(proofs[Math.floor(Math.random() * proofs.length)]);
     drainToast();
