@@ -47,7 +47,7 @@
         </p>
 
         <div class="ty_actions">
-          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=ClawBrand+AI+Launch&dates=20260414T150000Z/20260414T160000Z&details=ClawBrand+AI+is+launching!+Get+access+to+your+AI-powered+brand+team+for+mockups,+scenes,+and+complete+visual+assets.&location=https://clawbrandai.com" target="_blank" rel="noopener" class="ty_btn ty_btn_primary"><i class="ti ti-calendar-event"></i> Add to Google Calendar</a>
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=ClawBrandAI%20Training&dates=20260414T150000Z/20260414T160000Z&details=Join%20the%20live%20ClawBrandAI%20Training%20webinar.&location=https%3A%2F%2Fclawbrandai.com&ctz=America%2FNew_York" target="_blank" rel="noopener" class="ty_btn ty_btn_primary"><i class="ti ti-calendar-event"></i> Add to Google Calendar</a>
           <button onclick="downloadICS()" class="ty_btn ty_btn_secondary" style="cursor:pointer;font-family:inherit;font-size:inherit;"><i class="ti ti-calendar-plus"></i> Add to Outlook / iCal</button>
         </div>
       </div>
@@ -136,8 +136,8 @@
         'BEGIN:VEVENT',
         'DTSTART:20260414T150000Z',
         'DTEND:20260414T160000Z',
-        'SUMMARY:ClawBrand AI Launch',
-        'DESCRIPTION:ClawBrand AI is launching! Get access to your AI-powered brand team for mockups\\, scenes\\, and complete visual assets.',
+        'SUMMARY:ClawBrandAI Training',
+        'DESCRIPTION:Join the live ClawBrandAI Training webinar.',
         'URL:https://clawbrandai.com',
         'END:VEVENT',
         'END:VCALENDAR'
@@ -145,7 +145,7 @@
       var blob = new Blob([lines.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
       var link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
-      link.download = 'clawbrand-ai-launch.ics';
+      link.download = 'clawbrandai-training.ics';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
