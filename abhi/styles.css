@@ -2947,7 +2947,7 @@ body {
   right: 0;
   bottom: 0;
   z-index: 9998;
-  padding: 12px 18px;
+  padding: 8px 12px;
   background: linear-gradient(180deg, rgba(15, 21, 40, 0.95), #0f1528);
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(12px);
@@ -2962,7 +2962,16 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 12px 20px;
+  gap: 8px 12px;
+}
+
+.sp_sticky_btn_row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
 }
 
 .sp_sticky_txt {
@@ -2974,9 +2983,9 @@ body {
 }
 
 .sp_sticky_btn {
-  padding: 14px 26px;
+  padding: 11px 16px;
   border-radius: 22px;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 700;
   color: #18161a;
   text-decoration: none;
@@ -3043,23 +3052,38 @@ body {
     box-sizing: border-box;
   }
 
-  .sp_sticky_inner {
+  .sp_sticky_inner { flex-direction: row; }
+
+  .sp_sticky_btn_row {
+    width: 100%;
     flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
   }
 
   .sp_sticky_btn {
     width: 100%;
-    max-width: 420px;
+    min-width: 0;
+    max-width: 100%;
     justify-content: center;
     white-space: normal;
     text-align: center;
-    font-size: 15px;
-    padding: 12px 18px;
+    font-size: 13px;
+    padding: 9px 10px;
+    line-height: 1.25;
   }
 
   .sp_sticky_txt {
     font-size: 13px;
     line-height: 1.4;
+  }
+
+  .abhi_coupon_strip_sticky {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 2px;
+    font-size: 11px;
+    padding: 4px 8px;
   }
 }
 
@@ -3159,6 +3183,7 @@ body {
   padding: 11px 16px;
 }
 
+
 .abhi_offer_guarantees {
   display: flex;
   gap: 12px 18px;
@@ -3186,6 +3211,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 8px;
   margin: 0 auto 12px;
   padding: 8px 12px;
@@ -3197,10 +3223,21 @@ body {
   font-weight: 500;
   line-height: 1.35;
   text-align: center;
+  white-space: normal;
+  max-width: 100%;
+  width: 100%;
+  word-break: break-word;
 }
 
 .abhi_coupon_strip i { color: #fbe364; font-size: 15px; }
 .abhi_coupon_strip strong { color: #deff68; }
+.abhi_coupon_strip_sticky {
+  margin: 0 auto 4px;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 10px;
+  line-height: 1.2;
+}
 
 .abhi_bonus_box {
   width: 100%;
@@ -3298,5 +3335,6 @@ body {
   .abhi_coupon_strip {
     width: 100%;
     font-size: 12px;
+    gap: 6px;
   }
 }
