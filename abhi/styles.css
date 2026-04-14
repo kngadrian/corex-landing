@@ -3231,6 +3231,17 @@ body {
 
 .abhi_coupon_strip i { color: #fbe364; font-size: 15px; }
 .abhi_coupon_strip strong { color: #deff68; }
+.abhi_coupon_strip_hero {
+  padding: 12px 18px;
+  border-radius: 16px;
+  border: 2px dashed rgba(251, 227, 100, 0.65);
+  background: linear-gradient(90deg, rgba(14, 20, 38, 0.78), rgba(43, 29, 62, 0.78));
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.abhi_coupon_strip_hero i { font-size: 20px; }
 .abhi_coupon_strip_sticky {
   margin: 0 auto 4px;
   padding: 5px 10px;
@@ -3337,4 +3348,11 @@ body {
     font-size: 12px;
     gap: 6px;
   }
+
+  .abhi_coupon_strip_hero {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .abhi_coupon_strip_hero i { font-size: 16px; }
 }
