@@ -74,12 +74,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="hero_video_wrapper">
         <div class="hero_video_inner">
-          <iframe id="heroVimeo" src="https://player.vimeo.com/video/1179143984?autoplay=1&muted=1&loop=1&autopause=0&background=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-          <button class="video_sound_btn" id="soundToggle" onclick="toggleSound()">
-            <span class="beep_dot"></span>
-            <i class="ti ti-volume-off" id="soundIcon"></i>
-            <span id="soundLabel">Click to unmute</span>
-          </button>
+          <div id="vidalytics_embed_zbEBMKsvTAXkERPk" style="width: 100%; position:relative; padding-top: 56.25%;"></div>
+          <script type="text/javascript">
+            (function (v, i, d, a, l, y, t, c, s) {
+                y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+                if (!vsl){vsl=function(u,cb){
+                    if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+                    if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+                    i.getElementsByTagName("head")[0].appendChild(s);
+                };}
+                vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+            })(window, document, 'Vidalytics', 'vidalytics_embed_zbEBMKsvTAXkERPk', 'https://fast.vidalytics.com/embeds/nX_WRrPl/zbEBMKsvTAXkERPk/');
+          </script>
         </div>
       </div>
     
@@ -759,26 +765,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============================================================ -->
 <!-- SCRIPTS                                                       -->
 <!-- ============================================================ -->
-<script src="https://player.vimeo.com/api/player.js"></script>
 <script>
-let heroPlayer;
-let isMuted = true;
-
-function initHeroVideo() {
-  const iframe = document.getElementById('heroVimeo');
-  if (!iframe || typeof Vimeo === 'undefined') return;
-  heroPlayer = new Vimeo.Player(iframe);
-  heroPlayer.setMuted(true);
-}
-
-function toggleSound() {
-  if (!heroPlayer) return;
-  isMuted = !isMuted;
-  heroPlayer.setMuted(isMuted);
-  document.getElementById('soundIcon').className = isMuted ? 'ti ti-volume-off' : 'ti ti-volume';
-  document.getElementById('soundLabel').textContent = isMuted ? 'Click to unmute' : 'Sound on';
-}
-
 /* Countdown timer - session-based */
 function initTimer() {
   const key = 'bundle_end';
@@ -835,7 +822,6 @@ function initReveal() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  initHeroVideo();
   initTimer();
   initReveal();
 });
