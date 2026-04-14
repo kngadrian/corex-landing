@@ -942,6 +942,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- Toast notification -->
+<div class="bnd_toast" id="bndToast">
+  <div class="bnd_toast_accent"><i class="ti ti-flame"></i></div>
+  <div class="bnd_toast_body">
+    <span class="bnd_toast_dot"></span>
+    <span id="bndToastMsg"></span>
+  </div>
+</div>
+
+<style>
+.bnd_toast {
+  position: fixed; bottom: 76px; left: 24px; z-index: 9997;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(239,68,68,0.4);
+  border-radius: 16px;
+  padding: 0; display: flex; align-items: stretch; gap: 0;
+  font-size: 14px; font-weight: 600; color: #fff;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06) inset, 0 0 20px rgba(239,68,68,0.15);
+  transform: translateX(-120%); opacity: 0;
+  transition: transform .45s cubic-bezier(.22,1,.36,1), opacity .35s ease;
+  pointer-events: none; max-width: 380px; overflow: hidden;
+}
+.bnd_toast.show { transform: translateX(0); opacity: 1; }
+.bnd_toast_accent {
+  width: 48px; flex-shrink: 0;
+  background: linear-gradient(180deg, #ef4444, #dc2626);
+  display: flex; align-items: center; justify-content: center;
+}
+.bnd_toast_accent i { font-size: 20px; color: #fff; }
+.bnd_toast_dot {
+  width: 10px; height: 10px; border-radius: 50%; background: #ef4444; flex-shrink: 0;
+  animation: bndToastPulse 1.2s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(239,68,68,0.5);
+}
+@keyframes bndToastPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+.bnd_toast_body {
+  padding: 14px 18px 14px 14px; display: flex; align-items: center; gap: 10px;
+  flex: 1; min-width: 0;
+}
+.bnd_toast_body span { line-height: 1.45; }
+@media (max-width: 768px) {
+  .bnd_toast { left: 12px; right: 12px; bottom: 68px; font-size: 13px; max-width: 100%; }
+  .bnd_toast_accent { width: 40px; }
+  .bnd_toast_accent i { font-size: 17px; }
+  .bnd_toast_body { padding: 12px 14px 12px 12px; }
+}
+</style>
+
 <!-- ============================================================ -->
 <!-- FOOTER                                                        -->
 <!-- ============================================================ -->
@@ -1090,6 +1142,79 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initStickyBundleBar();
 });
+</script>
+
+<script>
+(function() {
+  var toastQueue = [];
+  var toastBusy = false;
+  var names = [
+    'Sarah M.','Mike R.','Jessica K.','David L.','Amanda P.','Chris B.',
+    'Taylor S.','Jordan W.','Alex H.','Nina G.','Ryan C.','Emma T.',
+    'Jake F.','Olivia D.','Sam N.','Mia V.','Leo Z.','Ava Q.',
+    'Noah J.','Zoe X.','Liam B.','Sofia R.','Ethan K.','Chloe P.',
+    'Mason D.','Ella W.','Lucas F.','Grace H.','Aiden T.','Riley N.'
+  ];
+  var usedNames = [];
+  var cities = [
+    'New York','Los Angeles','London','Toronto','Sydney','Austin',
+    'Miami','Chicago','Berlin','Dubai','Singapore','Denver',
+    'Atlanta','Vancouver','Dublin','Nashville','Portland','Amsterdam'
+  ];
+
+  function pickName() {
+    if (usedNames.length >= names.length) usedNames = [];
+    var available = names.filter(function(n) { return usedNames.indexOf(n) === -1; });
+    var name = available[Math.floor(Math.random() * available.length)];
+    usedNames.push(name);
+    return name;
+  }
+  function pickCity() { return cities[Math.floor(Math.random() * cities.length)]; }
+  function randMinutes() { return Math.floor(Math.random() * 12) + 1; }
+
+  function showProofToast() {
+    var name = pickName();
+    var city = pickCity();
+    var mins = randMinutes();
+    var proofs = [
+      '<strong>' + name + '</strong> from ' + city + ' just grabbed the bundle',
+      '<strong>' + name + '</strong> claimed the CLAWBUNDLE discount ' + mins + ' min ago',
+      '<strong>' + name + '</strong> from ' + city + ' upgraded to the full bundle',
+      '<strong>' + name + '</strong> just unlocked all 5 upgrades',
+      '<strong>' + Math.floor(Math.random() * 8 + 5) + ' people</strong> are viewing this bundle deal right now',
+      '<strong>' + name + '</strong> from ' + city + ' applied code CLAWBUNDLE',
+      '<strong>' + name + '</strong> secured the agency + reseller license ' + mins + ' min ago',
+      '<strong>' + name + '</strong> from ' + city + ' saved $100 on the bundle just now'
+    ];
+    toastQueue.push(proofs[Math.floor(Math.random() * proofs.length)]);
+    drainToast();
+  }
+
+  function drainToast() {
+    if (toastBusy || toastQueue.length === 0) return;
+    toastBusy = true;
+    var el = document.getElementById('bndToast');
+    var msgEl = document.getElementById('bndToastMsg');
+    if (!el || !msgEl) { toastBusy = false; return; }
+    msgEl.innerHTML = toastQueue.shift();
+    el.classList.add('show');
+    setTimeout(function() {
+      el.classList.remove('show');
+      setTimeout(function() { toastBusy = false; drainToast(); }, 400);
+    }, 3500);
+  }
+
+  function proofLoop() {
+    var delay = (12 + Math.random() * 20) * 1000;
+    setTimeout(function() {
+      if (!toastBusy && toastQueue.length === 0) showProofToast();
+      proofLoop();
+    }, delay);
+  }
+
+  setTimeout(function() { showProofToast(); }, 8000);
+  proofLoop();
+})();
 </script>
 </body>
 </html>
