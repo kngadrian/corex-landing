@@ -1101,6 +1101,147 @@ document.addEventListener('keydown', function(e) {
 });
 </script>
 
+<!-- Exit Intent Modal -->
+<div class="exit_modal_overlay" id="exitModal">
+  <div class="exit_modal">
+    <button class="exit_modal_close" id="exitModalClose" aria-label="Close">&times;</button>
+    <div class="exit_modal_icon"><i class="ti ti-broadcast"></i></div>
+    <div class="exit_modal_kicker">Free Live Workshop</div>
+    <h2 class="exit_modal_title">Wait! Before You Go&hellip;</h2>
+    <p class="exit_modal_desc">Join our <strong>free live workshop tomorrow</strong> and see exactly how ClawBrand AI turns simple logos into premium brand assets you can sell.</p>
+    <div class="exit_modal_details">
+      <div class="exit_modal_detail"><i class="ti ti-calendar-event"></i> <strong>Tomorrow &mdash; April 15, 2026</strong></div>
+      <div class="exit_modal_detail"><i class="ti ti-clock"></i> <strong>2:00 PM EST</strong></div>
+      <div class="exit_modal_detail"><i class="ti ti-tag"></i> <strong>100% Free</strong></div>
+    </div>
+    <a href="/invite/" class="exit_modal_cta"><i class="ti ti-bolt"></i> YES! I Want to Join for Free &rarr;</a>
+    <p class="exit_modal_sub">No credit card required &middot; Limited seats available</p>
+  </div>
+</div>
+
+<style>
+.exit_modal_overlay {
+  position: fixed; inset: 0; z-index: 99999;
+  background: rgba(0,0,0,0.7); backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity .35s ease, visibility .35s ease;
+  padding: 20px;
+}
+.exit_modal_overlay.active { opacity: 1; visibility: visible; }
+.exit_modal {
+  background: #fff; border-radius: 24px;
+  max-width: 520px; width: 100%;
+  padding: 48px 40px; text-align: center;
+  position: relative;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.35);
+  transform: translateY(30px) scale(0.95);
+  transition: transform .4s cubic-bezier(.22,1,.36,1);
+}
+.exit_modal_overlay.active .exit_modal { transform: translateY(0) scale(1); }
+.exit_modal_close {
+  position: absolute; top: 16px; right: 16px;
+  width: 36px; height: 36px; border-radius: 50%;
+  border: none; background: #f3f4f6; color: #6b7280;
+  font-size: 22px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+}
+.exit_modal_close:hover { background: #e5e7eb; color: #181a1e; }
+.exit_modal_icon {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #6d5cff);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px; font-size: 28px; color: #fff;
+}
+.exit_modal_kicker {
+  display: inline-block; font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .5px;
+  color: #4f46e5; background: rgba(79,70,229,0.08);
+  padding: 6px 16px; border-radius: 50px; margin-bottom: 16px;
+}
+.exit_modal_title {
+  font-size: 32px; font-weight: 800; color: #181a1e;
+  margin-bottom: 12px; line-height: 1.2;
+}
+.exit_modal_desc {
+  font-size: 17px; color: #4b5563; line-height: 1.6;
+  margin-bottom: 24px; max-width: 420px; margin-left: auto; margin-right: auto;
+}
+.exit_modal_details {
+  display: flex; justify-content: center; gap: 20px;
+  flex-wrap: wrap; margin-bottom: 28px;
+}
+.exit_modal_detail {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 15px; color: #181a1e;
+}
+.exit_modal_detail i { color: #4f46e5; font-size: 20px; }
+.exit_modal_cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(90deg, #22c07e, #a8f54a);
+  color: #18161a; font-size: 18px; font-weight: 800;
+  padding: 18px 36px; border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 8px 30px rgba(34,192,126,0.3), inset 0 -6px 0 rgba(255,255,255,0.28);
+  transition: transform .2s;
+}
+.exit_modal_cta:hover { transform: translateY(-2px); }
+.exit_modal_sub {
+  margin-top: 14px; font-size: 13px; color: #9ca3af;
+}
+@media (max-width: 600px) {
+  .exit_modal { padding: 36px 24px; }
+  .exit_modal_title { font-size: 26px; }
+  .exit_modal_cta { font-size: 16px; padding: 16px 28px; }
+  .exit_modal_details { gap: 12px; }
+}
+</style>
+
+<script>
+(function() {
+  var shown = false;
+  var dismissed = sessionStorage.getItem('exit_modal_dismissed');
+
+  function showExitModal() {
+    if (shown || dismissed) return;
+    shown = true;
+    document.getElementById('exitModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function hideExitModal() {
+    document.getElementById('exitModal').classList.remove('active');
+    document.body.style.overflow = '';
+    sessionStorage.setItem('exit_modal_dismissed', '1');
+  }
+
+  document.addEventListener('mouseout', function(e) {
+    if (e.clientY <= 0 && e.relatedTarget === null) {
+      showExitModal();
+    }
+  });
+
+  document.getElementById('exitModalClose').addEventListener('click', hideExitModal);
+
+  document.getElementById('exitModal').addEventListener('click', function(e) {
+    if (e.target === this) hideExitModal();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') hideExitModal();
+  });
+
+  setTimeout(function() {
+    if (!shown && !dismissed) {
+      document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'hidden') showExitModal();
+      }, { once: true });
+    }
+  }, 30000);
+})();
+</script>
+
 <script>
 (function() {
   var toastQueue = [];
