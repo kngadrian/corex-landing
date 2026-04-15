@@ -2228,8 +2228,9 @@ max-width:1050px; }
 .bundle_inner { max-width: var(--sp-content-max); margin: 0 auto; width: 100%; box-sizing: border-box; }
 .bundle_img_wrap {
   width: 100%; border-radius: 28px; overflow: hidden;
-  box-shadow: 0 40px 100px rgba(79,70,229,0.15);
-  border: 1px solid #e5e7eb;
+  box-shadow: none;
+  border: none;
+  background:transparent;
 }
 .bundle_img_wrap img {
   width: 100%; height: auto; display: block;
