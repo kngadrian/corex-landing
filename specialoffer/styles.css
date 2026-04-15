@@ -1627,7 +1627,7 @@ max-width:1050px; }
 .sp_assets_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 25px;
 }
 .sp_asset_card {
   background: #f3f4f654;
@@ -2516,6 +2516,13 @@ body {
 .container {
   padding-top: 84px;
   padding-bottom: 84px;
+}
+#features {
+  padding-bottom:0;
+}
+
+#features .inner_head {
+  margin-bottom:0px;
 }
 
 .inner_head {
