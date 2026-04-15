@@ -1235,6 +1235,14 @@ max-width:1050px; }
     gap: 10px;
     align-items: flex-start;
   }
+
+  #features {
+    padding-bottom:0px
+  }
+
+  #features .inner_head {
+    margin-bottom:0px;
+  }
   .funnel_step_inner { flex-direction: column; align-items: flex-start; gap: 20px; }
   .funnel_right { align-items: flex-start; flex-direction: row; gap: 15px; }
   .funnel_price { font-size: 30px; }
