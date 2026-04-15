@@ -1630,7 +1630,7 @@ max-width:1050px; }
   gap: 16px;
 }
 .sp_asset_card {
-  background: #fff;
+  background: #f3f4f654;
   border: 1px solid #e5e7eb;
   border-radius: 20px;
   overflow: hidden;
@@ -1648,7 +1648,7 @@ max-width:1050px; }
   display: block;
 }
 .sp_asset_body {
-  padding: 14px 16px 16px;
+  padding: 25px 25px 30px;
   display: flex;
   flex-direction: column;
   gap: 6px;
