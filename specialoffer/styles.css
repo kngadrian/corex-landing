@@ -2623,14 +2623,14 @@ body {
   color: var(--sp-muted);
 }
 .sp_asset_body {
-  padding: 16px 18px 18px;
+  padding: 25px 25px 40px;
 }
 .sp_asset_card h4 {
   font-size: 20px;
   color: var(--sp-text);
 }
 .sp_asset_desc {
-  font-size: 16px;
+  font-size: 20x;
   line-height: 1.55;
   color: var(--sp-muted);
 }
