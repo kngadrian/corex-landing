@@ -2861,7 +2861,7 @@ body {
 
   /* Primary CTAs (profit, how, proof, urgency) - compact on small screens */
   .cta_btn_primary {
-    font-size: 16px;
+    font-size: 20px;
     padding: 14px 20px;
     border-radius: 18px;
     line-height: 1.35;
