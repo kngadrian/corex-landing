@@ -1190,6 +1190,7 @@ max-width:1050px; }
   .call_to_action .crossed {
     max-width:300px;
     margin-bottom:0;
+    font-size:18px;
   }
   .call_to_action .price {
     font-size:25px
