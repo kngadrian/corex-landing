@@ -2948,7 +2948,7 @@ body {
 
 @media (max-width: 480px) {
   .cta_btn_primary {
-    font-size: 14px;
+    font-size: 20px;
     padding: 12px 16px;
     border-radius: 14px;
   }
