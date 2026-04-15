@@ -2597,6 +2597,32 @@ body {
   color: var(--sp-muted);
 }
 
+/* Feature mini grid shown above "This Is Perfect For" chips */
+.sp_perfect_feature_grid {
+  margin-top: 46px;
+  margin-bottom: 10px;
+}
+.sp_perfect_feature_grid .feature_mini_card {
+  background: #f3f4f6;
+  border: 1px solid #d7dbe3;
+}
+.sp_perfect_feature_grid .feature_mini_card i {
+  color: #3b82f6;
+}
+.sp_perfect_feature_grid .feature_mini_card.blue_accent {
+  background: linear-gradient(135deg, #1f2937, #374151);
+  border-color: rgba(184, 230, 54, 0.42);
+}
+.sp_perfect_feature_grid .feature_mini_card.blue_accent h4 {
+  color: #deff68;
+}
+.sp_perfect_feature_grid .feature_mini_card.blue_accent p {
+  color: rgba(255, 255, 255, 0.82);
+}
+.sp_perfect_feature_grid .feature_mini_card.blue_accent i {
+  color: #deff68;
+}
+
 .feature_split_text h2 {
   font-size: clamp(36px, 4.5vw, 56px);
   line-height: 1.08;
