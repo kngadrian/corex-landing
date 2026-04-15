@@ -1517,7 +1517,9 @@ max-width:1050px; }
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
 .how_step_body h3 { font-size: 24px; font-weight: 700; color: #181a1e; letter-spacing: -0.5px; }
-.how_step_body p { font-size: 18px; font-weight: 300; color: #778088; line-height: 1.65; margin: 0; }
+.how_step_body p { font-size: 20px;
+  font-weight: 300;
+  color: #4a4e52; line-height: 1.65; margin: 0; }
 .how_cta { text-align: center; margin-top: 20px; }
 
 /* ========================= */
@@ -1615,10 +1617,10 @@ max-width:1050px; }
   margin: 0 0 12px;
 }
 .sp_assets_block_desc {
-  margin: 0 0 28px;
-  max-width: 62ch;
-  font-size: 18px;
-  font-weight: 300;
+  margin: 0 0 50px;
+  max-width: 100%;
+  font-size: 20px;
+  font-weight: 400;
   color: #778088;
   line-height: 1.65;
 }
@@ -1660,7 +1662,7 @@ max-width:1050px; }
 }
 .sp_asset_desc {
   margin: 0;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 300;
   color: #778088;
   line-height: 1.5;
@@ -2494,7 +2496,7 @@ max-width:1050px; }
 /* SPECIAL PAGE POLISH OVERRIDES (non-hero only)                */
 /* ============================================================ */
 :root {
-  --sp-bg: #f7f8fc;
+  --sp-bg: #f3f4f6;
   --sp-surface: #ffffff;
   --sp-surface-soft: #f2f4fb;
   --sp-border: #dde3ef;
@@ -2617,7 +2619,7 @@ body {
   font-size: clamp(34px, 3.4vw, 46px);
 }
 .sp_assets_block_desc {
-  font-size: 19px;
+  font-size: 20px;
   color: var(--sp-muted);
 }
 .sp_asset_body {
