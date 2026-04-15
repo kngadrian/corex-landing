@@ -422,7 +422,7 @@ a.white-bg {
   content: '';
   width: 100%;
   height: 0;
-  box-shadow: 0 0 15px 15px #0000008f;
+  box-shadow: none;
   bottom: 35px;
   left: 0;
   z-index: 9999;
@@ -1230,7 +1230,7 @@ max-width:1050px; }
     width: 100%;
   }
   .trust_row {
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
     align-items: flex-start;
   }
@@ -2118,6 +2118,9 @@ max-width:1050px; }
   .offer_total_right { text-align: center; }
   .guarantee_section { padding: 60px 20px; }
   .pain_stat_grid { grid-template-columns: 1fr 1fr; }
+  .trust_row {
+    flex-direction:row;
+  }
 }
 @media (max-width: 540px) {
   .sp_assets_grid { grid-template-columns: 1fr; }
