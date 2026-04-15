@@ -273,6 +273,13 @@ body {
     gap: 16px;
   }
 
+  .logo_showcase_flow_reverse .logo_showcase_right,
+  .logo_showcase_flow_reverse .logo_showcase_arrow,
+  .logo_showcase_flow_reverse .logo_showcase_left {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
   .logo_showcase_arrow {
     margin: 0 auto;
     transform: rotate(90deg);
@@ -406,7 +413,7 @@ a.white-bg {
   content: '';
   width: 100%;
   height: 0;
-  box-shadow: none;
+  box-shadow: 0 0 15px 15px #0000008f;
   bottom: 35px;
   left: 0;
   z-index: 9999;
@@ -644,7 +651,6 @@ a.white-bg {
   background-image: linear-gradient(90deg, #df4ea6, #fbe364);
   box-shadow:inset 0 -10px 0px 0 rgba(255, 255, 255, 0.3);
   outline: 5px solid #1a193a36;
-  height:80px;
 }
 
 
@@ -1171,21 +1177,6 @@ max-width:1050px; }
     flex-direction: column;
     gap: 10px;
   }
-
-  .call_to_action .crossed {
-    max-width:300px;
-    margin-bottom:0;
-  }
-
-  .call_to_action .price {
-    font-size:25px
-  }
-
-  .trust_row {
-    margin-top: 10px;
-  width: 100%;
-  flex-direction: row;
-  }
   .call_to_action .user_avatars p {
     text-align: center;
     margin-left: 0;
@@ -1196,24 +1187,11 @@ max-width:1050px; }
   .hero .stats_list {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 10px;
   }
   .hero .inner_stats {
     width: 100%;
     min-width: 0;
-  }
-
-  .hero .inner_stats .content p {
-    font-size: 18px;
-  }
-
-  .hero_video_wrapper {
-    margin:20px auto;
-    padding: 5px;
-  }
-
-  .hero .call_to_action a {
-    font-size:20px
   }
   .hero .inner_stats .content {
     margin: 0;
